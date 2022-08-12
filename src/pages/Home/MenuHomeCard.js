@@ -20,10 +20,12 @@ const WrapperCards = styled.div`
     column-gap: 20px;
     width: 100%;
     margin: 0 70px;
+    padding-top: 50px;
 `
 
 const Card = styled.div`
-    
+    display: flex;
+    align-items: ${props => props.number % 2 !== 1 ? "flex-start" : "flex-end"};
 `
 
 const LIST_CARD = [{
@@ -50,7 +52,7 @@ const LIST_CARD = [{
 const MenuHomeCard = () => {
     return <WrapperMenuHomeCard>
         <WrapperCards>
-            {LIST_CARD.map((item, index) => <Card key={index}><HomeCard imgSrc={item.imgSrc} title={item.title} desc={item.desc} /></Card>)}
+            {LIST_CARD.map((item, index) => <Card key={index} number={index}><HomeCard imgSrc={item.imgSrc} title={item.title} desc={item.desc} /></Card>)}
         </WrapperCards>
     </WrapperMenuHomeCard>
 }

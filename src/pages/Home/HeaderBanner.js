@@ -96,11 +96,13 @@ const Desc = styled.p`
 const TextNumber = styled(Desc)`
     color: #00D1AC;
     margin-bottom: 0;
+    font-size: 26px;
 `
 
 const TextLua = styled(Desc)`
     color: #FABC46;
     margin-bottom: 0;
+    font-size: 26px;
 `
 
 const WrapperDesc = styled.div`

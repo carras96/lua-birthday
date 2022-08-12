@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import AdsImage from './AdsImage';
 import BlackShawDowBlock from './BlackShawDowBlock';
 import HeaderBanner from './HeaderBanner';
 import MenuHomeCard from './MenuHomeCard';
@@ -12,6 +13,7 @@ const Home = () => {
         <HeaderBanner/>
         <BlackShawDowBlock/>
         <MenuHomeCard/>
+        <AdsImage />
     </WrapperHome>
 }
 
