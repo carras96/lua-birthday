@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Home from '.';
 import HomeCard from '../../components/HomeCard';
 
 const WrapperMenuHomeCard = styled.div`
