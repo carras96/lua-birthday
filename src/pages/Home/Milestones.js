@@ -73,6 +73,21 @@ const FirstBubbleSection = styled.div`
     position: relative;
 `
 
+const TIME_LINE = [
+    {
+        time: '25 Sep 2020',
+        note: 'The multichain protocol - LuaSwap officially launched'
+    },
+    {
+        time: '30 Sep 2020',
+        note: 'LUA got listed on FTX'
+    },
+    {
+        time: '8 Oct 2020',
+        note: 'LUA got listed on Coinone'
+    },
+]
+
 const Milestones = () => {
     return <WrapperMilestones>
         <LineImage src='/assets/images/line-3.png' />
