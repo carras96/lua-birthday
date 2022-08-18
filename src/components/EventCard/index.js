@@ -70,7 +70,6 @@ const RocketIcon = styled.img`
 
 const EventCard = ({event}) => {
     const { title, content, width, colStart, colEnd, rowStart, rowEnd, isYellowEvent, isFullWidth } = event
-    console.log(title, content, width);
     return <WrapperCard width={width} colStart={colStart} colEnd={colEnd} rowStart={rowStart} rowEnd={rowEnd}>
         <Card isYellowEvent={isYellowEvent} isFullWidth={isFullWidth}>
             <Main>

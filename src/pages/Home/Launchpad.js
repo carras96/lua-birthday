@@ -28,10 +28,7 @@ const Header = styled.div`
     padding-top: 40px;
     justify-content: center;
     align-items: center;
-    background-image: url('/assets/images/luastarter-launchpad.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-
+    flex-direction: column;
 `
 
 const Main = styled.div`
@@ -79,6 +76,21 @@ const Column = styled.div`
     border-bottom: none;
     border-left: ${props => props.colIndex > 0 && props.colIndex < 7 ? 'none' : 'auto'};
     transform: skewX(-20deg);
+`
+
+const GradiantText = styled.p`
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 78px;
+    text-transform: uppercase;
+
+    background: linear-gradient(180deg, rgba(85, 85, 85, 0.4) 22.88%, rgba(20, 20, 20, 0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin-bottom: -40px;
 `
 
 const LIST_LAUNCHPAD = [
@@ -143,6 +155,7 @@ const LIST_LAUNCHPAD = [
 const Launchpad = () => {
     return <WrapperLaunchpad>
         <Header>
+            <GradiantText>LuaStarter Launchpad</GradiantText>
             <Title>
                 <TitleYellow>LuaStarter</TitleYellow> <TitleGreen>Launchpad</TitleGreen>
             </Title>

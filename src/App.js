@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
+import DailyHunt from './pages/DailyHunt';
 import Home from './pages/Home';
 import TradingCompetition from './pages/TradingCompetition';
 
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="trading-competition" element={<TradingCompetition />} />
+        <Route path="daily-hunt" element={<DailyHunt />} />
       </Routes>
     </WrapperApp>
   );

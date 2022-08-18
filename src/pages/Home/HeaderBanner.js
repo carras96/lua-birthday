@@ -122,7 +122,7 @@ const Btn = styled.div`
     width: 150px;
 `
 
-const HeaderBanner = () => {
+const HeaderBanner = ({onClickAction}) => {
     return <WrapperHeader>
         <WrapperFirstLine>
             <FirstLineImg src='/assets/images/line-1.png' />
@@ -140,7 +140,7 @@ const HeaderBanner = () => {
                     <Desc>Share a <TextNumber>200,000</TextNumber> <TextLua>$LUA</TextLua> prize pool</Desc></WrapperDesc>
                 <WrapperBtn>
                     <Btn>
-                        <ButtonLayer onPress={() => { }}>
+                        <ButtonLayer onPress={onClickAction}>
                         I'm in
                     </ButtonLayer>
                     </Btn>
