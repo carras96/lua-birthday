@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import ScrollToTop from './untils/ScrollToTop';
+import ScrollToTop from './utils/ScrollToTop';
 // import '../public/assets/fonts/HelveticaNeue.ttf';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

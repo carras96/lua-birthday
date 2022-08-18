@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import DailyHunt from './pages/DailyHunt';
 import Home from './pages/Home';
 import TradingCompetition from './pages/TradingCompetition';
-import AnimationLayout from './untils/AnimationLayout';
+import AnimationLayout from './utils/AnimationLayout';
 
 const WrapperApp = styled.div`
   background: #040406;
