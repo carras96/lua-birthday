@@ -1,5 +1,5 @@
 import React from 'react';
-import { BoxText, TextBold, TextNormal, WrapperContent } from './styles';
+import { BoxText, TextNormal, WrapperContent } from './styles';
 
 const PriceContent = () => {
     return <WrapperContent>

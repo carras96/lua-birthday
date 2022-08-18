@@ -32,7 +32,7 @@ const Note = () => {
         <Text>We are grateful for the community's companionship & partners' support in the past 2 years!</Text>
         <Text>Words cannot describe your contribution to the LuaSwap community.</Text>
         <Text>Take this time to celebrate, and cheers for many exciting things to come!.</Text>
-        <NoteTitle>THANK YOU</NoteTitle>
+        <NoteTitle>THANK YOU!</NoteTitle>
     </WrapperNote>
 }
 

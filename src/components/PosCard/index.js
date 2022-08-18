@@ -45,6 +45,22 @@ const PosText = styled.p`
     line-height: ${props => props.pos === 1 ? '117px' : '78px'};
     color: rgba(255, 255, 255, 0.87);
     margin-bottom: 12px;
+    display: inline-block;
+`
+
+const WrappPostText = styled.div`
+
+`
+
+const SmallPostText = styled.p`
+    font-style: normal;
+    font-weight: 700;
+    font-size: ${props => props.pos === 1 ? '48px' : '32px'};
+    line-height: ${props => props.pos === 1 ? '68px' : '49px'};
+    color: rgba(255, 255, 255, 0.87);
+    margin-bottom: 12px;
+    display: inline-block;
+    vertical-align: top;
 `
 
 const Text = styled.p`
@@ -92,9 +108,9 @@ const PosImg = styled.img`
 
 const PosCard = ({pos}) => {
     const postText = useMemo(() => {
-        if (pos === 1) return '1st'
-        if (pos === 2) return '2nd'
-        if (pos === 3) return '3rd'
+        if (pos === 1) return ['1', 'st']
+        if (pos === 2) return ['2', 'nd']
+        if (pos === 3) return ['3', 'rd']
     }, [pos])
 
     const srcPosCard = useMemo(() => {
@@ -108,7 +124,9 @@ const PosCard = ({pos}) => {
         <PosImg src={srcPosCard}/>
         <MainCard pos={pos}>
             <WrapperText>
-                <PosText pos={pos}>{postText}</PosText>
+                <WrappPostText>
+                    <PosText pos={pos}>{postText[0]}</PosText><SmallPostText pos={pos}>{postText[1]}</SmallPostText>
+                </WrappPostText>
                 <Text pos={pos}>Trading volume</Text>
                 <VolumeText pos={pos}>$15,000</VolumeText>
                 <WrappAddress>

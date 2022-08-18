@@ -164,9 +164,9 @@ const Launchpad = () => {
             <Line />
             <Row>
             {
-                LIST_LAUNCHPAD.map((col, index) => <Column colIndex={index}>
+                LIST_LAUNCHPAD.map((col, index) => <Column colIndex={index} key={index}>
                     {
-                        col.map(item => <WrappImage><Image src={item.src} /></WrappImage>)
+                        col.map(item => <WrappImage key={item.src}><Image src={item.src} /></WrappImage>)
                     }
                 </Column>)
             }

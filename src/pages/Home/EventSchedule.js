@@ -98,11 +98,6 @@ const TextHeader = styled.div`
     }
 `
 
-const WrapperColumn = styled(WrapperTimeText)`
-    border-left: 1px solid #121212;
-    height: 100%;
-`
-
 const CakeImg = styled.img`
     width: 32px;
     height: 32px;
@@ -312,7 +307,7 @@ const EventSchedule = () => {
             });
         });
         return result;
-    }, [DAYS_EVENTS]);
+    }, []);
 
     return <WrapperEventSchedule>
         <Title><TitleYellow>Event</TitleYellow> <TitleGreen>Schedule</TitleGreen></Title>

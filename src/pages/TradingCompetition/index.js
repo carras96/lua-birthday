@@ -1,4 +1,5 @@
 import React from 'react';
+import { Element, scroller } from 'react-scroll';
 import styled from 'styled-components';
 import Footer from '../../components/Footer';
 import PageMenu from '../../components/PageMenu';
@@ -10,11 +11,22 @@ const WrapperTradingCompetition = styled.div`
 `
 
 const TradingCompetition = () => {
+
+    const scrollToLeaderBoard = () => {
+        scroller.scrollTo('leader-board', {
+            duration: 1200,
+            delay: 0,
+            smooth: 'easeInOutQuart'
+        })
+    }
+
     return <WrapperTradingCompetition>
         <PageMenu/>
         <HeaderBanner />
-        <LeaderBoard />
-        <Rules />
+        <Element name='leader-board'>
+            <LeaderBoard />
+        </Element>
+        <Rules onClickGeneralBtn={scrollToLeaderBoard}/>
         <Footer />
     </WrapperTradingCompetition>
 }

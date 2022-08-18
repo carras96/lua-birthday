@@ -56,23 +56,12 @@ const ImageRight = styled.img`
 `
 
 const LuaLogoWrapper = styled.div`
-    position: relative;
+    margin-bottom: 25px;
 `
 
 const LuaLogoImage = styled.img`
-    width: 140px;
+    width: 200px;
     height: auto;
-    position: absolute;
-    left: 0;
-    top: 0;
-`
-
-const HatImage = styled.img`
-    width: 35px;
-    height: 33px;
-    position: absolute;
-    left: -16px;
-    top: -22px;
 `
 
 const Title = styled.p`
@@ -80,7 +69,6 @@ const Title = styled.p`
     font-size: 64px;
     line-height: 78px;
     color: rgba(255, 255, 255, 0.87);
-    margin-top: 60px;
     margin-bottom: 12px;
 `
 
@@ -131,7 +119,6 @@ const HeaderBanner = ({onClickAction}) => {
             <LeftBanner>
                 <LuaLogoWrapper>
                     <LuaLogoImage src='/assets/images/logo.png' />
-                    <HatImage src='/assets/images/hat-logo.png' />
                 </LuaLogoWrapper>
                 <Title>
                     LuaSwap turns 2

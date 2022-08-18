@@ -66,7 +66,7 @@ const InfoTextValue = styled.span`
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    color: rgba(255, 255, 255, 0.87);
+    color: #FABC46;
 `
 
 const FirstBubbleSection = styled.div`
@@ -107,10 +107,6 @@ const BoxTimeNode = styled.div`
     align-items: center;
     flex-direction: column;
     display: inline-flex;
-`
-
-const NodeContent = styled.div`
-    display: flex;
 `
 
 const NodeTime = styled.p`
@@ -218,7 +214,7 @@ const Milestones = () => {
             <TimeLine>
                 <TimeLineImage src='/assets/images/line-time.png' />
                 {
-                    TIME_LINE.map(node => <BoxTimeNode>
+                    TIME_LINE.map((node) => <BoxTimeNode key={node.time}>
                         <NodeTime>{node.time}</NodeTime>
                         <TimeNode isActive={false} />
                         <NodeText>{node.note}</NodeText>

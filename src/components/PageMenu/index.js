@@ -14,7 +14,6 @@ const Menu = styled.div`
     background: #1A191E;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 28px;
-    // height: 56px;
     width: 60%;
     display: flex;
     justify-content: space-between;
@@ -97,15 +96,15 @@ const PageMenu = () => {
 
     return <WrapperPageMenu>
         <Menu>
-        {
-            MENU_ITEMS.map(item => {
-                if (item.link) {
-                    return <MenuItemExtraLink href={item.link} target='blank'>{item.title}</MenuItemExtraLink>
-                } else {
-                    return <MenuItem onClick={() => onNavigate(item.path)} isActive={item.path === location.pathname}>{item.title}</MenuItem>
-                }
-            })
-        }
+            {
+                MENU_ITEMS.map(item => {
+                    if (item.link) {
+                        return <MenuItemExtraLink href={item.link} target='blank' key={item.title}>{item.title}</MenuItemExtraLink>
+                    } else {
+                        return <MenuItem onClick={() => onNavigate(item.path)} isActive={item.path === location.pathname} key={item.title}>{item.title}</MenuItem>
+                    }
+                })
+            }
         </Menu>
     </WrapperPageMenu>
 }

@@ -143,9 +143,9 @@ const Community = () => {
             <Line />
             <Row>
             {
-                LIST_COMMUNITY.map((col, index) => <Column colIndex={index}>
+                LIST_COMMUNITY.map((col, index) => <Column colIndex={index} key={index}>
                     {
-                        col.map(item => <WrappImage><Image src={item.src} /></WrappImage>)
+                        col.map(item => <WrappImage key={item.src}><Image src={item.src} /></WrappImage>)
                     }
                 </Column>)
             }

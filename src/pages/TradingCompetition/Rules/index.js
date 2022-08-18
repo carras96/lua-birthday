@@ -67,7 +67,7 @@ const Button = styled.div`
     }
 `
 
-const Rules = () => {
+const Rules = ({onClickGeneralBtn}) => {
     return <WrapperRules>
         <Header>
             <Title>
@@ -76,7 +76,7 @@ const Rules = () => {
         </Header>
         <MainRules>
             <Accordion title='General'>
-                <GeneralContent />
+                <GeneralContent onClickLeaderBoard={onClickGeneralBtn}/>
             </Accordion>
             <Accordion title='How to win'>
                 <HowToWinContent />

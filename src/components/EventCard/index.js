@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
 import styled from 'styled-components';
 
 const WrapperCard = styled.div`
@@ -16,6 +17,30 @@ const Card = styled.div`
     width: ${props => props.isFullWidth ? '100%' : 'calc(100% - 25px)'};
     z-index: 2;
     position: relative;
+    cursor: pointer;
+
+    transition: transform .5s;
+
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 2s cubic-bezier(.165, .84, .44, 1);
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
+        content: '';
+        opacity: 0;
+        z-index: -1;
+    }
+
+    &:hover,
+    &:focus {
+        transform: scale3d(1.05, 1.05, 1);
+        &::after {
+            opacity: 1;
+        }
+    }
 
     &:before {
         content: '';
@@ -64,20 +89,51 @@ const CardDesc = styled.p`
     color: rgba(255, 255, 255, 0.6);
 `
 
-const RocketIcon = styled.img`
+const Tooltip = styled(ReactTooltip)`
+    width: 300px;
+    padding: 20px 16px;
+    height: auto;
+`
 
+const TooltipTitle = styled.p`
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.87);
+`
+
+const TooltipContent = styled.p`
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 8px 0px;
+`
+
+const TooltipTime = styled.p`
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 0.87);
 `
 
 const EventCard = ({event}) => {
-    const { title, content, width, colStart, colEnd, rowStart, rowEnd, isYellowEvent, isFullWidth } = event
+    const { detail, title, content, width, colStart, colEnd, rowStart, rowEnd, isYellowEvent, isFullWidth } = event
     return <WrapperCard width={width} colStart={colStart} colEnd={colEnd} rowStart={rowStart} rowEnd={rowEnd}>
-        <Card isYellowEvent={isYellowEvent} isFullWidth={isFullWidth}>
+        <Card isYellowEvent={isYellowEvent} isFullWidth={isFullWidth} data-tip data-for={title}>
             <Main>
                 <CardTitle isYellowEvent={isYellowEvent}>{title}</CardTitle>
                 <CardDesc>{content}</CardDesc>
             </Main>
-
         </Card>
+        <Tooltip place="bottom" id={title}>
+           <TooltipTitle>{detail.title}</TooltipTitle>
+           <TooltipContent>{detail.content}</TooltipContent>
+           <TooltipTime>{detail.time}</TooltipTime>
+        </Tooltip>
     </WrapperCard>
 }
 
