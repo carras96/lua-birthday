@@ -5,15 +5,24 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import ScrollToTop from './utils/ScrollToTop';
-// import '../public/assets/fonts/HelveticaNeue.ttf';
+import styled from 'styled-components';
+import { BaseModalBackground, ModalProvider } from 'styled-react-modal';
+
+const FadingBackground = styled(BaseModalBackground)`
+  opacity: ${(props) => props.opacity};
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.2);
+`;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-    <BrowserRouter>
-      <ScrollToTop />
+  <BrowserRouter>
+    <ScrollToTop />
+    <ModalProvider backgroundComponent={FadingBackground}>
       <App />
-    </BrowserRouter>
+    </ModalProvider>
+  </BrowserRouter>
   // </React.StrictMode>
 );
 

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import BaseModal from '../../components/BaseModal';
 import Bubble from '../../components/Bubble';
 import PosCard from '../../components/PosCard';
+import LeaderBoardModal from './Modals/LeaderBoardModal';
 
 const WrapperLeaderBoard = styled.div`
     margin-top: 300px;
@@ -101,6 +103,26 @@ const Button = styled.div`
 `
 
 const LeaderBoard = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [opacity, setOpacity] = useState(0);
+
+    const toggleModal = (e) => {
+        setOpacity(0);
+        setIsOpen(!isOpen);
+    }
+
+    const afterOpen = () => {
+        setTimeout(() => {
+            setOpacity(1);
+        }, 100);
+    }
+
+    const beforeClose = () => {
+        return new Promise((resolve) => {
+            setOpacity(0);
+            setTimeout(resolve, 300);
+        });
+    }
     return <WrapperLeaderBoard>
         <CloudImage src='/assets/images/cloud.png' />
         <Header>
@@ -116,10 +138,10 @@ const LeaderBoard = () => {
         </FirstBubbleSection>
         <Main>
             <WrappPosCard width='100%' height='66.67%' alignSelf='end'>
-                <PosCard pos={2}/>
+                <PosCard pos={2} />
             </WrappPosCard>
             <WrappPosCard width='100%' height='100%' alignSelf='start'>
-                <PosCard pos={1}/>
+                <PosCard pos={1} />
             </WrappPosCard>
             <WrappPosCard width='100%' height='66.67%' alignSelf='end'>
                 <PosCard pos={3} />
@@ -130,10 +152,13 @@ const LeaderBoard = () => {
             <Bubble width={'16px'} top='75%' left='5%' />
         </FirstBubbleSection>
         <WrappButton>
-            <Button>View top 20</Button>
+            <Button onClick={toggleModal}>View top 20</Button>
         </WrappButton>
+        <BaseModal afterOpen={afterOpen} beforeClose={beforeClose} opacity={opacity} isOpen={isOpen} toggleModal={toggleModal}>
+            <LeaderBoardModal/>
+        </BaseModal>
     </WrapperLeaderBoard>
 
 }
 
-export default LeaderBoard
+export default LeaderBoard;

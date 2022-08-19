@@ -101,7 +101,7 @@ const Btn = styled.div`
     width: 180px;
 `
 
-const HeaderBanner = () => {
+const HeaderBanner = ({onClickAction}) => {
     return <WrapperHeader>
         <CloudImage src='/assets/images/cloud2.png'/>
         <CloudImageLeft src='/assets/images/cloud4.png'/>
@@ -115,7 +115,7 @@ const HeaderBanner = () => {
                     <Desc><TextNumber>15,000</TextNumber> <TextLua>$LUA</TextLua></Desc></WrapperDesc>
                 <WrapperBtn>
                     <Btn>
-                        <ButtonLayer onPress={() => { }}>
+                        <ButtonLayer onPress={onClickAction}>
                             Join Now
                         </ButtonLayer>
                     </Btn>

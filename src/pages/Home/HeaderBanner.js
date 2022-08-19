@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import ButtonLayer from '../../components/ButtonLayer';
+import Parallax from 'parallax-js';
 
 const WrapperBanner = styled.div`
     background-image: url('/assets/images/bg-header-home.png');
@@ -9,7 +10,7 @@ const WrapperBanner = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     display: grid;
-    grid-template-columns: 5fr 7fr;
+    grid-template-columns: 5fr 5fr;
 `
 
 const WrapperHeader = styled.div`
@@ -35,12 +36,18 @@ const LeftBanner = styled.div`
 `
 
 const RightBanner = styled.div`
-    position: relative;
     margin-right: 70px;
+    display: flex;
+    justify-content: flex-end;
+`
+
+const WrappRight = styled.div`
+    position: relative;
+    width: 80%;
 `
 
 const ImageLayerRight = styled.img`
-    width: 80%;
+    width: 100%;
     height: auto;
     position: absolute;
     right: 0;
@@ -48,11 +55,12 @@ const ImageLayerRight = styled.img`
 `
 
 const ImageRight = styled.img`
-    width: 85%;
+    width: 100%;
     height: auto;
     position: absolute;
-    top: 35px;
-    right: 20px;
+    top: 45px !important;
+    left: unset !important;
+    right: 20px !important;
 `
 
 const LuaLogoWrapper = styled.div`
@@ -111,6 +119,11 @@ const Btn = styled.div`
 `
 
 const HeaderBanner = ({onClickAction}) => {
+    const refImage = useRef(null);
+    useEffect(() => {
+        console.log(refImage)
+        new Parallax(refImage.current);
+    }, [refImage])
     return <WrapperHeader>
         <WrapperFirstLine>
             <FirstLineImg src='/assets/images/line-1.png' />
@@ -134,9 +147,13 @@ const HeaderBanner = ({onClickAction}) => {
                     <SecondLineImg src='/assets/images/line-2.png' />
                 </WrapperBtn>
             </LeftBanner>
-            <RightBanner>
-                <ImageLayerRight src='/assets/images/back-layer-img-header-home.png' />
-                <ImageRight src='/assets/images/img-header-home.png' />
+            <RightBanner >
+                <WrappRight id="scene" ref={refImage}>
+                    <ImageLayerRight src='/assets/images/back-layer-img-header-home.png' data-depth="0.2"/>
+                    <ImageRight src='/assets/images/img-header-home.png' data-depth="0.1"/>
+                    <ImageRight src='/assets/images/img-header-home1.png' data-depth="0.3"/>
+                    <ImageRight src='/assets/images/img-header-home2.png' data-depth="0.6"/>
+                </WrappRight>
             </RightBanner>
         </WrapperBanner>
     </WrapperHeader>
