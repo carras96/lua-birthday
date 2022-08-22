@@ -1,16 +1,27 @@
 import React from 'react';
-import { ButtonModal, GuideDetail, InputModal, InputTitle, ModalDesc, ModalTitle, TextGreen, TextGuide, TitleGuide, Wrapper } from './styles';
+import { useForm } from 'react-hook-form';
+import { ArrRight, ButtonModal, GuideDetail, InputModal, InputTitle, ModalDesc, ModalTitle, TextGreen, TextGuide, TitleGuide, Wrapper } from './styles';
 
-const StakeModal = () => {
+const StakeModal = ({ toggleModal }) => {
+    const { register, handleSubmit, watch, formState: { errors } } = useForm({
+        defaultValues: { stake: sessionStorage.getItem('stake') },
+    });
+
+    const onSubmit = data => {
+        sessionStorage.setItem('stake', data.stake);
+        toggleModal();
+    };
     return <Wrapper>
         <ModalTitle>Stake</ModalTitle>
         <ModalDesc>Stake at least 1,000 LUA in LuaSafe to be eligible</ModalDesc>
-        <InputTitle>Your Stake transaction</InputTitle>
-        <InputModal placeholder='0x...'/>
-        <ButtonModal>Save</ButtonModal>
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <InputTitle>Your Stake transaction</InputTitle>
+            <InputModal placeholder='0x...' {...register("stake", { required: true })} />
+            <ButtonModal type="submit" disabled={errors.stake}>Save <ArrRight src='/assets/images/arr-right.png' /></ButtonModal>
+        </form>
         <TitleGuide>How to do it?</TitleGuide>
         <GuideDetail>
-            <TextGuide>1. Go to <TextGreen href='https://luaswap.org/#/' target='_blank'>LuaSafe</TextGreen> tab</TextGuide>
+            <TextGuide>1. Go to <TextGreen href='https://app.luaswap.org/#/lua-safe' target='_blank'>LuaSafe</TextGreen> tab</TextGuide>
             <TextGuide>2. <b>Approve</b> the LUA token</TextGuide>
             <TextGuide>3. Click <b>Stake</b> button and enter the number of LUA you want to stake (at least 1,000 LUA)</TextGuide>
             <TextGuide>4. Click <b>Confirm</b></TextGuide>

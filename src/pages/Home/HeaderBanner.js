@@ -121,7 +121,6 @@ const Btn = styled.div`
 const HeaderBanner = ({onClickAction}) => {
     const refImage = useRef(null);
     useEffect(() => {
-        console.log(refImage)
         new Parallax(refImage.current);
     }, [refImage])
     return <WrapperHeader>

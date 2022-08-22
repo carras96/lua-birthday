@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import BaseModal from '../../components/BaseModal';
+import DailyCheckInModal from './Modals/DailyCheckInModal';
+import DailyQuizModal from './Modals/DailyQuizModal';
+import ResultModal from './Modals/ResultModal';
+import SocialTasksModal from './Modals/SocialTasksModal';
 import StakeModal from './Modals/StakeModal';
 import SwapModal from './Modals/SwapModal';
 
@@ -25,6 +29,10 @@ const CityImage = styled.img`
 const WrapperImage = styled.div`
     width: 80%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `
 
 const CircleImg = styled.img``
@@ -48,7 +56,8 @@ const MessageTextBox = styled.div`
     position: relative;
     margin-bottom: 25px;
     cursor: pointer;
-    background: #040406;
+    background: ${props => props.isDone ? '#D9D9D9' : '#040406'};
+    transition : all 0.5s ease-in-out;
 
     &:hover {
         transform: scale(1.1);
@@ -61,7 +70,7 @@ const MessageTextBox = styled.div`
         width: 16px;
         height: 16px;
         border: 1px solid #D9D9D9;
-        background: #040406;
+        background: ${props => props.isDone ? '#D9D9D9' : '#040406'};
         bottom: -10px;
         left: calc(50% - 8px);
         transform: rotate(45deg);
@@ -83,7 +92,7 @@ const Text = styled.p`
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
-    color: rgba(255, 255, 255, 0.87);
+    color: ${props => props.isDone ? '#1A191E' : 'rgba(255, 255, 255, 0.87)'};
 `
 
 const TextYellow = styled(Text)`
@@ -94,10 +103,50 @@ const ArrIcon = styled.img`
     margin-left: 8px;
 `
 
+const WrappSubmitButton = styled.div`
+    padding: 16px 20%;
+    background: linear-gradient(89.81deg, rgba(26, 25, 30, 0) 0.15%, rgba(26, 25, 30, 0.5) 51.55%, rgba(26, 25, 30, 0) 99.83%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+`
+
+const SubmitAnswerButton = styled.div`
+    background: #1A191E;
+    border: 1px solid #FFFFFF;
+    height: 48px;
+    padding: 0 48px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FABC46;
+    max-width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition : all 0.5s ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+        transition : all 0.5s ease-in-out;
+    }
+`
+
 const CitySection = () => {
 
     const [isOpenSwap, setIsOpenSwap] = useState(false);
     const [isOpenStake, setIsOpenStake] = useState(false);
+    const [isOpenDailyCheckIn, setIsOpenDailyCheckIn] = useState(false);
+    const [isOpenSocialTasks, setIsOpenSocialTasks] = useState(false);
+    const [isOpenDailyQuiz, setIsOpenDailyQuiz] = useState(false);
+    const [isOpenResult, setIsOpenResult] = useState(false);
+
     const [opacity, setOpacity] = useState(0);
 
     const toggleModalSwap = (e) => {
@@ -108,6 +157,26 @@ const CitySection = () => {
     const toggleModalStake = (e) => {
         setOpacity(0);
         setIsOpenStake(!isOpenStake);
+    }
+
+    const toggleModalDailyCheckIn = (e) => {
+        setOpacity(0);
+        setIsOpenDailyCheckIn(!isOpenDailyCheckIn);
+    }
+
+    const toggleModalSocialTasks = (e) => {
+        setOpacity(0);
+        setIsOpenSocialTasks(!isOpenSocialTasks);
+    }
+
+    const toggleModalDailyQuiz = (e) => {
+        setOpacity(0);
+        setIsOpenDailyQuiz(!isOpenDailyQuiz);
+    }
+
+    const toggleModalResult = (e) => {
+        setOpacity(0);
+        setIsOpenResult(!isOpenResult);
     }
 
     const afterOpen = () => {
@@ -126,54 +195,119 @@ const CitySection = () => {
     return <WrapperCity>
         <WrapperImage>
             <CityImage src='/assets/images/city.png' />
+            <WrappSubmitButton>
+                <SubmitAnswerButton>
+                    Submit your answers
+                </SubmitAnswerButton>
+            </WrappSubmitButton>
             <BoxMessage top='45%' left='10%'>
-                <MessageTextBox onClick={toggleModalSwap}>
-                    <Text>Swap</Text>
+                <MessageTextBox onClick={toggleModalSwap} isDone={!!sessionStorage.getItem('swap')}>
+                    <Text isDone={!!sessionStorage.getItem('swap')}>Swap</Text>
                 </MessageTextBox>
                 <CircleImg src='/assets/images/circle-position.png' />
             </BoxMessage>
 
             <BoxMessage top='20%' left='26%'>
-                <MessageTextBox>
-                    <Text>Daily check in</Text>
+                <MessageTextBox onClick={toggleModalDailyCheckIn} isDone={!!sessionStorage.getItem('checkIn')}>
+                    <Text isDone={!!sessionStorage.getItem('checkIn')}>Daily check in</Text>
                 </MessageTextBox>
                 <CircleImg src='/assets/images/circle-position.png' />
             </BoxMessage>
 
             <BoxMessage top='20%' right='32%'>
-                <MessageTextBox>
-                    <Text>Daily quiz</Text>
+                <MessageTextBox onClick={toggleModalDailyQuiz} isDone={!!sessionStorage.getItem('quiz')}>
+                    <Text isDone={!!sessionStorage.getItem('quiz')}>Daily quiz</Text>
                 </MessageTextBox>
                 <CircleImg src='/assets/images/circle-position.png' />
             </BoxMessage>
 
             <BoxMessage top='45%' right='10%'>
-                <MessageTextBox>
-                    <Text>Social tasks</Text>
+                <MessageTextBox onClick={toggleModalSocialTasks}
+                    isDone={!!sessionStorage.getItem('name') && !!sessionStorage.getItem('accTw') && !!sessionStorage.getItem('linkTweet')}>
+                    <Text
+                        isDone={!!sessionStorage.getItem('name') && !!sessionStorage.getItem('accTw') && !!sessionStorage.getItem('linkTweet')}>Social tasks</Text>
                 </MessageTextBox>
                 <CircleImg src='/assets/images/circle-position.png' />
             </BoxMessage>
 
-            <BoxMessage bottom='13%' left='46%' onClick={toggleModalStake}>
-                <MessageTextBox>
-                    <Text>Stake</Text>
+            <BoxMessage bottom='13%' left='46%' >
+                <MessageTextBox onClick={toggleModalStake} isDone={!!sessionStorage.getItem('stake')}>
+                    <Text isDone={!!sessionStorage.getItem('stake')}>Stake</Text>
                 </MessageTextBox>
                 <CircleImg src='/assets/images/circle-position.png' />
             </BoxMessage>
         </WrapperImage>
 
         <BoxMessage bottom='0%' left='0%'>
-            <MessageTextBoxResult>
+            <MessageTextBoxResult onClick={toggleModalResult}>
                 <TextYellow>Check result</TextYellow> <ArrIcon src='/assets/images/arr-up-yellow.png' />
             </MessageTextBoxResult>
         </BoxMessage>
 
-        <BaseModal afterOpen={afterOpen} beforeClose={beforeClose} opacity={opacity} isOpen={isOpenSwap} toggleModal={toggleModalSwap} width='380px' height='460px'>
-            <SwapModal />
+        <BaseModal
+            afterOpen={afterOpen}
+            beforeClose={beforeClose}
+            opacity={opacity}
+            isOpen={isOpenSwap}
+            toggleModal={toggleModalSwap}
+            width='380px'
+            height='460px'>
+            <SwapModal toggleModal={toggleModalSwap} />
         </BaseModal>
 
-        <BaseModal afterOpen={afterOpen} beforeClose={beforeClose} opacity={opacity} isOpen={isOpenStake} toggleModal={toggleModalStake} width='380px' height='460px'>
-            <StakeModal />
+        <BaseModal
+            afterOpen={afterOpen}
+            beforeClose={beforeClose}
+            opacity={opacity}
+            isOpen={isOpenStake}
+            toggleModal={toggleModalStake}
+            width='380px'
+            height='460px'>
+            <StakeModal toggleModal={toggleModalStake} />
+        </BaseModal>
+
+        <BaseModal
+            afterOpen={afterOpen}
+            beforeClose={beforeClose}
+            opacity={opacity}
+            isOpen={isOpenDailyCheckIn}
+            toggleModal={toggleModalDailyCheckIn}
+            width='380px'
+            height='220px'>
+            <DailyCheckInModal toggleModal={toggleModalDailyCheckIn} />
+        </BaseModal>
+
+        <BaseModal
+            afterOpen={afterOpen}
+            beforeClose={beforeClose}
+            opacity={opacity}
+            isOpen={isOpenSocialTasks}
+            toggleModal={toggleModalSocialTasks}
+            width='380px'
+            height='435px'>
+            <SocialTasksModal toggleModal={toggleModalSocialTasks} />
+        </BaseModal>
+
+        <BaseModal
+            afterOpen={afterOpen}
+            beforeClose={beforeClose}
+            opacity={opacity}
+            isOpen={isOpenDailyQuiz}
+            toggleModal={toggleModalDailyQuiz}
+            width='380px'
+            height='435px'>
+            <DailyQuizModal toggleModal={toggleModalDailyQuiz} />
+        </BaseModal>
+
+        <BaseModal
+            afterOpen={afterOpen}
+            beforeClose={beforeClose}
+            opacity={opacity}
+            isOpen={isOpenResult}
+            toggleModal={toggleModalResult}
+            width='633px'
+            height='435px'>
+            <ResultModal toggleModal={toggleModalResult} />
         </BaseModal>
     </WrapperCity>
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Bubble from '../../components/Bubble';
 import TimeNode from '../../components/TimeNode';
+import Scroll from './Scroll';
 
 const WrapperMilestones = styled.div`
     margin-top: 200px;
@@ -76,7 +77,7 @@ const FirstBubbleSection = styled.div`
 
 const WrapperTimeLine = styled.div`
     width: 100%;
-    height: 200px;
+    height: 300px;
     overflow-x: scroll;
     overflow-y: hidden;
 `
@@ -97,7 +98,7 @@ const TimeLineImage = styled.img`
     position: absolute;
     width: 100%;
     height: 40px;
-    top: 71.5px;
+    top: 30px;
 `
 
 const BoxTimeNode = styled.div`
@@ -213,13 +214,15 @@ const Milestones = () => {
         <WrapperTimeLine>
             <TimeLine>
                 <TimeLineImage src='/assets/images/line-time.png' />
-                {
+                {/* {
                     TIME_LINE.map((node) => <BoxTimeNode key={node.time}>
                         <NodeTime>{node.time}</NodeTime>
                         <TimeNode isActive={false} />
                         <NodeText>{node.note}</NodeText>
                     </BoxTimeNode>)
-                }
+                } */}
+
+                <Scroll items={TIME_LINE} />
             </TimeLine>
         </WrapperTimeLine>
 
