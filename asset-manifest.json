@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/lua-birthday/static/css/main.64733098.css",
-    "main.js": "/lua-birthday/static/js/main.6bd0dedb.js",
+    "main.js": "/lua-birthday/static/js/main.8e89a62a.js",
     "static/js/787.48c7e546.chunk.js": "/lua-birthday/static/js/787.48c7e546.chunk.js",
     "index.html": "/lua-birthday/index.html",
     "main.64733098.css.map": "/lua-birthday/static/css/main.64733098.css.map",
-    "main.6bd0dedb.js.map": "/lua-birthday/static/js/main.6bd0dedb.js.map",
+    "main.8e89a62a.js.map": "/lua-birthday/static/js/main.8e89a62a.js.map",
     "787.48c7e546.chunk.js.map": "/lua-birthday/static/js/787.48c7e546.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.64733098.css",
-    "static/js/main.6bd0dedb.js"
+    "static/js/main.8e89a62a.js"
   ]
 }
