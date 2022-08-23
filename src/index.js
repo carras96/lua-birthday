@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import ScrollToTop from './utils/ScrollToTop';
 import styled from 'styled-components';
 import { BaseModalBackground, ModalProvider } from 'styled-react-modal';
@@ -17,12 +17,12 @@ const FadingBackground = styled(BaseModalBackground)`
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-  <BrowserRouter>
+  <HashRouter>
     <ScrollToTop />
     <ModalProvider backgroundComponent={FadingBackground}>
       <App />
     </ModalProvider>
-  </BrowserRouter>
+  </HashRouter>
   // </React.StrictMode>
 );
 
