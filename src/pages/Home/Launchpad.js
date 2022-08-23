@@ -10,7 +10,7 @@ const WrapperLaunchpad = styled.div`
 const Title = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 3rem;
     line-height: 59px;
 `
 
@@ -82,6 +82,13 @@ const WrappImage = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition : all 0.5s ease-in-out;
+
+    &:hover {
+        transform: scale(1.5);
+        transition : all 0.5s ease-in-out;
+    }
 `
 
 const Column = styled.div`
@@ -97,7 +104,7 @@ const Column = styled.div`
 const GradiantText = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: 64px;
+    font-size: 4rem;
     line-height: 78px;
     text-transform: uppercase;
 
@@ -109,7 +116,7 @@ const GradiantText = styled.p`
     margin-bottom: -40px;
 
     @media (max-width: 767px) {
-        font-size: 48px;
+        font-size: 3rem;
         line-height: 54px;
         margin-bottom: -20px;
     }

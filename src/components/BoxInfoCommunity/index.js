@@ -13,13 +13,13 @@ const WrapperBox = styled.div`
 
     @media (max-width: 767px) {
         margin-bottom: 15px;
-     }
+    }
 `
 
 const Title = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 19px;
     color: rgba(255, 255, 255, 0.6);
 `
@@ -27,7 +27,7 @@ const Title = styled.p`
 const Number = styled.p`
     font-style: normal;
     font-weight: 500;
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 39px;
     color: rgba(255, 255, 255, 0.87);
 `

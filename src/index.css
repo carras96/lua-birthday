@@ -13,6 +13,15 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   background: #040406;
+
+  
+ 
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 13px;
+  }
 }
 
 code {

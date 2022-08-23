@@ -51,7 +51,7 @@ const Button = styled.span`
 const Text = styled.span`
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 24px;
     color: #1A1A1A;
 `

@@ -39,7 +39,7 @@ const CardImg = styled.img`
 const CardDesc = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 19px;
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
@@ -48,7 +48,7 @@ const CardDesc = styled.p`
 const CardTitle = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 29px;
     text-align: center;
     color: rgba(255, 255, 255, 0.87);

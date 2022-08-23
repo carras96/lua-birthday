@@ -47,7 +47,7 @@ const Row = styled.div`
 const HeaderText = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 19px;
     color: rgba(255, 255, 255, 0.37);
 `
@@ -55,7 +55,7 @@ const HeaderText = styled.p`
 const RowText = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 19px;
     color: rgba(255, 255, 255, 0.87);
 `

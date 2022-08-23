@@ -84,7 +84,7 @@ const ImageRight = styled.img`
 const Title = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 3rem;
     line-height: 59px;
     color: rgba(255, 255, 255, 0.87);
 `
@@ -92,7 +92,7 @@ const Title = styled.p`
 const Desc = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 48px;
     color: rgba(255, 255, 255, 0.87);
     display: inline-block;
@@ -101,13 +101,13 @@ const Desc = styled.p`
 const TextNumber = styled(Desc)`
     color: #00D1AC;
     margin-bottom: 0;
-    font-size: 26px;
+    font-size: 1.6rem;
 `
 
 const TextLua = styled(Desc)`
     color: #FABC46;
     margin-bottom: 0;
-    font-size: 26px;
+    font-size: 1.6rem;
 `
 
 const WrapperDesc = styled.div`

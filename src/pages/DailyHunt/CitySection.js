@@ -97,7 +97,7 @@ const MessageTextBoxResult = styled(MessageTextBox)`
 const Text = styled.p`
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 24px;
     color: ${props => props.isDone ? '#1A191E' : 'rgba(255, 255, 255, 0.87)'};
 `
@@ -129,7 +129,7 @@ const SubmitAnswerButton = styled.div`
     padding: 0 48px;
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 24px;
     color: #FABC46;
     max-width: 280px;
@@ -275,7 +275,7 @@ const CitySection = () => {
                 </BoxMessage>
             </WrapperImage>
 
-            <BoxMessage bottom='0%' left='0%'>
+            <BoxMessage bottom='0%' left='2%'>
                 <MessageTextBoxResult onClick={toggleModalResult}>
                     <TextYellow>Check result</TextYellow> <ArrIcon src='/assets/images/arr-up-yellow.png' />
                 </MessageTextBoxResult>

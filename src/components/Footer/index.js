@@ -18,7 +18,7 @@ const WrapperFooter = styled.div`
 const Text = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 21px;
     text-align: center;
     color: rgba(255, 255, 255, 0.6);

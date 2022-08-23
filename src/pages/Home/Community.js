@@ -18,7 +18,7 @@ const CloudImage = styled.img`
 const Title = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 3rem;
     line-height: 59px;
     
 `
@@ -95,6 +95,13 @@ const WrappImage = styled.div`
     justify-content: center;
     align-items: center;
     padding: 16px;
+
+    transition : all 0.5s ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+        transition : all 0.5s ease-in-out;
+    }
 `
 
 const Column = styled.div`

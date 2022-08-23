@@ -32,7 +32,7 @@ const Menu = styled.div`
 const MenuItem = styled.span`
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 20px;
     color: ${props => props.isActive ? 'rgba(255, 255, 255, 0.87)' : 'rgba(255, 255, 255, 0.6)'};
     cursor: pointer;
@@ -75,7 +75,7 @@ const MenuItem = styled.span`
 const MenuItemExtraLink = styled.a`
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 20px;
     color: rgba(255, 255, 255, 0.6);
     cursor: pointer;

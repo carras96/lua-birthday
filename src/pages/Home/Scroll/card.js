@@ -31,7 +31,7 @@ const BoxTimeNode = styled.div`
 const NodeTime = styled.p`
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 22px;
     text-align: center;
     color: rgba(255, 255, 255, 0.37);
@@ -40,7 +40,7 @@ const NodeTime = styled.p`
 const NodeText = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 21px;
     text-align: center;
     color: rgba(255, 255, 255, 0.37);

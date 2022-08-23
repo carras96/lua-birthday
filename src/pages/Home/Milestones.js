@@ -16,7 +16,7 @@ const LineImage = styled.img`
 const Title = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 3rem;
     line-height: 59px;
     
 `
@@ -61,7 +61,7 @@ const HeaderInfo = styled.div`
 const InfoTextWrap = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.9rem;
     line-height: 25px;
     color: rgba(255, 255, 255, 0.6);
     text-align: end;
@@ -70,7 +70,7 @@ const InfoTextWrap = styled.p`
 const InfoTextValue = styled.span`
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 20px;
     color: #FABC46;
 `
@@ -118,7 +118,7 @@ const BoxTimeNode = styled.div`
 const NodeTime = styled.p`
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 22px;
     text-align: center;
     color: rgba(255, 255, 255, 0.37);
@@ -127,7 +127,7 @@ const NodeTime = styled.p`
 const NodeText = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 21px;
     text-align: center;
     color: rgba(255, 255, 255, 0.37);

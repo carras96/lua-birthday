@@ -27,7 +27,7 @@ const Main = styled.div`
 const HeaderText = styled.p`
     font-style: normal;
     font-weight: 500;
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 39px;
     color: rgba(255, 255, 255, 0.6);
 `

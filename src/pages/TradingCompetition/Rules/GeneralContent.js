@@ -5,7 +5,7 @@ import { BoxText, InlineTextBold, InlineTextNormal, TextBold, TextNormal, Wrappe
 const Button = styled.span`
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 22px;
     cursor: pointer;
     color: #00D1AC;

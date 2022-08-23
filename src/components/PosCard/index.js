@@ -41,7 +41,7 @@ const WrapperText = styled.div`
 const PosText = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: ${props => props.pos === 1 ? '96px' : '64px'};
+    font-size: ${props => props.pos === 1 ? '6rem' : '4rem'};
     line-height: ${props => props.pos === 1 ? '117px' : '78px'};
     color: rgba(255, 255, 255, 0.87);
     margin-bottom: 12px;
@@ -55,7 +55,7 @@ const WrappPostText = styled.div`
 const SmallPostText = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: ${props => props.pos === 1 ? '48px' : '32px'};
+    font-size: ${props => props.pos === 1 ? '3rem' : '2rem'};
     line-height: ${props => props.pos === 1 ? '68px' : '49px'};
     color: rgba(255, 255, 255, 0.87);
     margin-bottom: 12px;
@@ -66,7 +66,7 @@ const SmallPostText = styled.p`
 const Text = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: ${props => props.pos === 1 ? '14px' : '12px'};
+    font-size: ${props => props.pos === 1 ? '0.9rem' : '0.8'};
     line-height: ${props => props.pos === 1 ? '17px' : '14px'};
     color: rgba(255, 255, 255, 0.37);
 `
@@ -74,7 +74,7 @@ const Text = styled.p`
 const VolumeText = styled.p`
     font-style: normal;
     font-weight: 500;
-    font-size: ${props => props.pos === 1 ? '48px' : '24px'};
+    font-size: ${props => props.pos === 1 ? '3rem' : '1.5rem'};
     line-height: ${props => props.pos === 1 ? '59px' : '29px'};
     color: #FABC46;
     margin-bottom: 12px;
@@ -83,7 +83,7 @@ const VolumeText = styled.p`
 const AddressText = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: ${props => props.pos === 1 ? '18px' : '16px'};
+    font-size: ${props => props.pos === 1 ? '1.1rem' : '1rem'};
     line-height: ${props => props.pos === 1 ? '21px' : '19px'};
     color: rgba(255, 255, 255, 0.87);
 `

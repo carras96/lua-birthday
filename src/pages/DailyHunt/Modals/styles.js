@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 export const ModalTitle = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 29px;
     color: rgba(255, 255, 255, 0.87);
     margin-bottom: 8px;
@@ -17,7 +17,7 @@ export const ModalTitle = styled.p`
 export const ModalDesc = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 19px;
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 32px;
@@ -26,7 +26,7 @@ export const ModalDesc = styled.p`
 export const InputTitle = styled.p`
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 0.9rem;
     line-height: 17px;
     color: rgba(255, 255, 255, 0.87);
     margin-bottom: 8px;
@@ -35,7 +35,7 @@ export const InputTitle = styled.p`
 export const TitleGuide = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 0.9rem;
     line-height: 17px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.6);
@@ -46,7 +46,7 @@ export const TitleGuide = styled.p`
 export const TextGuide = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.9rem;
     line-height: 18px;
     color: rgba(255, 255, 255, 0.6);
 `
@@ -54,7 +54,7 @@ export const TextGuide = styled.p`
 export const TextGreen = styled.a`
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.9rem;
     line-height: 18px;
     color: #00D1AC;
 `
@@ -71,7 +71,7 @@ export const InputModal = styled.input`
     padding-left: 16px;
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.9rem;
     line-height: 17px;
     color: rgba(255, 255, 255, 0.37);
     border: none;
@@ -85,7 +85,7 @@ export const ButtonModal = styled.button`
 
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 0.9rem;
     line-height: 17px;
     color: #1A191E;
     border-radius: 5px;
@@ -115,7 +115,7 @@ export const WrapperInput = styled.div`
 export const QuestionQuiz = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 20px;
     color: rgba(255, 255, 255, 0.87);
 `
@@ -145,7 +145,7 @@ export const RadioButton = styled.input`
 export const AnswerQuiz = styled.label`
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 20px;
     color: rgba(255, 255, 255, 0.87);
     padding-left: 30px;

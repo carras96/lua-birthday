@@ -63,7 +63,7 @@ const Main = styled.div`
 const CardTitle = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 20px;
     color: rgba(255, 255, 255, 0.87);
     margin-bottom: 24px;
@@ -84,7 +84,7 @@ const CardTitle = styled.p`
 const CardDesc = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 19px;
     color: rgba(255, 255, 255, 0.6);
 `
@@ -98,7 +98,7 @@ const Tooltip = styled(ReactTooltip)`
 const TooltipTitle = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 20px;
     color: rgba(255, 255, 255, 0.87);
 `
@@ -106,7 +106,7 @@ const TooltipTitle = styled.p`
 const TooltipContent = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 19px;
     color: rgba(255, 255, 255, 0.6);
     margin: 8px 0px;
@@ -115,7 +115,7 @@ const TooltipContent = styled.p`
 const TooltipTime = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 19px;
     color: rgba(255, 255, 255, 0.87);
 `

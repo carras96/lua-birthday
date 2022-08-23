@@ -14,7 +14,7 @@ const WrapperRules = styled.div`
 const Title = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 3rem;
     line-height: 59px;
 `
 
@@ -57,7 +57,7 @@ const Button = styled.div`
     border: 1px solid #FFFFFF;
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 24px;
     color: rgba(255, 255, 255, 0.87);
     display: flex;

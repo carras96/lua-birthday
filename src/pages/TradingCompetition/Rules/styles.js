@@ -11,7 +11,7 @@ export const WrapperContent = styled.div`
 export const TextBold = styled.p`
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 24px;
     color: rgba(255, 255, 255, 0.87);
 `

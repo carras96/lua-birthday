@@ -9,7 +9,7 @@ const WrapperEventSchedule = styled.div`
 const Title = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 3rem;
     line-height: 59px;
     margin: 0 70px;
 
@@ -72,7 +72,7 @@ const WrapperTimeText = styled.div`
 const MonthText = styled.p`
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 24px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.6);
@@ -81,7 +81,7 @@ const MonthText = styled.p`
 const DayText = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 39px;
     color: rgba(255, 255, 255, 0.87);
 `

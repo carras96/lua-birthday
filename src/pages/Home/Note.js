@@ -18,7 +18,7 @@ const WrapperNote = styled.div`
 const Text = styled.p`
     font-style: normal;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 32px;
     color: rgba(255, 255, 255, 0.87);
 `
@@ -26,7 +26,7 @@ const Text = styled.p`
 const NoteTitle = styled.p`
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 29px;
     text-align: center;
     text-transform: uppercase;
