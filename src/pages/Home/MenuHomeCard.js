@@ -6,26 +6,37 @@ import HomeCard from '../../components/HomeCard';
 const WrapperMenuHomeCard = styled.div`
     background-image: url('/assets/images/bg-line.png');
     width: 100%;
-    aspect-ratio: 3.7;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     display: flex;
     justify-content: flex-end;
     margin-top: 40px;
+    min-height: 400px;
 `
 
 const WrapperCards = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 20px;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    // column-gap: 20px;
     width: 100%;
     margin: 0 70px;
     padding-top: 50px;
+
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+
+    @media (max-width: 767px) {
+        margin: 0;
+    }
 `
 
 const Card = styled.div`
     display: flex;
     align-items: ${props => props.number % 2 !== 1 ? "flex-start" : "flex-end"};
+    width: 15%;
+    min-width: 300px;
+    margin: 10px;
 `
 
 const LIST_CARD = [{

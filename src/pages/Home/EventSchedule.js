@@ -11,7 +11,11 @@ const Title = styled.p`
     font-weight: 700;
     font-size: 48px;
     line-height: 59px;
-    margin: 0 70px 100px;
+    margin: 0 70px;
+
+    @media (max-width: 767px) {
+        text-align: center;
+    }
 `
 
 const TitleGreen = styled.span`
@@ -23,7 +27,13 @@ const TitleYellow = styled.span`
 `
 
 const Schedule = styled.div`
+    min-width: 1000px;
+`
+
+const WrapperSchedule = styled.div`
     margin: 0 50px;
+    padding: 220px 100px 0 100px;
+    overflow-x: auto;
 `
 
 const GridSchedule = styled.div`
@@ -311,30 +321,32 @@ const EventSchedule = () => {
 
     return <WrapperEventSchedule>
         <Title><TitleYellow>Event</TitleYellow> <TitleGreen>Schedule</TitleGreen></Title>
-        <Schedule>
-            <ScheduleHeader>
-                {
-                    DAYS_EVENTS.map((time, index) => <WrapperTimeText key={'header' + index}>
-                        <TextHeader isShowBorder={!!time.day}>
-                            {
-                                time.isBirthDay && <WrapperCake>
-                                    <CakeImg src='/assets/images/cake-icon.png'/>
-                                </WrapperCake>
-                            }
-                            <MonthText>{time.month}</MonthText>
-                            <DayText>{time.day}</DayText>
-                        </TextHeader>
-                    </WrapperTimeText>)
-                }
-            </ScheduleHeader>
-            <ShceduleContent>
-                {
-                    LIST_EVENTS.map((rowEvt, i) => {
-                        return rowEvt.map(evt => <EventCard event={evt} key={evt.title}/>)
-                     })
-                }
-            </ShceduleContent>
-        </Schedule>
+        <WrapperSchedule>
+            <Schedule>
+                <ScheduleHeader>
+                    {
+                        DAYS_EVENTS.map((time, index) => <WrapperTimeText key={'header' + index}>
+                            <TextHeader isShowBorder={!!time.day}>
+                                {
+                                    time.isBirthDay && <WrapperCake>
+                                        <CakeImg src='/assets/images/cake-icon.png' />
+                                    </WrapperCake>
+                                }
+                                <MonthText>{time.month}</MonthText>
+                                <DayText>{time.day}</DayText>
+                            </TextHeader>
+                        </WrapperTimeText>)
+                    }
+                </ScheduleHeader>
+                <ShceduleContent>
+                    {
+                        LIST_EVENTS.map((rowEvt, i) => {
+                            return rowEvt.map(evt => <EventCard event={evt} key={evt.title} />)
+                        })
+                    }
+                </ShceduleContent>
+            </Schedule>
+        </WrapperSchedule>
     </WrapperEventSchedule>
 }
 

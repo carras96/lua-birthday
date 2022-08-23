@@ -13,6 +13,7 @@ const BoxTimeNode = styled.div`
     display: inline-flex;
     position: relative;
     user-select:none;
+    transition: all 0.3s ease-in-out;
 
     &:before {
         content: '';
@@ -22,7 +23,8 @@ const BoxTimeNode = styled.div`
         background-image: linear-gradient(to right, rgba(255, 241, 119, 0.1), rgb(255, 241, 119));
         top: 46px;
         left: -110px;
-        display:${(props) => props.isActive ? 'block' : 'none'}; 
+        opacity:${(props) => props.isActive ? '1' : '0'}; 
+        transition: all 0.3s ease-in-out;
     }
 `
 

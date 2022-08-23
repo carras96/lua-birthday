@@ -9,6 +9,11 @@ const WrapperBox = styled.div`
     margin: 0 10px;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
+
+    @media (max-width: 767px) {
+        margin-bottom: 15px;
+     }
 `
 
 const Title = styled.p`
@@ -27,17 +32,31 @@ const Number = styled.p`
     color: rgba(255, 255, 255, 0.87);
 `
 
-const Icon = styled.img``
+const Icon = styled.div`
+    width: 64px;
+    height: 64px;
+    background-image: url(${props => props.src});
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background-position: center;
+
+    &:hover {
+        background-image: url(${props => props.srcHover});
+        transition: all 0.3s ease-in-out;
+    }
+`
 
 const TextWrap = styled.div``
 
-const BoxInfoCommunity = ({ title, number, icon }) => {
+const BoxInfoCommunity = ({ title, number, icon, iconHover }) => {
     return <WrapperBox>
         <TextWrap>
             <Title>{title}</Title>
             <Number>{number}</Number>
         </TextWrap>
-        <Icon src={icon} />
+        <Icon src={icon} srcHover={iconHover}/>
     </WrapperBox>
 }
 

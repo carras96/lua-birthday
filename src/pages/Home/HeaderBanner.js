@@ -11,10 +11,15 @@ const WrapperBanner = styled.div`
     background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 5fr 5fr;
+
+    
+    @media (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 const WrapperHeader = styled.div`
-    
 `
 
 const WrapperFirstLine = styled.div`
@@ -33,12 +38,27 @@ const FirstLineImg = styled.img`
 
 const LeftBanner = styled.div`
     margin-left: 70px;
+
+    
+    @media (max-width: 767px) {
+        margin-left: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 `
 
 const RightBanner = styled.div`
     margin-right: 70px;
     display: flex;
     justify-content: flex-end;
+
+    @media (max-width: 767px) {
+        margin-right: 0px;
+        margin-top: 30px;
+        justify-content: center;
+    }
 `
 
 const WrappRight = styled.div`
@@ -52,6 +72,10 @@ const ImageLayerRight = styled.img`
     position: absolute;
     right: 0;
     top: 0;
+
+    @media (max-width: 767px) {
+        width: 100%;
+    }
 `
 
 const ImageRight = styled.img`
@@ -61,6 +85,12 @@ const ImageRight = styled.img`
     top: 45px !important;
     left: unset !important;
     right: 20px !important;
+
+    @media (max-width: 767px) {
+        width: 90%;
+        right: 5% !important;
+        left: 5% !important;
+    }
 `
 
 const LuaLogoWrapper = styled.div`

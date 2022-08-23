@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import BaseModal from '../../components/BaseModal';
 import DailyCheckInModal from './Modals/DailyCheckInModal';
@@ -7,6 +7,11 @@ import ResultModal from './Modals/ResultModal';
 import SocialTasksModal from './Modals/SocialTasksModal';
 import StakeModal from './Modals/StakeModal';
 import SwapModal from './Modals/SwapModal';
+
+const Wrapper = styled.div`
+    width: 100%;
+    overflow: auto;
+`
 
 const WrapperCity = styled.div`
     background-image: url('/assets/images/bg-line-city.png');
@@ -20,6 +25,7 @@ const WrapperCity = styled.div`
     align-items: center;
     background-position: bottom;
     position: relative;
+    min-width: 1000px;
 `
 
 const CityImage = styled.img`
@@ -76,6 +82,7 @@ const MessageTextBox = styled.div`
         transform: rotate(45deg);
         border-top: none;
         border-left: none;
+        transition : all 0.5s ease-in-out;
     }
 `
 
@@ -138,6 +145,12 @@ const SubmitAnswerButton = styled.div`
     }
 `
 
+const RoketImg = styled.img`
+    width: 16px;
+    height: 16px;
+    margin-left: 12px;
+`
+
 const CitySection = () => {
 
     const [isOpenSwap, setIsOpenSwap] = useState(false);
@@ -192,124 +205,149 @@ const CitySection = () => {
         });
     }
 
-    return <WrapperCity>
-        <WrapperImage>
-            <CityImage src='/assets/images/city.png' />
-            <WrappSubmitButton>
-                <SubmitAnswerButton>
-                    Submit your answers
-                </SubmitAnswerButton>
-            </WrappSubmitButton>
-            <BoxMessage top='45%' left='10%'>
-                <MessageTextBox onClick={toggleModalSwap} isDone={!!sessionStorage.getItem('swap')}>
-                    <Text isDone={!!sessionStorage.getItem('swap')}>Swap</Text>
-                </MessageTextBox>
-                <CircleImg src='/assets/images/circle-position.png' />
+    const isDoneSwap = useMemo(() => {
+        return !!sessionStorage.getItem('swap');
+    }, [sessionStorage.getItem('swap')])
+
+    const isDoneCheckIn = useMemo(() => {
+        return !!sessionStorage.getItem('checkIn');
+    }, [sessionStorage.getItem('checkIn')])
+
+    const isDoneQuiz = useMemo(() => {
+        return !!sessionStorage.getItem('quiz');
+    }, [sessionStorage.getItem('quiz')])
+
+    const isDoneTasks = useMemo(() => {
+        return !!sessionStorage.getItem('name') && !!sessionStorage.getItem('accTw') && !!sessionStorage.getItem('linkTweet')
+    }, [sessionStorage.getItem('name'), sessionStorage.getItem('accTw'), sessionStorage.getItem('linkTweet')])
+
+    const isDoneStake = useMemo(() => {
+        return !!sessionStorage.getItem('stake');
+    }, [sessionStorage.getItem('stake')])
+
+
+
+    return <Wrapper>
+        <WrapperCity>
+            <WrapperImage>
+                <CityImage src='/assets/images/city.png' />
+                {
+                    isDoneSwap && isDoneCheckIn && isDoneQuiz && isDoneStake && isDoneTasks && <WrappSubmitButton>
+                        <SubmitAnswerButton>
+                            Submit your answers <RoketImg src='/assets/images/yellow-rocket.png' />
+                        </SubmitAnswerButton>
+                    </WrappSubmitButton>
+                }
+                <BoxMessage top='45%' left='10%'>
+                    <MessageTextBox onClick={toggleModalSwap} isDone={isDoneSwap}>
+                        <Text isDone={isDoneSwap}>Swap</Text>
+                    </MessageTextBox>
+                    <CircleImg src='/assets/images/circle-position.png' />
+                </BoxMessage>
+
+                <BoxMessage top='20%' left='26%'>
+                    <MessageTextBox onClick={toggleModalDailyCheckIn} isDone={isDoneCheckIn}>
+                        <Text isDone={isDoneCheckIn}>Daily check in</Text>
+                    </MessageTextBox>
+                    <CircleImg src='/assets/images/circle-position.png' />
+                </BoxMessage>
+
+                <BoxMessage top='20%' right='32%'>
+                    <MessageTextBox onClick={toggleModalDailyQuiz} isDone={isDoneQuiz}>
+                        <Text isDone={isDoneQuiz}>Daily quiz</Text>
+                    </MessageTextBox>
+                    <CircleImg src='/assets/images/circle-position.png' />
+                </BoxMessage>
+
+                <BoxMessage top='45%' right='10%'>
+                    <MessageTextBox onClick={toggleModalSocialTasks} isDone={isDoneTasks}>
+                        <Text
+                            isDone={isDoneTasks}>Social tasks</Text>
+                    </MessageTextBox>
+                    <CircleImg src='/assets/images/circle-position.png' />
+                </BoxMessage>
+
+                <BoxMessage bottom='13%' left='46%' >
+                    <MessageTextBox onClick={toggleModalStake} isDone={isDoneStake}>
+                        <Text isDone={isDoneStake}>Stake</Text>
+                    </MessageTextBox>
+                    <CircleImg src='/assets/images/circle-position.png' />
+                </BoxMessage>
+            </WrapperImage>
+
+            <BoxMessage bottom='0%' left='0%'>
+                <MessageTextBoxResult onClick={toggleModalResult}>
+                    <TextYellow>Check result</TextYellow> <ArrIcon src='/assets/images/arr-up-yellow.png' />
+                </MessageTextBoxResult>
             </BoxMessage>
 
-            <BoxMessage top='20%' left='26%'>
-                <MessageTextBox onClick={toggleModalDailyCheckIn} isDone={!!sessionStorage.getItem('checkIn')}>
-                    <Text isDone={!!sessionStorage.getItem('checkIn')}>Daily check in</Text>
-                </MessageTextBox>
-                <CircleImg src='/assets/images/circle-position.png' />
-            </BoxMessage>
+            <BaseModal
+                afterOpen={afterOpen}
+                beforeClose={beforeClose}
+                opacity={opacity}
+                isOpen={isOpenSwap}
+                toggleModal={toggleModalSwap}
+                width='380px'
+                height='460px'>
+                <SwapModal toggleModal={toggleModalSwap} />
+            </BaseModal>
 
-            <BoxMessage top='20%' right='32%'>
-                <MessageTextBox onClick={toggleModalDailyQuiz} isDone={!!sessionStorage.getItem('quiz')}>
-                    <Text isDone={!!sessionStorage.getItem('quiz')}>Daily quiz</Text>
-                </MessageTextBox>
-                <CircleImg src='/assets/images/circle-position.png' />
-            </BoxMessage>
+            <BaseModal
+                afterOpen={afterOpen}
+                beforeClose={beforeClose}
+                opacity={opacity}
+                isOpen={isOpenStake}
+                toggleModal={toggleModalStake}
+                width='380px'
+                height='460px'>
+                <StakeModal toggleModal={toggleModalStake} />
+            </BaseModal>
 
-            <BoxMessage top='45%' right='10%'>
-                <MessageTextBox onClick={toggleModalSocialTasks}
-                    isDone={!!sessionStorage.getItem('name') && !!sessionStorage.getItem('accTw') && !!sessionStorage.getItem('linkTweet')}>
-                    <Text
-                        isDone={!!sessionStorage.getItem('name') && !!sessionStorage.getItem('accTw') && !!sessionStorage.getItem('linkTweet')}>Social tasks</Text>
-                </MessageTextBox>
-                <CircleImg src='/assets/images/circle-position.png' />
-            </BoxMessage>
+            <BaseModal
+                afterOpen={afterOpen}
+                beforeClose={beforeClose}
+                opacity={opacity}
+                isOpen={isOpenDailyCheckIn}
+                toggleModal={toggleModalDailyCheckIn}
+                width='380px'
+                height='220px'>
+                <DailyCheckInModal toggleModal={toggleModalDailyCheckIn} />
+            </BaseModal>
 
-            <BoxMessage bottom='13%' left='46%' >
-                <MessageTextBox onClick={toggleModalStake} isDone={!!sessionStorage.getItem('stake')}>
-                    <Text isDone={!!sessionStorage.getItem('stake')}>Stake</Text>
-                </MessageTextBox>
-                <CircleImg src='/assets/images/circle-position.png' />
-            </BoxMessage>
-        </WrapperImage>
+            <BaseModal
+                afterOpen={afterOpen}
+                beforeClose={beforeClose}
+                opacity={opacity}
+                isOpen={isOpenSocialTasks}
+                toggleModal={toggleModalSocialTasks}
+                width='380px'
+                height='435px'>
+                <SocialTasksModal toggleModal={toggleModalSocialTasks} />
+            </BaseModal>
 
-        <BoxMessage bottom='0%' left='0%'>
-            <MessageTextBoxResult onClick={toggleModalResult}>
-                <TextYellow>Check result</TextYellow> <ArrIcon src='/assets/images/arr-up-yellow.png' />
-            </MessageTextBoxResult>
-        </BoxMessage>
+            <BaseModal
+                afterOpen={afterOpen}
+                beforeClose={beforeClose}
+                opacity={opacity}
+                isOpen={isOpenDailyQuiz}
+                toggleModal={toggleModalDailyQuiz}
+                width='380px'
+                height='435px'>
+                <DailyQuizModal toggleModal={toggleModalDailyQuiz} />
+            </BaseModal>
 
-        <BaseModal
-            afterOpen={afterOpen}
-            beforeClose={beforeClose}
-            opacity={opacity}
-            isOpen={isOpenSwap}
-            toggleModal={toggleModalSwap}
-            width='380px'
-            height='460px'>
-            <SwapModal toggleModal={toggleModalSwap} />
-        </BaseModal>
-
-        <BaseModal
-            afterOpen={afterOpen}
-            beforeClose={beforeClose}
-            opacity={opacity}
-            isOpen={isOpenStake}
-            toggleModal={toggleModalStake}
-            width='380px'
-            height='460px'>
-            <StakeModal toggleModal={toggleModalStake} />
-        </BaseModal>
-
-        <BaseModal
-            afterOpen={afterOpen}
-            beforeClose={beforeClose}
-            opacity={opacity}
-            isOpen={isOpenDailyCheckIn}
-            toggleModal={toggleModalDailyCheckIn}
-            width='380px'
-            height='220px'>
-            <DailyCheckInModal toggleModal={toggleModalDailyCheckIn} />
-        </BaseModal>
-
-        <BaseModal
-            afterOpen={afterOpen}
-            beforeClose={beforeClose}
-            opacity={opacity}
-            isOpen={isOpenSocialTasks}
-            toggleModal={toggleModalSocialTasks}
-            width='380px'
-            height='435px'>
-            <SocialTasksModal toggleModal={toggleModalSocialTasks} />
-        </BaseModal>
-
-        <BaseModal
-            afterOpen={afterOpen}
-            beforeClose={beforeClose}
-            opacity={opacity}
-            isOpen={isOpenDailyQuiz}
-            toggleModal={toggleModalDailyQuiz}
-            width='380px'
-            height='435px'>
-            <DailyQuizModal toggleModal={toggleModalDailyQuiz} />
-        </BaseModal>
-
-        <BaseModal
-            afterOpen={afterOpen}
-            beforeClose={beforeClose}
-            opacity={opacity}
-            isOpen={isOpenResult}
-            toggleModal={toggleModalResult}
-            width='633px'
-            height='435px'>
-            <ResultModal toggleModal={toggleModalResult} />
-        </BaseModal>
-    </WrapperCity>
+            <BaseModal
+                afterOpen={afterOpen}
+                beforeClose={beforeClose}
+                opacity={opacity}
+                isOpen={isOpenResult}
+                toggleModal={toggleModalResult}
+                width='700px'
+                height='435px'>
+                <ResultModal toggleModal={toggleModalResult} />
+            </BaseModal>
+        </WrapperCity>
+    </Wrapper>
 }
 
 export default CitySection;

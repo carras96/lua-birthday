@@ -20,6 +20,13 @@ const Menu = styled.div`
     align-items: center;
     padding: 18px 40px;
     
+    @media (max-width: 1000px) {
+        width: 90%;
+    }
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+    }
 `
 
 const MenuItem = styled.span`
@@ -33,6 +40,18 @@ const MenuItem = styled.span`
 
     &:hover {
         color: rgba(255, 255, 255, 0.87);
+
+        &:after {
+            content: '';
+            position: absolute;
+            height: 3px;
+            width: 40%;
+            background: #FABC46;
+            border-radius: 10px;
+            bottom: -10px;
+            left: 0;
+            display: block;
+        }
     }
 
     &:after {
@@ -47,6 +66,9 @@ const MenuItem = styled.span`
         display: ${props => props.isActive ? 'block' : 'none'};
     }
 
+    @media (max-width: 767px) {
+        margin-bottom: 20px;
+    }
 
 `
 
@@ -58,9 +80,26 @@ const MenuItemExtraLink = styled.a`
     color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
     text-decoration: none;
+    position: relative;
 
     &:hover {
         color: rgba(255, 255, 255, 0.87);
+
+        &:after {
+            content: '';
+            position: absolute;
+            height: 3px;
+            width: 40%;
+            background: #FABC46;
+            border-radius: 10px;
+            bottom: -10px;
+            left: 0;
+            display: block;
+        }
+    }
+
+    @media (max-width: 767px) {
+        margin-bottom: 20px;
     }
 `
 

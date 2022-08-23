@@ -37,6 +37,10 @@ const Header = styled.div`
 
 const MainRules = styled.div`
     margin: 0 180px;
+
+    @media (max-width: 991px) {
+        margin: 0 50px;
+    }
 `
 
 const WrappButton = styled.div`
@@ -80,6 +84,12 @@ const GradiantText = styled.p`
     background-clip: text;
     text-fill-color: transparent;
     margin-bottom: -40px;
+
+    @media (max-width: 767px) {
+        font-size: 48px;
+        line-height: 54px;
+        margin-bottom: -20px;
+    }
 `
 
 const Rules = () => {

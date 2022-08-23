@@ -6,6 +6,7 @@ const WrapperCard = styled.div`
     background: #1A191E;
     border-radius: 20px;
     cursor: pointer;
+    width: 100%;
 
     transition: transform .5s;
 
@@ -31,7 +32,9 @@ const WrapperCard = styled.div`
     }
 `
 
-const CardImg = styled.img``
+const CardImg = styled.img`
+    width: 100%;
+`
 
 const CardDesc = styled.p`
     font-style: normal;

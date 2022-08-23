@@ -6,6 +6,13 @@ const WrapperNote = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+
+    @media (max-width: 1000px) {
+        margin-right: 30px;
+        margin-left: 30px;
+        text-align: center;
+    }
 `
 
 const Text = styled.p`

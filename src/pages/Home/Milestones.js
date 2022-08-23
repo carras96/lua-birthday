@@ -34,6 +34,11 @@ const Header = styled.div`
     margin: 0 70px;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `
 const HeaderInfo = styled.div`
     display: flex;

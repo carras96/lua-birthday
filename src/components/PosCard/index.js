@@ -104,6 +104,12 @@ const PosImg = styled.img`
     width: auto;
     top: 20%;
     right: -30px;
+
+    @media (max-width: 767px) {
+        width: auto;
+        height: 38%;
+        right: -10px;
+    }
 `
 
 const PosCard = ({pos}) => {

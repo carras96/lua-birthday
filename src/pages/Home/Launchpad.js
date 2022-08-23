@@ -29,6 +29,11 @@ const Header = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    @media (max-width: 767px) {
+        margin: 0 0 100px;
+        text-align: center;
+    }
 `
 
 const Main = styled.div`
@@ -36,10 +41,20 @@ const Main = styled.div`
 `
 
 const Row = styled.div`
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    // display: grid;
+    // grid-template-columns: repeat(7, 1fr);
     // justify-content: space-between;
     // align-items: center;
+
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+
+    @media (max-width: 1400px) {
+        display: flex;
+        justify-content: center;
+        flex-flow: wrap;
+    }
 `
 
 const Line = styled.div`
@@ -57,11 +72,12 @@ const Line = styled.div`
 `
 
 const Image = styled.img`
-    transform: skewX(20deg);
+    // transform: skewX(20deg);
 `
 
 const WrappImage = styled.div`
-    width: 100%;
+    width: 14.5%;
+    min-width: 150px;
     height: 150px;
     display: flex;
     justify-content: center;
@@ -75,7 +91,7 @@ const Column = styled.div`
     border-top: none;
     border-bottom: none;
     border-left: ${props => props.colIndex > 0 && props.colIndex < 7 ? 'none' : 'auto'};
-    transform: skewX(-20deg);
+    // transform: skewX(-20deg);
 `
 
 const GradiantText = styled.p`
@@ -91,65 +107,57 @@ const GradiantText = styled.p`
     background-clip: text;
     text-fill-color: transparent;
     margin-bottom: -40px;
+
+    @media (max-width: 767px) {
+        font-size: 48px;
+        line-height: 54px;
+        margin-bottom: -20px;
+    }
 `
 
 const LIST_LAUNCHPAD = [
-    [
         {
             src: '/assets/images/launchpad/TomoMasterDAO.png'
         },
         {
             src: '/assets/images/launchpad/hwl.png'
         },
-    ],
-    [
         {
             src: '/assets/images/launchpad/p.png'
         },
         {
             src: '/assets/images/launchpad/dragonkart.png'
         },
-    ],
-    [
         {
             src: '/assets/images/launchpad/b.png'
         },
         {
             src: '/assets/images/launchpad/widi.png'
         },
-    ],
-    [
         {
             src: '/assets/images/launchpad/lunacrush.png'
         },
         {
             src: '/assets/images/launchpad/infinityarena.png'
         },
-    ],
-    [
         {
             src: '/assets/images/launchpad/mollector.png'
         },
         {
             src: '/assets/images/launchpad/starbot.png'
         },
-    ],
-    [
         {
             src: '/assets/images/launchpad/galaxyblizt.png'
         },
         {
             src: '/assets/images/launchpad/dark.png'
         },
-    ],
-    [
         {
             src: '/assets/images/launchpad/zoa.png'
         },
         {
             src: '/assets/images/launchpad/animverse.png'
         }
-    ]
 ]
 
 const Launchpad = () => {
@@ -161,14 +169,10 @@ const Launchpad = () => {
             </Title>
         </Header>
         <Main>
-            <Line />
+            {/* <Line /> */}
             <Row>
             {
-                LIST_LAUNCHPAD.map((col, index) => <Column colIndex={index} key={index}>
-                    {
-                        col.map(item => <WrappImage key={item.src}><Image src={item.src} /></WrappImage>)
-                    }
-                </Column>)
+                LIST_LAUNCHPAD.map((item, index) => <WrappImage key={item.src}><Image src={item.src} /></WrappImage>)
             }
             </Row>
         </Main>

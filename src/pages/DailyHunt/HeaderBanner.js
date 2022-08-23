@@ -2,6 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import ButtonLayer from '../../components/ButtonLayer';
 
+const CloudImageLeft = styled.img`
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 60%;
+`
+
 const WrapperBanner = styled.div`
     width: 100%;
     display: grid;
@@ -9,6 +16,11 @@ const WrapperBanner = styled.div`
     position: relative;
     height: 500px;
     padding-bottom: 150px;
+
+    @media (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 const CloudImage = styled.img`
@@ -18,25 +30,34 @@ const CloudImage = styled.img`
     width: 40%;
 `
 
-const CloudImageLeft = styled.img`
-    position: absolute;
-    top: 40%;
-    left: 0;
-    width: 60%;
-`
-
 const WrapperHeader = styled.div`
     position: relative;
     padding-top: 250px;
+
+    @media (max-width: 767px) {
+        padding-top: 100px;
+    }
 `
 
 const LeftBanner = styled.div`
     margin-left: 70px;
+
+    @media (max-width: 767px) {
+        margin-left: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 `
 
 const RightBanner = styled.div`
     position: relative;
     margin-right: 70px;
+    @media (max-width: 767px) {
+        margin-right: 0px;
+        margin-top: 30px;
+    }
 `
 
 const ImageLayerRight = styled.img`
@@ -45,14 +66,26 @@ const ImageLayerRight = styled.img`
     position: absolute;
     right: 0;
     top: 0;
+
+    @media (max-width: 767px) {
+        width: 90%;
+        left: 5%;
+        right: 5%;
+    }
 `
 
 const ImageRight = styled.img`
     width: 85%;
     height: auto;
     position: absolute;
-    top: 28px;
-    right: 8px;
+    top: 35px;
+    right: 20px;
+
+    @media (max-width: 767px) {
+        width: 80%;
+        right: 10%;
+        left: 10%;
+    }
 `
 
 const Title = styled.p`

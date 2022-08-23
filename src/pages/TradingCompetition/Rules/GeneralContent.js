@@ -9,10 +9,6 @@ const Button = styled.span`
     line-height: 22px;
     cursor: pointer;
     color: #00D1AC;
-
-    &:hover {
-        color: #FABC46;
-    }
 `
 
 const ArrowImg = styled.img`

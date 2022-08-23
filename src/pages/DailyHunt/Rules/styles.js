@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const WrapperContent = styled.div`
     width: 60%;
+
+    @media (max-width: 991px) {
+        width: 80%;
+    }
 `
 
 export const TextBold = styled.p`

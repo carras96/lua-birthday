@@ -36,12 +36,22 @@ const Header = styled.div`
     margin: 0 70px;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 767px) {
+        margin: 0;
+        text-align: center;
+    }
 `
 
 const CommunityCard = styled.div`
     display: flex;
     justify-content: center;
     margin: 50px 0 100px;
+
+    @media (max-width: 767px) {
+       flex-direction: column;
+       align-items: center;
+    }
 `
 
 const Main = styled.div`
@@ -49,10 +59,14 @@ const Main = styled.div`
 `
 
 const Row = styled.div`
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    // display: grid;
+    // grid-template-columns: repeat(4, 1fr);
     // justify-content: space-between;
     // align-items: center;
+
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
 `
 
 const Line = styled.div`
@@ -93,38 +107,30 @@ const Column = styled.div`
 `
 
 const LIST_COMMUNITY = [
-    [
         {
             src: '/assets/images/community/photo1.png'
         },
         {
             src: '/assets/images/community/photo5.png'
         },
-    ],
-    [
         {
             src: '/assets/images/community/photo2.png'
         },
         {
             src: '/assets/images/community/photo6.png'
         },
-    ],
-    [
         {
             src: '/assets/images/community/photo3.png'
         },
         {
             src: '/assets/images/community/photo7.png'
         },
-    ],
-    [
         {
             src: '/assets/images/community/photo4.png'
         },
         {
             src: '/assets/images/community/photo8.png'
         },
-    ],
 ]
 
 const Community = () => {
@@ -136,18 +142,13 @@ const Community = () => {
             </Title>
         </Header>
         <CommunityCard>
-            <BoxInfoCommunity title='Members' number='15K+' icon='/assets/images/members-icon.png'/>
-            <BoxInfoCommunity title='Followers' number='36.5K+' icon='/assets/images/followers-icon.png'/>
+            <BoxInfoCommunity title='Members' number='15K+' icon='/assets/images/members-icon.png' iconHover='/assets/images/members-icon-hover.png'/>
+            <BoxInfoCommunity title='Followers' number='36.5K+' icon='/assets/images/followers-icon.png' iconHover='/assets/images/followers-icon-hover.png'/>
         </CommunityCard>
         <Main>
-            <Line />
             <Row>
             {
-                LIST_COMMUNITY.map((col, index) => <Column colIndex={index} key={index}>
-                    {
-                        col.map(item => <WrappImage key={item.src}><Image src={item.src} /></WrappImage>)
-                    }
-                </Column>)
+                LIST_COMMUNITY.map((item, index) => <WrappImage key={item.src}><Image src={item.src} /></WrappImage>)
             }
             </Row>
         </Main>

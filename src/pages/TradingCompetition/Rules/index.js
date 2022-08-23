@@ -37,6 +37,10 @@ const Header = styled.div`
 
 const MainRules = styled.div`
     margin: 0 180px;
+
+    @media (max-width: 991px) {
+        margin: 0 50px;
+    }
 `
 
 const WrappButton = styled.div`

@@ -33,6 +33,10 @@ const Header = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    @media (max-width: 767px) {
+        text-align: center;
+    }
 `
 
 const GradiantText = styled.p`
@@ -48,6 +52,12 @@ const GradiantText = styled.p`
     background-clip: text;
     text-fill-color: transparent;
     margin-bottom: -40px;
+
+    @media (max-width: 767px) {
+        font-size: 48px;
+        line-height: 54px;
+        margin-bottom: -20px;
+    }
 `
 
 const CloudImage = styled.img`
@@ -68,12 +78,26 @@ const Main = styled.div`
     height: 300px;
     column-gap: 60px;
     margin: 0 180px;
+
+    @media (max-width: 1200px) {
+        display: flex;
+        flex-direction: column;
+        height: 900px;
+    }
+
+    @media (max-width: 767px) {
+        margin: 0 50px;
+    }
 `
 
 const WrappPosCard = styled.div`
     width: ${props => props.width};
     height: ${props => props.height};
     align-self: ${props => props.alignSelf};
+
+    @media (max-width: 1200px) {
+        padding-bottom: 50px;
+    }
 `
 
 const WrappButton = styled.div`
@@ -154,8 +178,16 @@ const LeaderBoard = () => {
         <WrappButton>
             <Button onClick={toggleModal}>View top 20</Button>
         </WrappButton>
-        <BaseModal afterOpen={afterOpen} beforeClose={beforeClose} opacity={opacity} isOpen={isOpen} toggleModal={toggleModal}>
-            <LeaderBoardModal/>
+        <BaseModal
+            afterOpen={afterOpen}
+            beforeClose={beforeClose}
+            opacity={opacity}
+            isOpen={isOpen}
+            toggleModal={toggleModal}
+            width='700px'
+            height='435px'
+        >
+            <LeaderBoardModal />
         </BaseModal>
     </WrapperLeaderBoard>
 

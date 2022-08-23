@@ -3,7 +3,20 @@ import React from "react";
 import { VisibilityContext } from "react-horizontal-scrolling-menu";
 import styled from "styled-components";
 
-const ArrImg = styled.img``
+const ArrImg = styled.div`
+  width: 40px;
+  height: 40px;
+  background-image: url(${props => props.src});
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-image: url(${props => props.srcHover});
+    transition: all 0.3s ease-in-out;
+  }
+`
 
 const Button = styled.button`
   cursor: pointer;
@@ -54,7 +67,7 @@ export function LeftArrow() {
 
   return (
     <Arrow disabled={disabled} onClick={() => scrollPrev()}>
-      <ArrImg src='/assets/images/left-btn.png'/>
+      <ArrImg src='/assets/images/left-btn.png' srcHover='/assets/images/left-btn-hover.png'/>
     </Arrow>
   );
 }
@@ -78,7 +91,7 @@ export function RightArrow() {
 
   return (
     <Arrow disabled={disabled} onClick={() => scrollNext()}>
-      <ArrImg src='/assets/images/right-btn.png'/>
+      <ArrImg src='/assets/images/right-btn.png' srcHover='/assets/images/right-btn-hover.png'/>
     </Arrow>
   );
 }

@@ -19,7 +19,8 @@ export const StyledBaseModal = Modal.styled`
 
 const CloseBtnModal = styled.img`
     position: absolute;
-    bottom: -65px;
+    top: 24px;
+    right: 24px;
     cursor: pointer;
     opacity: 0.8;
 
