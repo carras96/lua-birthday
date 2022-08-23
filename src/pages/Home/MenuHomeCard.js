@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import HomeCard from '../../components/HomeCard';
 
 const WrapperMenuHomeCard = styled.div`
-    background-image: url('/assets/images/bg-line.png');
+    background-image: url('assets/images/bg-line.png');
     width: 100%;
     background-size: contain;
     background-repeat: no-repeat;
@@ -40,26 +40,26 @@ const Card = styled.div`
 `
 
 const LIST_CARD = [{
-    imgSrc: '/assets/images/image21.png',
+    imgSrc: 'assets/images/image21.png',
     title: 'Trading competition',
     desc: 'Trade to share a reward pool of 120,000 $LUA',
     link: '/trading-competition'
 },
 {
-    imgSrc: '/assets/images/image22.png',
+    imgSrc: 'assets/images/image22.png',
     title: 'Daily hunt',
     desc: 'Conquer treasure fields to earn a daily attractive bonus',
     link: '/daily-hunt',
 },
 {
-    imgSrc: '/assets/images/image23.png',
+    imgSrc: 'assets/images/image23.png',
     title: 'Gleam mission',
     desc: 'Complete the tasks to get decent rewards',
     link: 'https://reactrouter.com/docs/en/v6/hooks/use-navigate',
     isOpenExtraLink: true
 },
 {
-    imgSrc: '/assets/images/image24.png',
+    imgSrc: 'assets/images/image24.png',
     title: '$LUA social contest',
     desc: 'Join  mini game series and accept our challenges to win ',
     link: 'https://reactrouter.com/docs/en/v6/hooks/use-navigate',

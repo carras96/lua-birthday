@@ -67,7 +67,7 @@ export function LeftArrow() {
 
   return (
     <Arrow disabled={disabled} onClick={() => scrollPrev()}>
-      <ArrImg src='/assets/images/left-btn.png' srcHover='/assets/images/left-btn-hover.png'/>
+      <ArrImg src='assets/images/left-btn.png' srcHover='assets/images/left-btn-hover.png'/>
     </Arrow>
   );
 }
@@ -91,7 +91,7 @@ export function RightArrow() {
 
   return (
     <Arrow disabled={disabled} onClick={() => scrollNext()}>
-      <ArrImg src='/assets/images/right-btn.png' srcHover='/assets/images/right-btn-hover.png'/>
+      <ArrImg src='assets/images/right-btn.png' srcHover='assets/images/right-btn-hover.png'/>
     </Arrow>
   );
 }

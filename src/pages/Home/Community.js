@@ -115,42 +115,42 @@ const Column = styled.div`
 
 const LIST_COMMUNITY = [
         {
-            src: '/assets/images/community/photo1.png'
+            src: 'assets/images/community/photo1.png'
         },
         {
-            src: '/assets/images/community/photo5.png'
+            src: 'assets/images/community/photo5.png'
         },
         {
-            src: '/assets/images/community/photo2.png'
+            src: 'assets/images/community/photo2.png'
         },
         {
-            src: '/assets/images/community/photo6.png'
+            src: 'assets/images/community/photo6.png'
         },
         {
-            src: '/assets/images/community/photo3.png'
+            src: 'assets/images/community/photo3.png'
         },
         {
-            src: '/assets/images/community/photo7.png'
+            src: 'assets/images/community/photo7.png'
         },
         {
-            src: '/assets/images/community/photo4.png'
+            src: 'assets/images/community/photo4.png'
         },
         {
-            src: '/assets/images/community/photo8.png'
+            src: 'assets/images/community/photo8.png'
         },
 ]
 
 const Community = () => {
     return <WrapperCommunity>
-        <CloudImage src='/assets/images/cloud.png'/>
+        <CloudImage src='assets/images/cloud.png'/>
         <Header>
             <Title>
                 <TitleYellow>LuaSwap</TitleYellow> <TitleGreen>Community </TitleGreen>
             </Title>
         </Header>
         <CommunityCard>
-            <BoxInfoCommunity title='Members' number='15K+' icon='/assets/images/members-icon.png' iconHover='/assets/images/members-icon-hover.png'/>
-            <BoxInfoCommunity title='Followers' number='36.5K+' icon='/assets/images/followers-icon.png' iconHover='/assets/images/followers-icon-hover.png'/>
+            <BoxInfoCommunity title='Members' number='15K+' icon='assets/images/members-icon.png' iconHover='assets/images/members-icon-hover.png'/>
+            <BoxInfoCommunity title='Followers' number='36.5K+' icon='assets/images/followers-icon.png' iconHover='assets/images/followers-icon-hover.png'/>
         </CommunityCard>
         <Main>
             <Row>

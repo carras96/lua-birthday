@@ -25,7 +25,7 @@ const MainCard = styled.div`
     border-radius: 10px;
     top: 13px;
     right: 12px;
-    background-image: url('/assets/images/bg-pos-card.png');
+    background-image: url('assets/images/bg-pos-card.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right;
@@ -120,9 +120,9 @@ const PosCard = ({pos}) => {
     }, [pos])
 
     const srcPosCard = useMemo(() => {
-        if (pos === 1) return '/assets/images/pos1.png'
-        if (pos === 2) return '/assets/images/pos2.png'
-        if (pos === 3) return '/assets/images/pos3.png'
+        if (pos === 1) return 'assets/images/pos1.png'
+        if (pos === 2) return 'assets/images/pos2.png'
+        if (pos === 3) return 'assets/images/pos3.png'
     }, [pos])
 
     return <WrapperPosCard>
@@ -137,7 +137,7 @@ const PosCard = ({pos}) => {
                 <VolumeText pos={pos}>$15,000</VolumeText>
                 <WrappAddress>
                     <AddressText pos={pos}>0xecg55EF0mog...963a</AddressText>
-                    <CopyIcon src='/assets/images/copy-icon.png'/>
+                    <CopyIcon src='assets/images/copy-icon.png'/>
                 </WrappAddress>
             </WrapperText>
         </MainCard>

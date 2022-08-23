@@ -42,7 +42,7 @@ const DailyQuizModal = ({ toggleModal }) => {
                     </AnswerQuiz>
                 </WrappAnswer>)
             }
-            <ButtonModal type="submit" disabled={errors.quiz}>Save <ArrRight src='/assets/images/arr-right.png' /></ButtonModal>
+            <ButtonModal type="submit" disabled={errors.quiz}>Save <ArrRight src='assets/images/arr-right.png' /></ButtonModal>
         </form>
     </Wrapper>
 }

@@ -136,8 +136,8 @@ const Btn = styled.div`
 
 const HeaderBanner = ({onClickAction}) => {
     return <WrapperHeader>
-        <CloudImage src='/assets/images/cloud2.png'/>
-        <CloudImageLeft src='/assets/images/cloud4.png'/>
+        <CloudImage src='assets/images/cloud2.png'/>
+        <CloudImageLeft src='assets/images/cloud4.png'/>
         <WrapperBanner>
             <LeftBanner>
                 <Title>
@@ -152,12 +152,12 @@ const HeaderBanner = ({onClickAction}) => {
                             Join Now
                         </ButtonLayer>
                     </Btn>
-                    <SecondLineImg src='/assets/images/line-2.png' />
+                    <SecondLineImg src='assets/images/line-2.png' />
                 </WrapperBtn>
             </LeftBanner>
             <RightBanner>
-                <ImageLayerRight src='/assets/images/back-layer-img-header-home.png' />
-                <ImageRight src='/assets/images/img-header-daily-hunt.png' />
+                <ImageLayerRight src='assets/images/back-layer-img-header-home.png' />
+                <ImageRight src='assets/images/img-header-daily-hunt.png' />
             </RightBanner>
         </WrapperBanner>
     </WrapperHeader>

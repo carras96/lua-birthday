@@ -47,7 +47,7 @@ const Card = styled.div`
         display: ${props => props.isYellowEvent ? 'block' : 'none' };
         width: 24px;
         height: 24px;
-        background-image: url('/assets/images/rocket-icon.png');
+        background-image: url('assets/images/rocket-icon.png');
         background-size: cover;
         background-repeat: no-repeat;
         left: -12px;

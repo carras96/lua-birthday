@@ -53,7 +53,7 @@ const Accordion = ({ title, children }) => {
     return <WrapperAccordion>
         <Header onClick={onToggle}>
             <HeaderText>{title}</HeaderText>
-            <Icon src='/assets/images/down-arrow.png' isOpen={isOpen} />
+            <Icon src='assets/images/down-arrow.png' isOpen={isOpen} />
         </Header>
         {
             <Main isOpen={isOpen}>

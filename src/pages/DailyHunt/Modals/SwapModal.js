@@ -18,7 +18,7 @@ const SwapModal = ({ toggleModal }) => {
         <form onSubmit={handleSubmit(onSubmit)}>
             <InputTitle>Your Swap transaction</InputTitle>
             <InputModal placeholder='0x...' {...register("swap", { required: true })} />
-            <ButtonModal type="submit" disabled={errors.swap}>Save <ArrRight src='/assets/images/arr-right.png' /></ButtonModal>
+            <ButtonModal type="submit" disabled={errors.swap}>Save <ArrRight src='assets/images/arr-right.png' /></ButtonModal>
         </form>
         <TitleGuide>How to do it?</TitleGuide>
         <GuideDetail>

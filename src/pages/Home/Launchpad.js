@@ -124,46 +124,46 @@ const GradiantText = styled.p`
 
 const LIST_LAUNCHPAD = [
         {
-            src: '/assets/images/launchpad/TomoMasterDAO.png'
+            src: 'assets/images/launchpad/TomoMasterDAO.png'
         },
         {
-            src: '/assets/images/launchpad/hwl.png'
+            src: 'assets/images/launchpad/hwl.png'
         },
         {
-            src: '/assets/images/launchpad/p.png'
+            src: 'assets/images/launchpad/p.png'
         },
         {
-            src: '/assets/images/launchpad/dragonkart.png'
+            src: 'assets/images/launchpad/dragonkart.png'
         },
         {
-            src: '/assets/images/launchpad/b.png'
+            src: 'assets/images/launchpad/b.png'
         },
         {
-            src: '/assets/images/launchpad/widi.png'
+            src: 'assets/images/launchpad/widi.png'
         },
         {
-            src: '/assets/images/launchpad/lunacrush.png'
+            src: 'assets/images/launchpad/lunacrush.png'
         },
         {
-            src: '/assets/images/launchpad/infinityarena.png'
+            src: 'assets/images/launchpad/infinityarena.png'
         },
         {
-            src: '/assets/images/launchpad/mollector.png'
+            src: 'assets/images/launchpad/mollector.png'
         },
         {
-            src: '/assets/images/launchpad/starbot.png'
+            src: 'assets/images/launchpad/starbot.png'
         },
         {
-            src: '/assets/images/launchpad/galaxyblizt.png'
+            src: 'assets/images/launchpad/galaxyblizt.png'
         },
         {
-            src: '/assets/images/launchpad/dark.png'
+            src: 'assets/images/launchpad/dark.png'
         },
         {
-            src: '/assets/images/launchpad/zoa.png'
+            src: 'assets/images/launchpad/zoa.png'
         },
         {
-            src: '/assets/images/launchpad/animverse.png'
+            src: 'assets/images/launchpad/animverse.png'
         }
 ]
 

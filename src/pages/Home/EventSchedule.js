@@ -329,7 +329,7 @@ const EventSchedule = () => {
                             <TextHeader isShowBorder={!!time.day}>
                                 {
                                     time.isBirthDay && <WrapperCake>
-                                        <CakeImg src='/assets/images/cake-icon.png' />
+                                        <CakeImg src='assets/images/cake-icon.png' />
                                     </WrapperCake>
                                 }
                                 <MonthText>{time.month}</MonthText>

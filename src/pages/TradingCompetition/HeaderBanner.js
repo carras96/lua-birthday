@@ -130,9 +130,9 @@ const ArrowUpImg = styled.img``
 
 const HeaderBanner = () => {
     return <WrapperHeader>
-        <CloudImage src='/assets/images/cloud2.png'/>
+        <CloudImage src='assets/images/cloud2.png'/>
         <WrapperBanner>
-            <SecondLineImg src='/assets/images/roket-line-2.png' />
+            <SecondLineImg src='assets/images/roket-line-2.png' />
             
             <LeftBanner>
                 <Title>
@@ -144,14 +144,14 @@ const HeaderBanner = () => {
                 <WrapperBtn>
                     <Btn>
                         <ButtonLayer onPress={() => { }}>
-                            Join Now <ArrowUpImg src='/assets/images/arrow-up.png'/>
+                            Join Now <ArrowUpImg src='assets/images/arrow-up.png'/>
                         </ButtonLayer>
                     </Btn>
                 </WrapperBtn>
             </LeftBanner>
             <RightBanner>
-                <ImageLayerRight src='/assets/images/back-layer-img-header-home.png' />
-                <ImageRight src='/assets/images/img-header-competition.png' />
+                <ImageLayerRight src='assets/images/back-layer-img-header-home.png' />
+                <ImageRight src='assets/images/img-header-competition.png' />
             </RightBanner>
         </WrapperBanner>
     </WrapperHeader>

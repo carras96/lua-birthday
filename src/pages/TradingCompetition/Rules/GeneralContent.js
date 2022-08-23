@@ -37,7 +37,7 @@ const GeneralContent = ({ onClickLeaderBoard }) => {
         <BoxText>
             <InlineTextNormal><InlineTextBold>Competition period:</InlineTextBold> 9AM UTC 19, Sep - 9AM UTC 25 Sep, 2022</InlineTextNormal>
         </BoxText>
-        <Button onClick={onClickLeaderBoard}>Leaderboard <ArrowImg src='/assets/images/arrow-up-green.png' /></Button>
+        <Button onClick={onClickLeaderBoard}>Leaderboard <ArrowImg src='assets/images/arrow-up-green.png' /></Button>
     </WrapperContent>
 }
 

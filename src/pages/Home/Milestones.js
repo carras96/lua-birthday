@@ -88,7 +88,7 @@ const WrapperTimeLine = styled.div`
 `
 
 const TimeLine = styled.div`
-    // background-image: url('/assets/images/line-time.png');
+    // background-image: url('assets/images/line-time.png');
     // background-size: contain;
     // background-repeat: no-repeat;
     // background-position: center;
@@ -200,7 +200,7 @@ const TIME_LINE = [
 
 const Milestones = () => {
     return <WrapperMilestones>
-        <LineImage src='/assets/images/line-3.png' />
+        <LineImage src='assets/images/line-3.png' />
         <Header>
             <Title>
                 <TitleYellow>LuaSwap</TitleYellow> <TitleGreen>Milestones</TitleGreen>
@@ -218,7 +218,7 @@ const Milestones = () => {
 
         <WrapperTimeLine>
             <TimeLine>
-                <TimeLineImage src='/assets/images/line-time.png' />
+                <TimeLineImage src='assets/images/line-time.png' />
                 {/* {
                     TIME_LINE.map((node) => <BoxTimeNode key={node.time}>
                         <NodeTime>{node.time}</NodeTime>

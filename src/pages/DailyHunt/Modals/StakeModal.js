@@ -17,7 +17,7 @@ const StakeModal = ({ toggleModal }) => {
         <form onSubmit={handleSubmit(onSubmit)}>
             <InputTitle>Your Stake transaction</InputTitle>
             <InputModal placeholder='0x...' {...register("stake", { required: true })} />
-            <ButtonModal type="submit" disabled={errors.stake}>Save <ArrRight src='/assets/images/arr-right.png' /></ButtonModal>
+            <ButtonModal type="submit" disabled={errors.stake}>Save <ArrRight src='assets/images/arr-right.png' /></ButtonModal>
         </form>
         <TitleGuide>How to do it?</TitleGuide>
         <GuideDetail>

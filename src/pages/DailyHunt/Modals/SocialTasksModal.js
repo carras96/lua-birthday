@@ -39,7 +39,7 @@ const SocialTasksModal = ({ toggleModal }) => {
             </WrapperInput>
 
 
-            <ButtonModal type="submit" disabled={errors.name || errors.accTw || errors.linkTweet}>Save <ArrRight src='/assets/images/arr-right.png' /></ButtonModal>
+            <ButtonModal type="submit" disabled={errors.name || errors.accTw || errors.linkTweet}>Save <ArrRight src='assets/images/arr-right.png' /></ButtonModal>
         </form>
     </Wrapper>
 }

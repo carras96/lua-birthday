@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 `
 
 const WrapperCity = styled.div`
-    background-image: url('/assets/images/bg-line-city.png');
+    background-image: url('assets/images/bg-line-city.png');
     width: 100%;
     aspect-ratio: 3.71;
     background-size: contain;
@@ -230,11 +230,11 @@ const CitySection = () => {
     return <Wrapper>
         <WrapperCity>
             <WrapperImage>
-                <CityImage src='/assets/images/city.png' />
+                <CityImage src='assets/images/city.png' />
                 {
                     isDoneSwap && isDoneCheckIn && isDoneQuiz && isDoneStake && isDoneTasks && <WrappSubmitButton>
                         <SubmitAnswerButton>
-                            Submit your answers <RoketImg src='/assets/images/yellow-rocket.png' />
+                            Submit your answers <RoketImg src='assets/images/yellow-rocket.png' />
                         </SubmitAnswerButton>
                     </WrappSubmitButton>
                 }
@@ -242,21 +242,21 @@ const CitySection = () => {
                     <MessageTextBox onClick={toggleModalSwap} isDone={isDoneSwap}>
                         <Text isDone={isDoneSwap}>Swap</Text>
                     </MessageTextBox>
-                    <CircleImg src='/assets/images/circle-position.png' />
+                    <CircleImg src='assets/images/circle-position.png' />
                 </BoxMessage>
 
                 <BoxMessage top='20%' left='26%'>
                     <MessageTextBox onClick={toggleModalDailyCheckIn} isDone={isDoneCheckIn}>
                         <Text isDone={isDoneCheckIn}>Daily check in</Text>
                     </MessageTextBox>
-                    <CircleImg src='/assets/images/circle-position.png' />
+                    <CircleImg src='assets/images/circle-position.png' />
                 </BoxMessage>
 
                 <BoxMessage top='20%' right='32%'>
                     <MessageTextBox onClick={toggleModalDailyQuiz} isDone={isDoneQuiz}>
                         <Text isDone={isDoneQuiz}>Daily quiz</Text>
                     </MessageTextBox>
-                    <CircleImg src='/assets/images/circle-position.png' />
+                    <CircleImg src='assets/images/circle-position.png' />
                 </BoxMessage>
 
                 <BoxMessage top='45%' right='10%'>
@@ -264,20 +264,20 @@ const CitySection = () => {
                         <Text
                             isDone={isDoneTasks}>Social tasks</Text>
                     </MessageTextBox>
-                    <CircleImg src='/assets/images/circle-position.png' />
+                    <CircleImg src='assets/images/circle-position.png' />
                 </BoxMessage>
 
                 <BoxMessage bottom='13%' left='46%' >
                     <MessageTextBox onClick={toggleModalStake} isDone={isDoneStake}>
                         <Text isDone={isDoneStake}>Stake</Text>
                     </MessageTextBox>
-                    <CircleImg src='/assets/images/circle-position.png' />
+                    <CircleImg src='assets/images/circle-position.png' />
                 </BoxMessage>
             </WrapperImage>
 
             <BoxMessage bottom='0%' left='2%'>
                 <MessageTextBoxResult onClick={toggleModalResult}>
-                    <TextYellow>Check result</TextYellow> <ArrIcon src='/assets/images/arr-up-yellow.png' />
+                    <TextYellow>Check result</TextYellow> <ArrIcon src='assets/images/arr-up-yellow.png' />
                 </MessageTextBoxResult>
             </BoxMessage>
 

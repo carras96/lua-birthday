@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const WrapperFooter = styled.div`
     margin-top: 120px;
-    background-image: url('/assets/images/line-footer.png');
+    background-image: url('assets/images/line-footer.png');
     width: 100%;
     aspect-ratio: 6.97;
     background-size: contain;
@@ -52,10 +52,10 @@ const Footer = () => {
     return <WrapperFooter>
         <Text>Join us to build a decentralized future</Text>
         <WrappIcon>
-            <Icon src='/assets/images/Tw.png' srcHover='/assets/images/Tw-hover.png' onClick={() => openLink('https://twitter.com/luaswap')}/>
-            <Icon src='/assets/images/Tele.png' srcHover='/assets/images/Tele-hover.png' onClick={() => openLink('https://t.me/luaswap')}/>
-            <Icon src='/assets/images/Me.png' srcHover='/assets/images/Me-hover.png' onClick={() => openLink('https://medium.com/luaswap')}/>
-            <Icon src='/assets/images/Git.png' srcHover='/assets/images/Git-hover.png' onClick={() => openLink('https://github.com/tomochain/luaswap-core')}/>
+            <Icon src='assets/images/Tw.png' srcHover='assets/images/Tw-hover.png' onClick={() => openLink('https://twitter.com/luaswap')}/>
+            <Icon src='assets/images/Tele.png' srcHover='assets/images/Tele-hover.png' onClick={() => openLink('https://t.me/luaswap')}/>
+            <Icon src='assets/images/Me.png' srcHover='assets/images/Me-hover.png' onClick={() => openLink('https://medium.com/luaswap')}/>
+            <Icon src='assets/images/Git.png' srcHover='assets/images/Git-hover.png' onClick={() => openLink('https://github.com/tomochain/luaswap-core')}/>
         </WrappIcon>
     </WrapperFooter>
 }

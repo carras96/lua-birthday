@@ -194,7 +194,7 @@ const ResultModal = ({toggleModal}) => {
             {
                 FAKE_DATA.map((data, index) => <Row key={index}>
                     <Col1><RowText>{data.date}</RowText></Col1>
-                    <Col2><RowText>{data.address}</RowText> <CopyIcon src='/assets/images/copy-icon.png' /></Col2>
+                    <Col2><RowText>{data.address}</RowText> <CopyIcon src='assets/images/copy-icon.png' /></Col2>
                     <Col3><RowText>{data.reward}</RowText></Col3>
                 </Row>)
             }
