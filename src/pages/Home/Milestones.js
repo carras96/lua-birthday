@@ -76,7 +76,7 @@ const InfoTextValue = styled.span`
 `
 
 const FirstBubbleSection = styled.div`
-    height: 250px;
+    height: 200px;
     position: relative;
 `
 
@@ -211,25 +211,22 @@ const Milestones = () => {
             </HeaderInfo>
         </Header>
         <FirstBubbleSection>
-            <Bubble width={'16px'} isSort top='40%' left='15%' />
-            <Bubble width={'24px'} top='20%' right='10%' />
-            <Bubble width={'16px'} top='25%' right='15%' />
+            <Bubble width={'16px'} isSort top='40%' left='15%' time={[18, 2]} scale={0.7}/>
+            <Bubble width={'24px'} top='20%' right='10%' time={[12, 3]} scale={0.3}/>
+            <Bubble width={'16px'} top='25%' right='15%' time={[19, 4]} scale={0.6}/>
         </FirstBubbleSection>
 
         <WrapperTimeLine>
             <TimeLine>
                 <TimeLineImage src='assets/images/line-time.png' />
-                {/* {
-                    TIME_LINE.map((node) => <BoxTimeNode key={node.time}>
-                        <NodeTime>{node.time}</NodeTime>
-                        <TimeNode isActive={false} />
-                        <NodeText>{node.note}</NodeText>
-                    </BoxTimeNode>)
-                } */}
-
                 <Scroll items={TIME_LINE} />
             </TimeLine>
         </WrapperTimeLine>
+
+        <FirstBubbleSection>
+            <Bubble width={'24px'} top='50%' left='20%' time={[15, 2]} scale={0.6}/>
+            <Bubble width={'16px'} top='75%' left='5%' time={[10, 4]} scale={0.4}/>
+        </FirstBubbleSection>
 
     </WrapperMilestones>
 }

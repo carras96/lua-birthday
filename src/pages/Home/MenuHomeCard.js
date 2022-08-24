@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from "react-router-dom";
 import HomeCard from '../../components/HomeCard';
+import { FadeInBottomDiv } from '../../styles';
 
-const WrapperMenuHomeCard = styled.div`
+const WrapperMenuHomeCard = styled(FadeInBottomDiv)`
     background-image: url('assets/images/bg-line.png');
     width: 100%;
     background-size: contain;

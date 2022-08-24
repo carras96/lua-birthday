@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import ButtonLayer from '../../components/ButtonLayer';
 import Parallax from 'parallax-js';
+import { FadeInLeftDiv, FadeInRightDiv } from '../../styles';
 
 const WrapperBanner = styled.div`
     background-image: url('assets/images/bg-header-home.png');
@@ -36,7 +37,7 @@ const FirstLineImg = styled.img`
     padding-top: 40px;
 `
 
-const LeftBanner = styled.div`
+const LeftBanner = styled(FadeInLeftDiv)`
     margin-left: 70px;
 
     
@@ -49,7 +50,7 @@ const LeftBanner = styled.div`
     }
 `
 
-const RightBanner = styled.div`
+const RightBanner = styled(FadeInRightDiv)`
     margin-right: 70px;
     display: flex;
     justify-content: flex-end;

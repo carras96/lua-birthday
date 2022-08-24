@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import BaseModal from '../../components/BaseModal';
+import { FadeInBottomDiv } from '../../styles';
 import DailyCheckInModal from './Modals/DailyCheckInModal';
 import DailyQuizModal from './Modals/DailyQuizModal';
 import ResultModal from './Modals/ResultModal';
@@ -32,7 +33,7 @@ const CityImage = styled.img`
     width: 100%;
 `
 
-const WrapperImage = styled.div`
+const WrapperImage = styled(FadeInBottomDiv)`
     width: 80%;
     position: relative;
     display: flex;
@@ -238,28 +239,28 @@ const CitySection = () => {
                         </SubmitAnswerButton>
                     </WrappSubmitButton>
                 }
-                <BoxMessage top='45%' left='10%'>
+                <BoxMessage top='41%' left='10%'>
                     <MessageTextBox onClick={toggleModalSwap} isDone={isDoneSwap}>
                         <Text isDone={isDoneSwap}>Swap</Text>
                     </MessageTextBox>
                     <CircleImg src='assets/images/circle-position.png' />
                 </BoxMessage>
 
-                <BoxMessage top='20%' left='26%'>
+                <BoxMessage top='19%' left='24%'>
                     <MessageTextBox onClick={toggleModalDailyCheckIn} isDone={isDoneCheckIn}>
                         <Text isDone={isDoneCheckIn}>Daily check in</Text>
                     </MessageTextBox>
                     <CircleImg src='assets/images/circle-position.png' />
                 </BoxMessage>
 
-                <BoxMessage top='20%' right='32%'>
+                <BoxMessage top='17%' right='37%'>
                     <MessageTextBox onClick={toggleModalDailyQuiz} isDone={isDoneQuiz}>
                         <Text isDone={isDoneQuiz}>Daily quiz</Text>
                     </MessageTextBox>
                     <CircleImg src='assets/images/circle-position.png' />
                 </BoxMessage>
 
-                <BoxMessage top='45%' right='10%'>
+                <BoxMessage top='41%' right='16%'>
                     <MessageTextBox onClick={toggleModalSocialTasks} isDone={isDoneTasks}>
                         <Text
                             isDone={isDoneTasks}>Social tasks</Text>
@@ -267,7 +268,7 @@ const CitySection = () => {
                     <CircleImg src='assets/images/circle-position.png' />
                 </BoxMessage>
 
-                <BoxMessage bottom='13%' left='46%' >
+                <BoxMessage bottom='17%' left='43%' >
                     <MessageTextBox onClick={toggleModalStake} isDone={isDoneStake}>
                         <Text isDone={isDoneStake}>Stake</Text>
                     </MessageTextBox>

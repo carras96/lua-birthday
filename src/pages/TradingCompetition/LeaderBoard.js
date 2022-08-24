@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import BaseModal from '../../components/BaseModal';
 import Bubble from '../../components/Bubble';
 import PosCard from '../../components/PosCard';
+import { FadeInBottomDiv } from '../../styles';
 import LeaderBoardModal from './Modals/LeaderBoardModal';
 
 const WrapperLeaderBoard = styled.div`
@@ -72,7 +73,7 @@ const FirstBubbleSection = styled.div`
     position: relative;
 `
 
-const Main = styled.div`
+const Main = styled(FadeInBottomDiv)`
     display: grid;
     grid-template-columns: 3fr 4fr 3fr;
     height: 300px;
@@ -156,9 +157,9 @@ const LeaderBoard = () => {
             </Title>
         </Header>
         <FirstBubbleSection>
-            <Bubble width={'16px'} isSort top='40%' left='15%' />
-            <Bubble width={'24px'} top='20%' right='10%' />
-            <Bubble width={'16px'} top='25%' right='15%' />
+            <Bubble width={'16px'} isSort top='40%' left='15%' time={[18, 2]} scale={0.7}/>
+            <Bubble width={'24px'} top='20%' right='10%' time={[12, 3]} scale={0.3}/>
+            <Bubble width={'16px'} top='25%' right='15%' time={[19, 4]} scale={0.6}/>
         </FirstBubbleSection>
         <Main>
             <WrappPosCard width='100%' height='66.67%' alignSelf='end'>
@@ -172,8 +173,8 @@ const LeaderBoard = () => {
             </WrappPosCard>
         </Main>
         <FirstBubbleSection>
-            <Bubble width={'24px'} top='50%' left='20%' />
-            <Bubble width={'16px'} top='75%' left='5%' />
+            <Bubble width={'24px'} top='50%' left='20%' time={[15, 2]} scale={0.6}/>
+            <Bubble width={'16px'} top='75%' left='5%' time={[10, 4]} scale={0.4}/>
         </FirstBubbleSection>
         <WrappButton>
             <Button onClick={toggleModal}>View top 20</Button>

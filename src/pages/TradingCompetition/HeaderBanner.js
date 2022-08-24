@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ButtonLayer from '../../components/ButtonLayer';
+import { FadeInLeftDiv, FadeInRightDiv } from '../../styles';
 
 const WrapperBanner = styled.div`
     width: 100%;
@@ -32,7 +33,7 @@ const WrapperHeader = styled.div`
     }
 `
 
-const LeftBanner = styled.div`
+const LeftBanner = styled(FadeInLeftDiv)`
     margin-left: 70px;
 
     @media (max-width: 767px) {
@@ -44,7 +45,7 @@ const LeftBanner = styled.div`
     }
 `
 
-const RightBanner = styled.div`
+const RightBanner = styled(FadeInRightDiv)`
     position: relative;
     margin-right: 70px;
     @media (max-width: 767px) {
@@ -129,6 +130,11 @@ const Btn = styled.div`
 const ArrowUpImg = styled.img``
 
 const HeaderBanner = () => {
+ 
+    const onClickJoinNow = () => {
+        window.open('https://app.luaswap.org/#/swap', '_blank', 'noopener,noreferrer');
+    }
+
     return <WrapperHeader>
         <CloudImage src='assets/images/cloud2.png'/>
         <WrapperBanner>
@@ -143,7 +149,7 @@ const HeaderBanner = () => {
                     <Desc>trade to win up to <TextNumber>120,000</TextNumber> <TextLua>$LUA!</TextLua></Desc></WrapperDesc>
                 <WrapperBtn>
                     <Btn>
-                        <ButtonLayer onPress={() => { }}>
+                        <ButtonLayer onPress={onClickJoinNow}>
                             Join Now <ArrowUpImg src='assets/images/arrow-up.png'/>
                         </ButtonLayer>
                     </Btn>

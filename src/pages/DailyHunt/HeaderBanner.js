@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ButtonLayer from '../../components/ButtonLayer';
+import { FadeInLeftDiv, FadeInRightDiv } from '../../styles';
 
 const CloudImageLeft = styled.img`
     position: absolute;
@@ -39,7 +40,7 @@ const WrapperHeader = styled.div`
     }
 `
 
-const LeftBanner = styled.div`
+const LeftBanner = styled(FadeInLeftDiv)`
     margin-left: 70px;
 
     @media (max-width: 767px) {
@@ -51,7 +52,7 @@ const LeftBanner = styled.div`
     }
 `
 
-const RightBanner = styled.div`
+const RightBanner = styled(FadeInRightDiv)`
     position: relative;
     margin-right: 70px;
     @media (max-width: 767px) {
