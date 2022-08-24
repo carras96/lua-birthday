@@ -118,7 +118,7 @@ const WrapperCake = styled.div`
     top: -40px;
      &:before {
         content: '';
-        box-shadow: 0 0 150px 50px yellow;
+        box-shadow: 0 0 200px 50px #fff177;
         border-radius: 50%;
         width: 0px;
         height: 0px;

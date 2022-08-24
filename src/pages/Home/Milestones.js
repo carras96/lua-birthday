@@ -11,6 +11,7 @@ const WrapperMilestones = styled.div`
 
 const LineImage = styled.img`
     margin-bottom: 25px;
+    height: 50px;
 `
 
 const Title = styled.p`
@@ -103,7 +104,7 @@ const TimeLineImage = styled.img`
     position: absolute;
     width: 100%;
     height: 40px;
-    top: 30px;
+    top: 28px;
 `
 
 const BoxTimeNode = styled.div`

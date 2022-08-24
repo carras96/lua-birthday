@@ -76,6 +76,15 @@ export const InputModal = styled.input`
     color: rgba(255, 255, 255, 0.37);
     border: none;
     outline: none;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+
+    &:hover, &:focus {
+        border: 1px solid rgba(255, 255, 255, 0.87);
+        color: rgba(255, 255, 255, 0.87);
+        transition: all 0.3s ease-in-out;
+
+    }
 `
 
 export const ButtonModal = styled.button`
@@ -93,9 +102,9 @@ export const ButtonModal = styled.button`
 
     cursor: pointer;
 
-    &:hover {
-        background: #FABC46;
-    }
+    // &:hover {
+    //     background: #FABC46;
+    // }
 
     &:disabled {
         background: rgba(255, 255, 255, 0.37);

@@ -25,15 +25,36 @@ const WrapperCard = styled.div`
 
     &:hover,
     &:focus {
-        transform: scale3d(1.05, 1.05, 1);
+        // transform: scale3d(1.05, 1.05, 1);
         &::after {
             opacity: 1;
+        }
+        border: 0.5px solid #FFFFFF;
+        background: #070707;
+
+        > .title {
+            color: #FFF177;
+        }
+
+        .image {
+            -webkit-transform: scale(1.2);
+	        transform: scale(1.2);
         }
     }
 `
 
+const WrappImg = styled.div`
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+`
+
 const CardImg = styled.img`
     width: 100%;
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
 `
 
 const CardDesc = styled.p`
@@ -55,10 +76,12 @@ const CardTitle = styled.p`
     margin-bottom: 8px;
 `
 
-const HomeCard = ({imgSrc, title, desc, onClickNavigate}) => {
+const HomeCard = ({ imgSrc, title, desc, onClickNavigate }) => {
     return <WrapperCard onClick={onClickNavigate}>
-        <CardImg src={imgSrc}/>
-        <CardTitle>{title}</CardTitle>
+        <WrappImg>
+            <CardImg src={imgSrc} className='image' />
+        </WrappImg>
+        <CardTitle className='title'>{title}</CardTitle>
         <CardDesc>{desc}</CardDesc>
     </WrapperCard>
 }

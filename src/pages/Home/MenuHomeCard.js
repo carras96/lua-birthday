@@ -49,7 +49,7 @@ const LIST_CARD = [{
 {
     imgSrc: 'assets/images/image22.png',
     title: 'Daily hunt',
-    desc: 'Conquer treasure fields to earn a daily attractive bonus',
+    desc: 'Conquer treasure city to earn a daily attractive bonus',
     link: '/daily-hunt',
 },
 {

@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import BaseModal from '../../components/BaseModal';
+import CircleWave from '../../components/CircleWave';
 import { FadeInBottomDiv } from '../../styles';
 import DailyCheckInModal from './Modals/DailyCheckInModal';
 import DailyQuizModal from './Modals/DailyQuizModal';
@@ -67,7 +68,7 @@ const MessageTextBox = styled.div`
     transition : all 0.5s ease-in-out;
 
     &:hover {
-        transform: scale(1.1);
+        // transform: scale(1.1);
         transition : all 0.5s ease-in-out;
     }
 
@@ -239,40 +240,45 @@ const CitySection = () => {
                         </SubmitAnswerButton>
                     </WrappSubmitButton>
                 }
-                <BoxMessage top='41%' left='10%'>
+                <BoxMessage top='41%' left='16%'>
                     <MessageTextBox onClick={toggleModalSwap} isDone={isDoneSwap}>
                         <Text isDone={isDoneSwap}>Swap</Text>
                     </MessageTextBox>
-                    <CircleImg src='assets/images/circle-position.png' />
+                    {/* <CircleImg src='assets/images/circle-position.png' /> */}
+                    <CircleWave/>
                 </BoxMessage>
 
-                <BoxMessage top='19%' left='24%'>
+                <BoxMessage top='19%' left='27%'>
                     <MessageTextBox onClick={toggleModalDailyCheckIn} isDone={isDoneCheckIn}>
                         <Text isDone={isDoneCheckIn}>Daily check in</Text>
                     </MessageTextBox>
-                    <CircleImg src='assets/images/circle-position.png' />
+                    {/* <CircleImg src='assets/images/circle-position.png' /> */}
+                    <CircleWave/>
                 </BoxMessage>
 
-                <BoxMessage top='17%' right='37%'>
+                <BoxMessage top='17%' right='33%'>
                     <MessageTextBox onClick={toggleModalDailyQuiz} isDone={isDoneQuiz}>
                         <Text isDone={isDoneQuiz}>Daily quiz</Text>
                     </MessageTextBox>
-                    <CircleImg src='assets/images/circle-position.png' />
+                    {/* <CircleImg src='assets/images/circle-position.png' /> */}
+                    <CircleWave/>
                 </BoxMessage>
 
-                <BoxMessage top='41%' right='16%'>
+                <BoxMessage top='45%' right='10%'>
                     <MessageTextBox onClick={toggleModalSocialTasks} isDone={isDoneTasks}>
                         <Text
                             isDone={isDoneTasks}>Social tasks</Text>
                     </MessageTextBox>
-                    <CircleImg src='assets/images/circle-position.png' />
+                    {/* <CircleImg src='assets/images/circle-position.png' /> */}
+                    <CircleWave/>
                 </BoxMessage>
 
-                <BoxMessage bottom='17%' left='43%' >
+                <BoxMessage bottom='13%' left='46%' >
                     <MessageTextBox onClick={toggleModalStake} isDone={isDoneStake}>
                         <Text isDone={isDoneStake}>Stake</Text>
                     </MessageTextBox>
-                    <CircleImg src='assets/images/circle-position.png' />
+                    {/* <CircleImg src='assets/images/circle-position.png' /> */}
+                    <CircleWave/>
                 </BoxMessage>
             </WrapperImage>
 
@@ -333,7 +339,7 @@ const CitySection = () => {
                 isOpen={isOpenDailyQuiz}
                 toggleModal={toggleModalDailyQuiz}
                 width='380px'
-                height='435px'>
+                height='350px'>
                 <DailyQuizModal toggleModal={toggleModalDailyQuiz} />
             </BaseModal>
 

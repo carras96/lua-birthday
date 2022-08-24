@@ -1,4 +1,5 @@
-import React from 'react';
+import Parallax from 'parallax-js';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import ButtonLayer from '../../components/ButtonLayer';
 import { FadeInLeftDiv, FadeInRightDiv } from '../../styles';
@@ -13,7 +14,7 @@ const CloudImageLeft = styled.img`
 const WrapperBanner = styled.div`
     width: 100%;
     display: grid;
-    grid-template-columns: 5fr 7fr;
+    grid-template-columns: 1fr 1fr;
     position: relative;
     height: 500px;
     padding-bottom: 150px;
@@ -62,30 +63,29 @@ const RightBanner = styled(FadeInRightDiv)`
 `
 
 const ImageLayerRight = styled.img`
-    width: 80%;
+    width: 100%;
     height: auto;
     position: absolute;
     right: 0;
     top: 0;
 
     @media (max-width: 767px) {
-        width: 90%;
-        left: 5%;
-        right: 5%;
+        width: 100%;
     }
 `
 
 const ImageRight = styled.img`
-    width: 85%;
+    width: 100%;
     height: auto;
     position: absolute;
-    top: 35px;
-    right: 20px;
+    top: 45px !important;
+    left: unset !important;
+    right: 20px !important;
 
     @media (max-width: 767px) {
-        width: 80%;
-        right: 10%;
-        left: 10%;
+        width: 90%;
+        right: 5% !important;
+        left: 5% !important;
     }
 `
 
@@ -136,6 +136,11 @@ const Btn = styled.div`
 `
 
 const HeaderBanner = ({onClickAction}) => {
+
+    const refImage = useRef(null);
+    useEffect(() => {
+        new Parallax(refImage.current);
+    }, [refImage])
     return <WrapperHeader>
         <CloudImage src='assets/images/cloud2.png'/>
         <CloudImageLeft src='assets/images/cloud4.png'/>
@@ -156,9 +161,9 @@ const HeaderBanner = ({onClickAction}) => {
                     <SecondLineImg src='assets/images/line-2.png' />
                 </WrapperBtn>
             </LeftBanner>
-            <RightBanner>
-                <ImageLayerRight src='assets/images/back-layer-img-header-home.png' />
-                <ImageRight src='assets/images/img-header-daily-hunt.png' />
+            <RightBanner ref={refImage}>
+                <ImageLayerRight src='assets/images/back-layer-img-header-home.png' data-depth="0.3"/>
+                <ImageRight src='assets/images/img-header-daily-hunt.png' data-depth="0.6"/>
             </RightBanner>
         </WrapperBanner>
     </WrapperHeader>

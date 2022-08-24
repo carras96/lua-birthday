@@ -11,7 +11,7 @@ const WrapperBanner = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     display: grid;
-    grid-template-columns: 5fr 5fr;
+    grid-template-columns: 1fr 1fr;
 
     
     @media (max-width: 767px) {
@@ -64,7 +64,7 @@ const RightBanner = styled(FadeInRightDiv)`
 
 const WrappRight = styled.div`
     position: relative;
-    width: 80%;
+    width: 95%;
 `
 
 const ImageLayerRight = styled.img`
@@ -124,12 +124,14 @@ const TextNumber = styled(Desc)`
     color: #00D1AC;
     margin-bottom: 0;
     font-size: 1.6rem;
+    font-weight: bold;
 `
 
 const TextLua = styled(Desc)`
     color: #FABC46;
     margin-bottom: 0;
     font-size: 1.6rem;
+    font-weight: bold;
 `
 
 const WrapperDesc = styled.div`

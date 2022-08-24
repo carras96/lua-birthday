@@ -18,7 +18,7 @@ const DailyCheckInModal = ({ toggleModal }) => {
         <form onSubmit={handleSubmit(onSubmit)}>
             <InputTitle>Your wallet address</InputTitle>
             <InputModal placeholder='0x...' {...register("checkIn", { required: true })} />
-            <ButtonModal type="submit" disabled={errors.checkIn}>Save <ArrRight src='assets/images/arr-right.png' /></ButtonModal>
+            <ButtonModal type="submit" disabled={errors.checkIn || !watch("checkIn")}>Save <ArrRight src='assets/images/arr-right.png' /></ButtonModal>
         </form>
     </Wrapper>
 }

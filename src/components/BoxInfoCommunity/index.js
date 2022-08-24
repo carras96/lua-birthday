@@ -35,17 +35,17 @@ const Number = styled.p`
 const Icon = styled.div`
     width: 64px;
     height: 64px;
-    background-image: url(${props => props.src});
+    background-image: url(${props => props.srcHover});
     background-size: contain;
     background-repeat: no-repeat;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     background-position: center;
 
-    &:hover {
-        background-image: url(${props => props.srcHover});
-        transition: all 0.3s ease-in-out;
-    }
+    // &:hover {
+    //     background-image: url(${props => props.srcHover});
+    //     transition: all 0.3s ease-in-out;
+    // }
 `
 
 const TextWrap = styled.div``
