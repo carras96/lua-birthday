@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { clickToCopy } from '../../../utils/clickToCopy';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -76,6 +77,13 @@ const Col3 = styled.div`
 const CopyIcon = styled.img`
     margin-left: 8px;
     cursor: pointer;
+
+    transition : all 0.5s ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+        transition : all 0.5s ease-in-out;
+    }
 `
 
 const TitleModal = styled.p`
@@ -182,7 +190,7 @@ const FAKE_DATA = [
 ]
 
 
-const ResultModal = ({toggleModal}) => {
+const ResultModal = ({ toggleModal }) => {
     return <Wrapper>
         <TitleModal>Winner list</TitleModal>
         <Header>
@@ -194,7 +202,7 @@ const ResultModal = ({toggleModal}) => {
             {
                 FAKE_DATA.map((data, index) => <Row key={index}>
                     <Col1><RowText>{data.date}</RowText></Col1>
-                    <Col2><RowText>{data.address}</RowText> <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} /></Col2>
+                    <Col2><RowText>{data.address}</RowText> <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy(data.address)} /></Col2>
                     <Col3><RowText>{data.reward}</RowText></Col3>
                 </Row>)
             }

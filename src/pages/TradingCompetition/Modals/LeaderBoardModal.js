@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { clickToCopy } from '../../../utils/clickToCopy';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -62,7 +63,7 @@ const RowText = styled.p`
 
 const Col1 = styled.div`
     width: 15%;
-`   
+`
 
 const Col2 = styled.div`
     width: 60%;
@@ -76,6 +77,13 @@ const Col3 = styled.div`
 const CopyIcon = styled.img`
     margin-left: 8px;
     cursor: pointer;
+
+    transition : all 0.5s ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+        transition : all 0.5s ease-in-out;
+    }
 `
 
 const FAKE_DATA = [
@@ -161,7 +169,7 @@ const LeaderBoardModal = () => {
             {
                 FAKE_DATA.map((data, index) => <Row key={index}>
                     <Col1><RowText>{index + 1}</RowText></Col1>
-                    <Col2><RowText>{data.address}</RowText> <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`}/></Col2>
+                    <Col2><RowText>{data.address}</RowText> <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy(data.address)} /></Col2>
                     <Col3><RowText>{data.tradingVol}</RowText></Col3>
                 </Row>)
             }

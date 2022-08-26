@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
+import { clickToCopy } from '../../utils/clickToCopy';
 
 const WrapperPosCard = styled.div`
     width: 100%;
@@ -91,6 +92,12 @@ const AddressText = styled.p`
 const CopyIcon = styled.img`
     margin-left: 8px;
     cursor: pointer;
+    transition : all 0.5s ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+        transition : all 0.5s ease-in-out;
+    }
 `
 
 const WrappAddress = styled.div`
@@ -137,7 +144,7 @@ const PosCard = ({pos}) => {
                 <VolumeText pos={pos}>$15,000</VolumeText>
                 <WrappAddress>
                     <AddressText pos={pos}>0xecg55EF0mog...963a</AddressText>
-                    <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`}/>
+                    <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy('0xecg55EF0mog...963a')}/>
                 </WrappAddress>
             </WrapperText>
         </MainCard>
