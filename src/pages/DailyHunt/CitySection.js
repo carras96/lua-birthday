@@ -8,6 +8,7 @@ import DailyQuizModal from './Modals/DailyQuizModal';
 import ResultModal from './Modals/ResultModal';
 import SocialTasksModal from './Modals/SocialTasksModal';
 import StakeModal from './Modals/StakeModal';
+import SuccessModal from './Modals/SuccessModal';
 import SwapModal from './Modals/SwapModal';
 
 const Wrapper = styled.div`
@@ -161,6 +162,7 @@ const CitySection = () => {
     const [isOpenSocialTasks, setIsOpenSocialTasks] = useState(false);
     const [isOpenDailyQuiz, setIsOpenDailyQuiz] = useState(false);
     const [isOpenResult, setIsOpenResult] = useState(false);
+    const [isOpenSuccess, setIsOpenSuccess] = useState(false);
 
     const [opacity, setOpacity] = useState(0);
 
@@ -192,6 +194,11 @@ const CitySection = () => {
     const toggleModalResult = (e) => {
         setOpacity(0);
         setIsOpenResult(!isOpenResult);
+    }
+
+    const toggleModalSuccess = (e) => {
+        setOpacity(0);
+        setIsOpenSuccess(!isOpenSuccess);
     }
 
     const afterOpen = () => {
@@ -228,6 +235,10 @@ const CitySection = () => {
     }, [sessionStorage.getItem('stake')])
 
 
+    const onClickSubmitAnswer = () => {
+        toggleModalSuccess();
+    }
+
 
     return <Wrapper>
         <WrapperCity>
@@ -235,7 +246,7 @@ const CitySection = () => {
                 <CityImage src='assets/images/city.png' />
                 {
                     isDoneSwap && isDoneCheckIn && isDoneQuiz && isDoneStake && isDoneTasks && <WrappSubmitButton>
-                        <SubmitAnswerButton>
+                        <SubmitAnswerButton onClick={onClickSubmitAnswer}>
                             Submit your answers <RoketImg src='assets/images/yellow-rocket.png' />
                         </SubmitAnswerButton>
                     </WrappSubmitButton>
@@ -295,7 +306,7 @@ const CitySection = () => {
                 isOpen={isOpenSwap}
                 toggleModal={toggleModalSwap}
                 width='380px'
-                height='460px'>
+                height='420px'>
                 <SwapModal toggleModal={toggleModalSwap} />
             </BaseModal>
 
@@ -306,7 +317,7 @@ const CitySection = () => {
                 isOpen={isOpenStake}
                 toggleModal={toggleModalStake}
                 width='380px'
-                height='460px'>
+                height='420px'>
                 <StakeModal toggleModal={toggleModalStake} />
             </BaseModal>
 
@@ -317,7 +328,7 @@ const CitySection = () => {
                 isOpen={isOpenDailyCheckIn}
                 toggleModal={toggleModalDailyCheckIn}
                 width='380px'
-                height='220px'>
+                height='200px'>
                 <DailyCheckInModal toggleModal={toggleModalDailyCheckIn} />
             </BaseModal>
 
@@ -328,7 +339,7 @@ const CitySection = () => {
                 isOpen={isOpenSocialTasks}
                 toggleModal={toggleModalSocialTasks}
                 width='380px'
-                height='435px'>
+                height='500px'>
                 <SocialTasksModal toggleModal={toggleModalSocialTasks} />
             </BaseModal>
 
@@ -339,7 +350,7 @@ const CitySection = () => {
                 isOpen={isOpenDailyQuiz}
                 toggleModal={toggleModalDailyQuiz}
                 width='380px'
-                height='350px'>
+                height='310px'>
                 <DailyQuizModal toggleModal={toggleModalDailyQuiz} />
             </BaseModal>
 
@@ -352,6 +363,17 @@ const CitySection = () => {
                 width='700px'
                 height='435px'>
                 <ResultModal toggleModal={toggleModalResult} />
+            </BaseModal>
+
+            <BaseModal
+                afterOpen={afterOpen}
+                beforeClose={beforeClose}
+                opacity={opacity}
+                isOpen={isOpenSuccess}
+                toggleModal={toggleModalSuccess}
+                width='380px'
+                height='150px'>
+                <SuccessModal toggleModal={toggleModalSuccess} />
             </BaseModal>
         </WrapperCity>
     </Wrapper>

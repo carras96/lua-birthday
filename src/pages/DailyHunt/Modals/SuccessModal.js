@@ -1,12 +1,17 @@
 import React from 'react';
-import { ArrRight, ButtonModal, GuideDetail, InputModal, InputTitle, ModalDesc, ModalTitle, TextGreen, TextGuide, TitleGuide, Wrapper } from './styles';
+import { ArrRight, ButtonModal, GuideDetail, InputModal, InputTitle, ModalDescSuccess, ModalTitle, TextGreen, TextGuide, TitleGuide, Wrapper } from './styles';
 
 const SuccessModal = ({toggleModal}) => {
+    const onClickDone = () => {
+        sessionStorage.clear();
+        toggleModal();
+    }
+
     return <Wrapper>
         <ModalTitle>You’re almost done!</ModalTitle>
-        <ModalDesc>Answers recorded!</ModalDesc>
-        <ModalDesc>Are you sure you want to submit all these answers? </ModalDesc>
-        <ButtonModal>DONE!</ButtonModal>
+        <ModalDescSuccess>Answers recorded!</ModalDescSuccess>
+        <ModalDescSuccess>Are you sure you want to submit all these answers? </ModalDescSuccess>
+        <ButtonModal onClick={onClickDone}>DONE!</ButtonModal>
     </Wrapper>
 }
 

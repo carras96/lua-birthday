@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { ArrRight, ButtonModal, GuideDetail, InputModal, InputTitle, ModalDesc, ModalTitle, TextGreen, TextGuide, TitleGuide, Wrapper } from './styles';
+import { ArrRight, ButtonModal, ErrorMessage, ErrorMessageBlank, GuideDetail, InputModal, InputTitle, ModalDesc, ModalTitle, TextGreen, TextGuide, TitleGuide, Wrapper } from './styles';
 
 const StakeModal = ({ toggleModal }) => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm({
@@ -16,7 +16,17 @@ const StakeModal = ({ toggleModal }) => {
         <ModalDesc>Stake at least 1,000 LUA in LuaSafe to be eligible</ModalDesc>
         <form onSubmit={handleSubmit(onSubmit)}>
             <InputTitle>Your Stake transaction</InputTitle>
-            <InputModal placeholder='0x...' {...register("stake", { required: true })} />
+            <InputModal placeholder='0x...' {...register("stake", { required: true, pattern: /^0x([A-Fa-f0-9]{64})$/ })} />
+            {
+                errors.stake ? <ErrorMessage>
+                    {
+                        errors.stake.type === 'required' && '*Required field.'
+                    }
+                    {
+                        errors.stake.type === 'pattern' && '*Incorrect format.'
+                    }
+                </ErrorMessage> : <ErrorMessageBlank/>
+            }
             <ButtonModal type="submit" disabled={errors.stake || !watch("stake")}>Save <ArrRight src='assets/images/arr-right.png' /></ButtonModal>
         </form>
         <TitleGuide>How to do it?</TitleGuide>

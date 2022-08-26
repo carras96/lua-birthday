@@ -13,7 +13,7 @@ const FAKE_ANSWER = [
     },
     {
         option: 'C',
-        answer: 'Avalanche - Avax'
+        answer: 'Avalanche (Avax)'
     }
 ]
 

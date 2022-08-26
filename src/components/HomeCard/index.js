@@ -74,6 +74,7 @@ const CardTitle = styled.p`
     text-align: center;
     color: rgba(255, 255, 255, 0.87);
     margin-bottom: 8px;
+    margin-top: 15px;
 `
 
 const HomeCard = ({ imgSrc, title, desc, onClickNavigate }) => {

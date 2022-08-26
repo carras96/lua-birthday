@@ -118,7 +118,7 @@ const WrapperCake = styled.div`
     top: -40px;
      &:before {
         content: '';
-        box-shadow: 0 0 200px 50px #fff177;
+        box-shadow: 0 0 200px 40px #fff177;
         border-radius: 50%;
         width: 0px;
         height: 0px;
@@ -161,7 +161,7 @@ const DAYS_EVENTS = [
                     content: '5,000 LUA for 5 winners',
                     detail: {
                         title: 'Cross-word minigame',
-                        content: 'Join the mind-blowing game to earn some lucky $LUA rewards! It would be fun! \n5000 LUA for 5 winners',
+                        content: 'Join the mind-blowing game to earn some lucky $LUA rewards! It would be fun! \n5,000 LUA for 5 winners',
                         time: '1 - 4 Sep, 2022'
                     },
                     colStart: 2,
@@ -186,7 +186,7 @@ const DAYS_EVENTS = [
                     rowEnd: 3,
                     detail: {
                         title: 'KOL challenge',
-                        content: 'What crypto KOL would you invite to our party? Tag them and share some attractive rewards! \n10000 LUA to win!',
+                        content: 'What crypto KOL would you invite to our party? Tag them and share some attractive rewards! \n10,000 LUA to win!',
                         time: '5 - 10 Sep, 2022'
                     },
                 }
@@ -208,7 +208,7 @@ const DAYS_EVENTS = [
                     isFullWidth: true,
                     detail: {
                         title: 'LuaStarter Learn-and-Earn',
-                        content: 'Learn about #LuaStarter IDO launchpad & join the prize-winning quiz: 5000 LUA prize pool!',
+                        content: 'Learn about #LuaStarter IDO launchpad & join the prize-winning quiz: 5,000 LUA prize pool!',
                         time: '12 - 15 Sep, 2022'
                     },
                 }

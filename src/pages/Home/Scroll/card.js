@@ -35,6 +35,7 @@ const NodeTime = styled.p`
     line-height: 22px;
     text-align: center;
     color: ${(props) => props.isActive ? '#FFF177' : 'rgba(255, 255, 255, 0.37)'};
+    
 `
 
 const NodeText = styled.p`
@@ -43,7 +44,8 @@ const NodeText = styled.p`
     font-size: 1.1rem;
     line-height: 21px;
     text-align: center;
-    color: rgba(255, 255, 255, 0.37);
+    color: ${(props) => props.isActive ? 'rgba(255, 255, 255, 0.87)' : 'rgba(255, 255, 255, 0.37)'};
+    padding: 0 8px;
 `
 
 export function Card({
@@ -62,7 +64,7 @@ export function Card({
       <BoxTimeNode onClick={() => onClick()} isActive={selected}>
           <NodeTime isActive={selected}>{node.time}</NodeTime>
           <TimeNode isActive={selected} />
-          <NodeText>{node.note}</NodeText>
+          <NodeText isActive={selected}>{node.note}</NodeText>
       </BoxTimeNode>
   )
 }

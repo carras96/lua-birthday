@@ -150,7 +150,7 @@ const Community = () => {
         </Header>
         <CommunityCard>
             <BoxInfoCommunity title='Members' number='15K+' icon='assets/images/members-icon.png' iconHover='assets/images/members-icon-hover.png'/>
-            <BoxInfoCommunity title='Followers' number='36.5K+' icon='assets/images/followers-icon.png' iconHover='assets/images/followers-icon-hover.png'/>
+            <BoxInfoCommunity title='Followers' number='~37K+' icon='assets/images/followers-icon.png' iconHover='assets/images/followers-icon-hover.png'/>
         </CommunityCard>
         <Main>
             <Row>

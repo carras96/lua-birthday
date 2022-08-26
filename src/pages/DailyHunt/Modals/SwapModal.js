@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { ArrRight, ButtonModal, GuideDetail, InputModal, InputTitle, ModalDesc, ModalTitle, TextGreen, TextGuide, TitleGuide, Wrapper } from './styles';
+import { ArrRight, ButtonModal, ErrorMessage, ErrorMessageBlank, GuideDetail, InputModal, InputTitle, ModalDesc, ModalTitle, TextGreen, TextGuide, TitleGuide, Wrapper } from './styles';
 
 const SwapModal = ({ toggleModal }) => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm({
@@ -12,13 +12,26 @@ const SwapModal = ({ toggleModal }) => {
         toggleModal();
     };
 
+    console.log(errors)
+
     return <Wrapper>
         <ModalTitle>Swap</ModalTitle>
         <ModalDesc>Swap at least 15,000 LUA to be eligible</ModalDesc>
         <form onSubmit={handleSubmit(onSubmit)}>
             <InputTitle>Your Swap transaction</InputTitle>
-            <InputModal placeholder='0x...' {...register("swap", { required: true })} />
-            <ButtonModal type="submit" disabled={errors.swap || !watch("swap")}>Save <ArrRight src='assets/images/arr-right.png' /></ButtonModal>
+            <InputModal placeholder='0x...' {...register("swap", { required: true, pattern: /^0x([A-Fa-f0-9]{64})$/ })} />
+            {
+                errors.swap ? <ErrorMessage>
+                    {
+                        errors.swap.type === 'required' && '*Required field.'
+                    }
+                    {
+                        errors.swap.type === 'pattern' && '*Incorrect format.'
+                    }
+                </ErrorMessage> : <ErrorMessageBlank/>
+            }
+            <ButtonModal type="submit" disabled={errors.swap  || !watch("swap")}>Save <ArrRight src='assets/images/arr-right.png' /></ButtonModal>
+            
         </form>
         <TitleGuide>How to do it?</TitleGuide>
         <GuideDetail>

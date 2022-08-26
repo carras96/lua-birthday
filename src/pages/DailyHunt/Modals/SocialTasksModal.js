@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { ArrRight, ButtonModal, InputModal, InputTitle, ModalDesc, ModalTitle, TextGreenItalic, Wrapper, WrapperInput } from './styles';
+import { ArrRight, ButtonModal, ErrorMessage, ErrorMessageBlank, InputModal, InputTitle, ModalDesc, ModalTitle, TextGreenItalic, Wrapper, WrapperInput } from './styles';
 
 const SocialTasksModal = ({ toggleModal }) => {
 
@@ -26,16 +26,43 @@ const SocialTasksModal = ({ toggleModal }) => {
             <WrapperInput>
                 <InputTitle>Full name</InputTitle>
                 <InputModal placeholder='Your full name' {...register("name", { required: true })} />
+                {
+                    errors.name ? <ErrorMessage>
+                        {
+                            errors.name.type === 'required' && '*Required field.'
+                        }
+                    </ErrorMessage> : <ErrorMessageBlank/>
+                }
             </WrapperInput>
 
             <WrapperInput>
                 <InputTitle>Your Twitter account </InputTitle>
-                <InputModal placeholder='@abc' {...register("accTw", { required: true })} />
+                <InputModal placeholder='@abc' {...register("accTw", { required: true, pattern: /^@[A-Za-z0-9_]{4,15}$/ })} />
+                {
+                    errors.accTw ? <ErrorMessage>
+                        {
+                            errors.accTw.type === 'required' && '*Required field.'
+                        }
+                        {
+                            errors.accTw.type === 'pattern' && '*Incorrect format.'
+                        }
+                    </ErrorMessage> : <ErrorMessageBlank/>
+                }
             </WrapperInput>
 
             <WrapperInput>
                 <InputTitle>Link to your Quote tweet</InputTitle>
-                <InputModal placeholder='Your link' {...register("linkTweet", { required: true })} />
+                <InputModal placeholder='Your link' {...register("linkTweet", { required: true, pattern: /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ })} />
+                {
+                    errors.linkTweet ? <ErrorMessage>
+                        {
+                            errors.linkTweet.type === 'required' && '*Required field.'
+                        }
+                        {
+                            errors.linkTweet.type === 'pattern' && '*Incorrect format.'
+                        }
+                    </ErrorMessage> : <ErrorMessageBlank/>
+                }
             </WrapperInput>
 
 

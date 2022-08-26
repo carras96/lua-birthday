@@ -153,14 +153,14 @@ const FAKE_DATA = [
 const LeaderBoardModal = () => {
     return <Wrapper>
         <Header>
-            <Col1><HeaderText>Name</HeaderText></Col1>
+            <Col1><HeaderText>Rank</HeaderText></Col1>
             <Col2><HeaderText>Address</HeaderText></Col2>
             <Col3><HeaderText>Trading Vol</HeaderText></Col3>
         </Header>
         <Main>
             {
                 FAKE_DATA.map((data, index) => <Row key={index}>
-                    <Col1><RowText>{index}</RowText></Col1>
+                    <Col1><RowText>{index + 1}</RowText></Col1>
                     <Col2><RowText>{data.address}</RowText> <CopyIcon src='assets/images/copy-icon.png'/></Col2>
                     <Col3><RowText>{data.tradingVol}</RowText></Col3>
                 </Row>)

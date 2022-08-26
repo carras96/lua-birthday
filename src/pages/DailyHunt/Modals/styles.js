@@ -23,6 +23,10 @@ export const ModalDesc = styled.p`
     margin-bottom: 32px;
 `
 
+export const ModalDescSuccess = styled(ModalDesc)`
+    margin-bottom: 8px;
+`
+
 export const InputTitle = styled.p`
     font-style: normal;
     font-weight: 500;
@@ -179,4 +183,18 @@ export const WrappAnswer = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 24px;
+`
+
+export const ErrorMessage = styled.p`
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #D01C1C;
+    margin-top: 10px;
+`
+
+export const ErrorMessageBlank = styled.div`
+    height: 14px;
+    margin-top: 10px;
 `
