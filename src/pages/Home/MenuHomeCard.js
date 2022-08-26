@@ -40,36 +40,39 @@ const Card = styled.div`
     margin: 10px;
 `
 
-const LIST_CARD = [{
-    imgSrc: `${process.env.PUBLIC_URL}/assets/images/image21.png`,
-    title: 'Trading competition',
-    desc: 'Trade to share a reward pool of 120,000 $LUA',
-    link: '/trading-competition',
-    date: 'Start on 19 Sep, 2022'
-},
-{
-    imgSrc: `${process.env.PUBLIC_URL}/assets/images/image22.png`,
-    title: 'Daily hunt',
-    desc: 'Conquer treasure city to earn a daily attractive bonus',
-    link: '/daily-hunt',
-    date: 'Start on 22 Sep, 2022'
-},
-{
-    imgSrc: `${process.env.PUBLIC_URL}/assets/images/image23.png`,
-    title: 'Gleam mission',
-    desc: 'Complete the tasks to get decent rewards',
-    link: 'https://reactrouter.com/docs/en/v6/hooks/use-navigate',
-    isOpenExtraLink: true,
-    date: 'Start on 15 Sep, 2022'
-},
-{
-    imgSrc: `${process.env.PUBLIC_URL}/assets/images/image24.png`,
-    title: '$LUA social contest',
-    desc: 'Join  mini game series and accept our challenges to win ',
-    link: 'https://reactrouter.com/docs/en/v6/hooks/use-navigate',
-    isOpenExtraLink: true,
-    date: ''
-}]
+const LIST_CARD = [
+    {
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/image24.png`,
+        title: '$LUA social contest',
+        desc: 'Join  mini game series and accept our challenges to win ',
+        link: 'https://reactrouter.com/docs/en/v6/hooks/use-navigate',
+        isOpenExtraLink: true,
+        date: ''
+    },
+    {
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/image23.png`,
+        title: 'Gleam mission',
+        desc: 'Complete the tasks to get decent rewards',
+        link: 'https://reactrouter.com/docs/en/v6/hooks/use-navigate',
+        isOpenExtraLink: true,
+        date: 'Start on 15 Sep, 2022'
+    },
+    {
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/image21.png`,
+        title: 'Trading competition',
+        desc: 'Trade to share a reward pool of 120,000 $LUA',
+        link: '/trading-competition',
+        date: 'Start on 19 Sep, 2022'
+    },
+    {
+        imgSrc: `${process.env.PUBLIC_URL}/assets/images/image22.png`,
+        title: 'Daily hunt',
+        desc: 'Conquer treasure city to earn a daily attractive bonus',
+        link: '/daily-hunt',
+        date: 'Start on 22 Sep, 2022'
+    },
+
+]
 
 const MenuHomeCard = () => {
     const navigate = useNavigate();
