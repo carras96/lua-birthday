@@ -118,11 +118,11 @@ const MENU_ITEMS = [
     },
     {
         title: 'Gleam Mission',
-        link: 'https://reactrouter.com/docs/en/v6/hooks/use-navigate',
+        link: '#',
     },
     {
         title: '$LUA Social Contest',
-        link: 'https://reactrouter.com/docs/en/v6/hooks/use-navigate',
+        link: '#',
     },
 ];
 
