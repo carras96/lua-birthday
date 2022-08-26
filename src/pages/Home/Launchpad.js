@@ -154,8 +154,8 @@ const LIST_LAUNCHPAD = [
             height: 40
         },
         {
-            src: 'assets/images/launchpad/lunacrush.png',
-            height: 32
+            src: 'assets/images/launchpad/lunarush.png',
+            height: 60
         },
         {
             src: 'assets/images/launchpad/infinityarena.png',
