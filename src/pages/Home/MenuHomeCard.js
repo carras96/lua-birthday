@@ -12,7 +12,7 @@ const WrapperMenuHomeCard = styled(FadeInBottomDiv)`
     display: flex;
     justify-content: flex-end;
     margin-top: 40px;
-    min-height: 400px;
+    min-height: 450px;
 `
 
 const WrapperCards = styled.div`
@@ -44,27 +44,31 @@ const LIST_CARD = [{
     imgSrc: 'assets/images/image21.png',
     title: 'Trading competition',
     desc: 'Trade to share a reward pool of 120,000 $LUA',
-    link: '/trading-competition'
+    link: '/trading-competition',
+    date: 'Start on 19 Sep, 2022'
 },
 {
     imgSrc: 'assets/images/image22.png',
     title: 'Daily hunt',
     desc: 'Conquer treasure city to earn a daily attractive bonus',
     link: '/daily-hunt',
+    date: 'Start on 22 Sep, 2022'
 },
 {
     imgSrc: 'assets/images/image23.png',
     title: 'Gleam mission',
     desc: 'Complete the tasks to get decent rewards',
     link: 'https://reactrouter.com/docs/en/v6/hooks/use-navigate',
-    isOpenExtraLink: true
+    isOpenExtraLink: true,
+    date: 'Start on 15 Sep, 2022'
 },
 {
     imgSrc: 'assets/images/image24.png',
     title: '$LUA social contest',
     desc: 'Join  mini game series and accept our challenges to win ',
     link: 'https://reactrouter.com/docs/en/v6/hooks/use-navigate',
-    isOpenExtraLink: true
+    isOpenExtraLink: true,
+    date: ''
 }]
 
 const MenuHomeCard = () => {
@@ -79,7 +83,7 @@ const MenuHomeCard = () => {
     return <WrapperMenuHomeCard>
         <WrapperCards>
             {LIST_CARD.map((item, index) => <Card key={index} number={index}>
-                <HomeCard imgSrc={item.imgSrc} title={item.title} desc={item.desc} onClickNavigate={() => onNavigate(item.link, item.isOpenExtraLink)}/>
+                <HomeCard imgSrc={item.imgSrc} title={item.title} desc={item.desc} date={item.date} onClickNavigate={() => onNavigate(item.link, item.isOpenExtraLink)} />
             </Card>)}
         </WrapperCards>
     </WrapperMenuHomeCard>

@@ -64,6 +64,7 @@ const CardDesc = styled.p`
     line-height: 19px;
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 8px;
 `
 
 const CardTitle = styled.p`
@@ -77,13 +78,29 @@ const CardTitle = styled.p`
     margin-top: 15px;
 `
 
-const HomeCard = ({ imgSrc, title, desc, onClickNavigate }) => {
+const CardDate = styled.p`
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #00D1AC;
+`
+
+const WrappCardDate = styled.div`
+    height: 20px;
+`
+
+const HomeCard = ({ imgSrc, title, desc, onClickNavigate, date }) => {
     return <WrapperCard onClick={onClickNavigate}>
         <WrappImg>
             <CardImg src={imgSrc} className='image' />
         </WrappImg>
         <CardTitle className='title'>{title}</CardTitle>
         <CardDesc>{desc}</CardDesc>
+        <WrappCardDate>
+            <CardDate>{date}</CardDate>
+        </WrappCardDate>
     </WrapperCard>
 }
 
