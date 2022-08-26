@@ -5,7 +5,7 @@ import Parallax from 'parallax-js';
 import { FadeInLeftDiv, FadeInRightDiv } from '../../styles';
 
 const WrapperBanner = styled.div`
-    background-image: url('assets/images/bg-header-home.png');
+    background-image: url('${process.env.PUBLIC_URL}/assets/images/bg-header-home.png');
     width: 100%;
     aspect-ratio: 1.9;
     background-size: cover;
@@ -24,7 +24,7 @@ const WrapperHeader = styled.div`
 `
 
 const WrapperFirstLine = styled.div`
-    background-image: url('assets/images/star-bg.png');
+    background-image: url('${process.env.PUBLIC_URL}/assets/images/star-bg.png');
     width: 100%;
     aspect-ratio: 12;
     background-size: cover;
@@ -158,12 +158,12 @@ const HeaderBanner = ({onClickAction}) => {
     }, [refImage])
     return <WrapperHeader>
         <WrapperFirstLine>
-            <FirstLineImg src='assets/images/line-1.png' />
+            <FirstLineImg src={`${process.env.PUBLIC_URL}/assets/images/line-1.png`} />
         </WrapperFirstLine>
         <WrapperBanner>
             <LeftBanner>
                 <LuaLogoWrapper>
-                    <LuaLogoImage src='assets/images/logo.png' />
+                    <LuaLogoImage src={`${process.env.PUBLIC_URL}/assets/images/logo.png`} />
                 </LuaLogoWrapper>
                 <Title>
                     LuaSwap turns 2
@@ -176,15 +176,15 @@ const HeaderBanner = ({onClickAction}) => {
                         I'm in
                     </ButtonLayer>
                     </Btn>
-                    <SecondLineImg src='assets/images/line-2.png' />
+                    <SecondLineImg src={`${process.env.PUBLIC_URL}/assets/images/line-2.png`} />
                 </WrapperBtn>
             </LeftBanner>
             <RightBanner >
                 <WrappRight id="scene" ref={refImage}>
-                    <ImageLayerRight src='assets/images/back-layer-img-header-home.png' data-depth="0.2"/>
-                    <ImageRight src='assets/images/img-header-home.png' data-depth="0.1"/>
-                    <ImageRight src='assets/images/img-header-home1.png' data-depth="0.3"/>
-                    <ImageRight src='assets/images/img-header-home2.png' data-depth="0.6"/>
+                    <ImageLayerRight src={`${process.env.PUBLIC_URL}/assets/images/back-layer-img-header-home.png`} data-depth="0.2"/>
+                    <ImageRight src={`${process.env.PUBLIC_URL}/assets/images/img-header-home.png`} data-depth="0.1"/>
+                    <ImageRight src={`${process.env.PUBLIC_URL}/assets/images/img-header-home1.png`} data-depth="0.3"/>
+                    <ImageRight src={`${process.env.PUBLIC_URL}/assets/images/img-header-home2.png`} data-depth="0.6"/>
                 </WrappRight>
             </RightBanner>
         </WrapperBanner>

@@ -130,59 +130,59 @@ const GradiantText = styled.p`
 
 const LIST_LAUNCHPAD = [
         {
-            src: 'assets/images/launchpad/TomoMasterDAO.png',
+            src: `${process.env.PUBLIC_URL}/assets/images/launchpad/TomoMasterDAO.png`,
             height: 40
         },
         {
-            src: 'assets/images/launchpad/hwl.png',
+            src: `${process.env.PUBLIC_URL}/assets/images/launchpad/hwl.png`,
             height: 64
         },
         {
-            src: 'assets/images/launchpad/p.png',
+            src: `${process.env.PUBLIC_URL}/assets/images/launchpad/p.png`,
             height: 48
         },
         {
-            src: 'assets/images/launchpad/dragonkart.png',
+            src: `${process.env.PUBLIC_URL}/assets/images/launchpad/dragonkart.png`,
             height: 64
         },
         {
-            src: 'assets/images/launchpad/b.png',
+            src: `${process.env.PUBLIC_URL}/assets/images/launchpad/b.png`,
             height: 36
         },
         {
-            src: 'assets/images/launchpad/widi.png',
+            src: `${process.env.PUBLIC_URL}/assets/images/launchpad/widi.png`,
             height: 40
         },
         {
-            src: 'assets/images/launchpad/lunarush.png',
+            src: `${process.env.PUBLIC_URL}/assets/images/launchpad/lunarush.png`,
             height: 60
         },
         {
-            src: 'assets/images/launchpad/infinityarena.png',
+            src: `${process.env.PUBLIC_URL}/assets/images/launchpad/infinityarena.png`,
             height: 52
         },
         {
-            src: 'assets/images/launchpad/mollector.png',
+            src: `${process.env.PUBLIC_URL}/assets/images/launchpad/mollector.png`,
             height: 100
         },
         {
-            src: 'assets/images/launchpad/starbot.png',
+            src: `${process.env.PUBLIC_URL}/assets/images/launchpad/starbot.png`,
             height: 36
         },
         {
-            src: 'assets/images/launchpad/galaxyblizt.png',
+            src: `${process.env.PUBLIC_URL}/assets/images/launchpad/galaxyblizt.png`,
             height: 34
         },
         {
-            src: 'assets/images/launchpad/dark.png',
+            src: `${process.env.PUBLIC_URL}/assets/images/launchpad/dark.png`,
             height: 64
         },
         {
-            src: 'assets/images/launchpad/zoa.png',
+            src: `${process.env.PUBLIC_URL}/assets/images/launchpad/zoa.png`,
             height: 40
         },
         {
-            src: 'assets/images/launchpad/animverse.png',
+            src: `${process.env.PUBLIC_URL}/assets/images/launchpad/animverse.png`,
             height: 64
         }
 ]

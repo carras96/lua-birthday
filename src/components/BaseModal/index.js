@@ -44,7 +44,7 @@ const BaseModal = ({children, isOpen, afterOpen, beforeClose, toggleModal, opaci
         height={height}
     >
         {children}
-        <CloseBtnModal src='assets/images/close-modal-btn.png' onClick={toggleModal}/>
+        <CloseBtnModal src={`${process.env.PUBLIC_URL}/assets/images/close-modal-btn.png`} onClick={toggleModal}/>
     </StyledBaseModal>
 }
 

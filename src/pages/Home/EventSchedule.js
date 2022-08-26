@@ -135,7 +135,7 @@ const DAYS_EVENTS = [
         event: [
             [
                 {
-                    title: '#LuaTurns2 Profile Design Contest',
+                    title: '#LuaTurns2 Avatar Design Contest',
                     content: '5,000 $LUA to win',
                     colStart: 1,
                     colEnd: 2,
@@ -143,9 +143,9 @@ const DAYS_EVENTS = [
                     rowEnd: 2,
                     isFullWidth: true,
                     detail: {
-                        title: '#LuaTurns2 Profile Design Contest',
-                        content: 'Flex your artistic muscles to render the best LuaSwap birthday profile! \nRewards up to 5,000 $LUA!',
-                        time: '25 Aug - 1 Sep, 2022'
+                        title: '#LuaTurns2 Avatar Design Contest',
+                        content: 'Flex your artistic muscles to render the best LuaSwap birthday avatar! \nRewards up to 5,000 $LUA!',
+                        time: '25 - 31 Aug, 2022'
                     },
                 }
             ]
@@ -329,7 +329,7 @@ const EventSchedule = () => {
                             <TextHeader isShowBorder={!!time.day}>
                                 {
                                     time.isBirthDay && <WrapperCake>
-                                        <CakeImg src='assets/images/cake-icon.png' />
+                                        <CakeImg src={`${process.env.PUBLIC_URL}/assets/images/cake-icon.png`} />
                                     </WrapperCake>
                                 }
                                 <MonthText>{time.month}</MonthText>

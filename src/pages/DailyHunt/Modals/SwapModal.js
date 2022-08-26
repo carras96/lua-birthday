@@ -30,7 +30,7 @@ const SwapModal = ({ toggleModal }) => {
                     }
                 </ErrorMessage> : <ErrorMessageBlank/>
             }
-            <ButtonModal type="submit" disabled={errors.swap  || !watch("swap")}>Save <ArrRight src='assets/images/arr-right.png' /></ButtonModal>
+            <ButtonModal type="submit" disabled={errors.swap  || !watch("swap")}>Save <ArrRight src={`${process.env.PUBLIC_URL}/assets/images/arr-right.png`} /></ButtonModal>
             
         </form>
         <TitleGuide>How to do it?</TitleGuide>

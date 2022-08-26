@@ -161,7 +161,7 @@ const LeaderBoardModal = () => {
             {
                 FAKE_DATA.map((data, index) => <Row key={index}>
                     <Col1><RowText>{index + 1}</RowText></Col1>
-                    <Col2><RowText>{data.address}</RowText> <CopyIcon src='assets/images/copy-icon.png'/></Col2>
+                    <Col2><RowText>{data.address}</RowText> <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`}/></Col2>
                     <Col3><RowText>{data.tradingVol}</RowText></Col3>
                 </Row>)
             }

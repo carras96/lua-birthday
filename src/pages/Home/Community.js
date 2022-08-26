@@ -114,49 +114,51 @@ const Column = styled.div`
 `
 
 const LIST_COMMUNITY = [
-        {
-            src: 'assets/images/community/photo1.png'
-        },
-        {
-            src: 'assets/images/community/photo5.png'
-        },
-        {
-            src: 'assets/images/community/photo2.png'
-        },
-        {
-            src: 'assets/images/community/photo6.png'
-        },
-        {
-            src: 'assets/images/community/photo3.png'
-        },
-        {
-            src: 'assets/images/community/photo7.png'
-        },
-        {
-            src: 'assets/images/community/photo4.png'
-        },
-        {
-            src: 'assets/images/community/photo8.png'
-        },
+    {
+        src: `${process.env.PUBLIC_URL}/assets/images/community/photo1.png`
+    },
+    {
+        src: `${process.env.PUBLIC_URL}/assets/images/community/photo5.png`
+    },
+    {
+        src: `${process.env.PUBLIC_URL}/assets/images/community/photo2.png`
+    },
+    {
+        src: `${process.env.PUBLIC_URL}/assets/images/community/photo6.png`
+    },
+    {
+        src: `${process.env.PUBLIC_URL}/assets/images/community/photo3.png`
+    },
+    {
+        src: `${process.env.PUBLIC_URL}/assets/images/community/photo7.png`
+    },
+    {
+        src: `${process.env.PUBLIC_URL}/assets/images/community/photo4.png`
+    },
+    {
+        src: `${process.env.PUBLIC_URL}/assets/images/community/photo8.png`
+    },
 ]
 
 const Community = () => {
     return <WrapperCommunity>
-        <CloudImage src='assets/images/cloud.png'/>
+        <CloudImage src={`${process.env.PUBLIC_URL}/assets/images/cloud.png`} />
         <Header>
             <Title>
                 <TitleYellow>LuaSwap</TitleYellow> <TitleGreen>Community </TitleGreen>
             </Title>
         </Header>
         <CommunityCard>
-            <BoxInfoCommunity title='Members' number='15K+' icon='assets/images/members-icon.png' iconHover='assets/images/members-icon-hover.png'/>
-            <BoxInfoCommunity title='Followers' number='~37K+' icon='assets/images/followers-icon.png' iconHover='assets/images/followers-icon-hover.png'/>
+            <BoxInfoCommunity title='Members' number='15K+' icon={`${process.env.PUBLIC_URL}/assets/images/members-icon.png`}
+                iconHover={`${process.env.PUBLIC_URL}/assets/images/members-icon-hover.png`} />
+            <BoxInfoCommunity title='Followers' number='~37K+' icon={`${process.env.PUBLIC_URL}/assets/images/followers-icon.png`}
+                iconHover={`${process.env.PUBLIC_URL}/assets/images/followers-icon-hover.png`} />
         </CommunityCard>
         <Main>
             <Row>
-            {
-                LIST_COMMUNITY.map((item, index) => <WrappImage key={item.src}><Image src={item.src} /></WrappImage>)
-            }
+                {
+                    LIST_COMMUNITY.map((item, index) => <WrappImage key={item.src}><Image src={item.src} /></WrappImage>)
+                }
             </Row>
         </Main>
     </WrapperCommunity>

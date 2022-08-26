@@ -89,12 +89,6 @@ const WrapperTimeLine = styled.div`
 `
 
 const TimeLine = styled.div`
-    // background-image: url('assets/images/line-time.png');
-    // background-size: contain;
-    // background-repeat: no-repeat;
-    // background-position: center;
-    
-    // display: flex;
     width: auto;
     height: 100%;
     position: relative;
@@ -201,7 +195,7 @@ const TIME_LINE = [
 
 const Milestones = () => {
     return <WrapperMilestones>
-        <LineImage src='assets/images/line-3.png' />
+        <LineImage src={`${process.env.PUBLIC_URL}/assets/images/line-3.png`} />
         <Header>
             <Title>
                 <TitleYellow>LuaSwap</TitleYellow> <TitleGreen>Milestones</TitleGreen>
@@ -219,7 +213,7 @@ const Milestones = () => {
 
         <WrapperTimeLine>
             <TimeLine>
-                <TimeLineImage src='assets/images/line-time.png' />
+                <TimeLineImage src={`${process.env.PUBLIC_URL}/assets/images/line-time.png`} />
                 <Scroll items={TIME_LINE} />
             </TimeLine>
         </WrapperTimeLine>

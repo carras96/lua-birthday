@@ -5,7 +5,7 @@ import HomeCard from '../../components/HomeCard';
 import { FadeInBottomDiv } from '../../styles';
 
 const WrapperMenuHomeCard = styled(FadeInBottomDiv)`
-    background-image: url('assets/images/bg-line.png');
+    background-image: url('${process.env.PUBLIC_URL}/assets/images/bg-line.png');
     width: 100%;
     background-size: contain;
     background-repeat: no-repeat;
@@ -41,21 +41,21 @@ const Card = styled.div`
 `
 
 const LIST_CARD = [{
-    imgSrc: 'assets/images/image21.png',
+    imgSrc: `${process.env.PUBLIC_URL}/assets/images/image21.png`,
     title: 'Trading competition',
     desc: 'Trade to share a reward pool of 120,000 $LUA',
     link: '/trading-competition',
     date: 'Start on 19 Sep, 2022'
 },
 {
-    imgSrc: 'assets/images/image22.png',
+    imgSrc: `${process.env.PUBLIC_URL}/assets/images/image22.png`,
     title: 'Daily hunt',
     desc: 'Conquer treasure city to earn a daily attractive bonus',
     link: '/daily-hunt',
     date: 'Start on 22 Sep, 2022'
 },
 {
-    imgSrc: 'assets/images/image23.png',
+    imgSrc: `${process.env.PUBLIC_URL}/assets/images/image23.png`,
     title: 'Gleam mission',
     desc: 'Complete the tasks to get decent rewards',
     link: 'https://reactrouter.com/docs/en/v6/hooks/use-navigate',
@@ -63,7 +63,7 @@ const LIST_CARD = [{
     date: 'Start on 15 Sep, 2022'
 },
 {
-    imgSrc: 'assets/images/image24.png',
+    imgSrc: `${process.env.PUBLIC_URL}/assets/images/image24.png`,
     title: '$LUA social contest',
     desc: 'Join  mini game series and accept our challenges to win ',
     link: 'https://reactrouter.com/docs/en/v6/hooks/use-navigate',

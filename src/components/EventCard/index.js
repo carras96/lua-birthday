@@ -47,7 +47,7 @@ const Card = styled.div`
         display: ${props => props.isYellowEvent ? 'block' : 'none' };
         width: 24px;
         height: 24px;
-        background-image: url('assets/images/rocket-icon.png');
+        background-image: url('${process.env.PUBLIC_URL}/assets/images/rocket-icon.png');
         background-size: cover;
         background-repeat: no-repeat;
         left: -12px;
@@ -110,6 +110,7 @@ const TooltipContent = styled.p`
     line-height: 19px;
     color: rgba(255, 255, 255, 0.6);
     margin: 8px 0px;
+    white-space: pre-line;
 `
 
 const TooltipTime = styled.p`

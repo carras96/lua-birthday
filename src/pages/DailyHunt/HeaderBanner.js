@@ -142,8 +142,8 @@ const HeaderBanner = ({onClickAction}) => {
         new Parallax(refImage.current);
     }, [refImage])
     return <WrapperHeader>
-        <CloudImage src='assets/images/cloud2.png'/>
-        <CloudImageLeft src='assets/images/cloud4.png'/>
+        <CloudImage src={`${process.env.PUBLIC_URL}/assets/images/cloud2.png`}/>
+        <CloudImageLeft src={`${process.env.PUBLIC_URL}/assets/images/cloud4.png`}/>
         <WrapperBanner>
             <LeftBanner>
                 <Title>
@@ -158,12 +158,12 @@ const HeaderBanner = ({onClickAction}) => {
                             Join Now
                         </ButtonLayer>
                     </Btn>
-                    <SecondLineImg src='assets/images/line-2.png' />
+                    <SecondLineImg src={`${process.env.PUBLIC_URL}/assets/images/line-2.png`} />
                 </WrapperBtn>
             </LeftBanner>
             <RightBanner ref={refImage}>
-                <ImageLayerRight src='assets/images/back-layer-img-header-home.png' data-depth="0.3"/>
-                <ImageRight src='assets/images/img-header-daily-hunt.png' data-depth="0.6"/>
+                <ImageLayerRight src={`${process.env.PUBLIC_URL}/assets/images/back-layer-img-header-home.png`} data-depth="0.3"/>
+                <ImageRight src={`${process.env.PUBLIC_URL}/assets/images/img-header-daily-hunt.png`} data-depth="0.6"/>
             </RightBanner>
         </WrapperBanner>
     </WrapperHeader>

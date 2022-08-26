@@ -8,7 +8,7 @@ const Img = styled.img`
 `
 
 const AdsImage = () => {
-return <Img src='assets/images/image-ads.png'/>
+return <Img src={`${process.env.PUBLIC_URL}/assets/images/image-ads.png`}/>
 }
 
 export default AdsImage;

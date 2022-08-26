@@ -149,7 +149,7 @@ const LeaderBoard = () => {
         });
     }
     return <WrapperLeaderBoard>
-        <CloudImage src='assets/images/cloud.png' />
+        <CloudImage src={`${process.env.PUBLIC_URL}/assets/images/cloud.png`} />
         <Header>
             <GradiantText>Leader Board</GradiantText>
             <Title>

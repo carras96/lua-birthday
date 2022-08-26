@@ -28,7 +28,7 @@ const DailyCheckInModal = ({ toggleModal }) => {
                     }
                 </ErrorMessage> : <ErrorMessageBlank/>
             }
-            <ButtonModal type="submit" disabled={errors.checkIn || !watch("checkIn")}>Save <ArrRight src='assets/images/arr-right.png' /></ButtonModal>
+            <ButtonModal type="submit" disabled={errors.checkIn || !watch("checkIn")}>Save <ArrRight src={`${process.env.PUBLIC_URL}/assets/images/arr-right.png`} /></ButtonModal>
         </form>
     </Wrapper>
 }

@@ -142,9 +142,9 @@ const HeaderBanner = () => {
     }
 
     return <WrapperHeader>
-        <CloudImage src='assets/images/cloud2.png'/>
+        <CloudImage src={`${process.env.PUBLIC_URL}/assets/images/cloud2.png`}/>
         <WrapperBanner>
-            <SecondLineImg src='assets/images/roket-line-2.png' />
+            <SecondLineImg src={`${process.env.PUBLIC_URL}/assets/images/roket-line-2.png`} />
             
             <LeftBanner>
                 <Title>
@@ -156,14 +156,14 @@ const HeaderBanner = () => {
                 <WrapperBtn>
                     <Btn>
                         <ButtonLayer onPress={onClickJoinNow}>
-                            Join Now <ArrowUpImg src='assets/images/arrow-up.png'/>
+                            Join Now <ArrowUpImg src={`${process.env.PUBLIC_URL}/assets/images/arrow-up.png`}/>
                         </ButtonLayer>
                     </Btn>
                 </WrapperBtn>
             </LeftBanner>
             <RightBanner ref={refImage}>
-                <ImageLayerRight src='assets/images/back-layer-img-header-home.png' data-depth="0.3"/>
-                <ImageRight src='assets/images/img-header-competition.png' data-depth="0.6" />
+                <ImageLayerRight src={`${process.env.PUBLIC_URL}/assets/images/back-layer-img-header-home.png`} data-depth="0.3"/>
+                <ImageRight src={`${process.env.PUBLIC_URL}/assets/images/img-header-competition.png`} data-depth="0.6" />
             </RightBanner>
         </WrapperBanner>
     </WrapperHeader>
