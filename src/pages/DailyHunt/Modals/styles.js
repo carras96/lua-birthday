@@ -162,6 +162,7 @@ export const AnswerQuiz = styled.label`
     line-height: 20px;
     color: rgba(255, 255, 255, 0.87);
     padding-left: 30px;
+    text-transform: uppercase;
 
     position: relative;
 
