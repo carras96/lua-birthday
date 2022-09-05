@@ -47,7 +47,8 @@ const LIST_CARD = [
         desc: 'Join  mini game series and accept our challenges to win ',
         link: '#',
         isOpenExtraLink: true,
-        date: ''
+        date: '',
+        isDisable: true
     },
     {
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image23.png`,
@@ -55,28 +56,34 @@ const LIST_CARD = [
         desc: 'Complete the tasks to get decent rewards',
         link: '#',
         isOpenExtraLink: true,
-        date: 'Start on 15 Sep, 2022'
+        date: 'Start on 15 Sep, 2022',
+        isDisable: true
     },
     {
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image21.png`,
         title: 'Trading competition',
         desc: 'Trade to share a reward pool of 120,000 $LUA',
         link: '/trading-competition',
-        date: 'Start on 19 Sep, 2022'
+        date: 'Start on 19 Sep, 2022',
+        isDisable: true
     },
     {
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image22.png`,
         title: 'Daily hunt',
         desc: 'Conquer treasure city to earn a daily attractive bonus',
         link: '/daily-hunt',
-        date: 'Start on 22 Sep, 2022'
+        date: 'Start on 22 Sep, 2022',
+        isDisable: true
     },
 
 ]
 
 const MenuHomeCard = () => {
     const navigate = useNavigate();
-    const onNavigate = (link, isOpenExtraLink) => {
+    const onNavigate = (link, isOpenExtraLink, isDisable) => {
+        if (isDisable) {
+            return;
+        }
         if (isOpenExtraLink) {
             window.open(link, '_blank', 'noopener,noreferrer');
         } else {
@@ -86,7 +93,13 @@ const MenuHomeCard = () => {
     return <WrapperMenuHomeCard>
         <WrapperCards>
             {LIST_CARD.map((item, index) => <Card key={index} number={index}>
-                <HomeCard imgSrc={item.imgSrc} title={item.title} desc={item.desc} date={item.date} onClickNavigate={() => onNavigate(item.link, item.isOpenExtraLink)} />
+                <HomeCard
+                    imgSrc={item.imgSrc}
+                    title={item.title}
+                    desc={item.desc}
+                    date={item.date}
+                    onClickNavigate={() => onNavigate(item.link, item.isOpenExtraLink, item.isDisable)}
+                />
             </Card>)}
         </WrapperCards>
     </WrapperMenuHomeCard>

@@ -18,8 +18,9 @@ function App() {
       <Routes>
         <Route element={<AnimationLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="trading-competition" element={<TradingCompetition />} />
-          <Route path="daily-hunt" element={<DailyHunt />} />
+          {/* <Route path="trading-competition" element={<TradingCompetition />} />
+          <Route path="daily-hunt" element={<DailyHunt />} /> */}
+          <Route path="*" element={<Home />} />
         </Route>
       </Routes>
     </WrapperApp>
