@@ -1,7 +1,7 @@
 {
   "name": "lua-birthday",
   "version": "0.1.0",
-  "homepage": "http://carras96.github.io/lua-birthday/",
+  "homepage": "http://luaturns2.luaswap.org/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
