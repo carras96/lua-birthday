@@ -29,7 +29,7 @@ const Number = styled.p`
     font-weight: 500;
     font-size: 2rem;
     line-height: 39px;
-    color: rgba(255, 255, 255, 0.87);
+    color: #FABC46;
 `
 
 const Icon = styled.div`
