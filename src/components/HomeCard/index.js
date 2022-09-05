@@ -75,7 +75,7 @@ const CardTitle = styled.p`
     text-align: center;
     color: rgba(255, 255, 255, 0.87);
     margin-bottom: 8px;
-    margin-top: 15px;
+    margin-top: 24px;
 `
 
 const CardDate = styled.p`

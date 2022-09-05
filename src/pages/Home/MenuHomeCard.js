@@ -7,7 +7,7 @@ import { FadeInBottomDiv } from '../../styles';
 const WrapperMenuHomeCard = styled(FadeInBottomDiv)`
     background-image: url('${process.env.PUBLIC_URL}/assets/images/bg-line.png');
     width: 100%;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     justify-content: flex-end;

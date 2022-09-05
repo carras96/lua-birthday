@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import BoxInfoCommunity from '../../components/BoxInfoCommunity';
 
 const WrapperCommunity = styled.div`
-    padding-top: 350px;
+    padding-top: 200px;
     position: relative;
     
 `

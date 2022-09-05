@@ -3,7 +3,12 @@ import styled from 'styled-components';
 import EventCard from '../../components/EventCard';
 
 const WrapperEventSchedule = styled.div`
-   
+    background-image: url('${process.env.PUBLIC_URL}/assets/images/bg-event-schedule.png');
+    width: 100%;
+    aspect-ratio: 1.6;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 `
 
 const Title = styled.p`
@@ -34,6 +39,7 @@ const WrapperSchedule = styled.div`
     margin: 0 50px;
     padding: 220px 100px 0 100px;
     overflow-x: auto;
+    overflow-y: hidden;
 `
 
 const GridSchedule = styled.div`
@@ -83,7 +89,7 @@ const DayText = styled.p`
     font-weight: 700;
     font-size: 2rem;
     line-height: 39px;
-    color: rgba(255, 255, 255, 0.87);
+    color: #FABC46;
 `
 
 const TextHeader = styled.div`
@@ -100,7 +106,7 @@ const TextHeader = styled.div`
         position: absolute;
         height: 850px;
         width: 1px;
-        background-color: #121212;
+        background-color: #2E2E2E;
         bottom: -25px;
         left: 20px;
         transform: translateY(850px);
@@ -286,7 +292,7 @@ const DAYS_EVENTS = [
                     detail: {
                         title: `Daily Hunt`,
                         content: `Complete daily series of missions to earn attractive bonuses! \n15,000 LUA to reward players' commitment`,
-                        time: '22 - 28 Sep, 2022'
+                        time: '22 - 29 Sep, 2022'
                     },
                 }
             ]

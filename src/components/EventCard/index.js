@@ -93,6 +93,7 @@ const Tooltip = styled(ReactTooltip)`
     width: 300px;
     padding: 20px 16px;
     height: auto;
+    opacity: 1 !important;
 `
 
 const TooltipTitle = styled.p`
@@ -100,7 +101,7 @@ const TooltipTitle = styled.p`
     font-weight: 700;
     font-size: 1rem;
     line-height: 20px;
-    color: rgba(255, 255, 255, 0.87);
+    color: #FFF177;
 `
 
 const TooltipContent = styled.p`
@@ -118,7 +119,7 @@ const TooltipTime = styled.p`
     font-weight: 400;
     font-size: 1rem;
     line-height: 19px;
-    color: rgba(255, 255, 255, 0.87);
+    color: #00D1AC;
 `
 
 const EventCard = ({event}) => {

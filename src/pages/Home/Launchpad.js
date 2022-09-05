@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const WrapperLaunchpad = styled.div`
-    margin-top: 300px;
     position: relative;
     padding-bottom: 100px;
 `

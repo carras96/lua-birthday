@@ -13,7 +13,7 @@ export const TextBold = styled.p`
     font-weight: 500;
     font-size: 1.1rem;
     line-height: 24px;
-    color: rgba(255, 255, 255, 0.87);
+    color: #FABC46;
 `
 
 export const BoxText = styled.div`
