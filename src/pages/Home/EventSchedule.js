@@ -9,6 +9,7 @@ const WrapperEventSchedule = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    padding 50px 0;
 `
 
 const Title = styled.p`

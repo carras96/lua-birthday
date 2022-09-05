@@ -127,6 +127,12 @@ const GradiantText = styled.p`
     }
 `
 
+const RocketImage = styled.img`
+    position: absolute;
+    top: 120px;
+    left: 0;
+`
+
 const LIST_LAUNCHPAD = [
         {
             src: `${process.env.PUBLIC_URL}/assets/images/launchpad/TomoMasterDAO.png`,
@@ -188,6 +194,7 @@ const LIST_LAUNCHPAD = [
 
 const Launchpad = () => {
     return <WrapperLaunchpad>
+        <RocketImage src={`${process.env.PUBLIC_URL}/assets/images/rocket-launchpad.png`}/>
         <Header>
             <GradiantText>LuaStarter Launchpad</GradiantText>
             <Title>

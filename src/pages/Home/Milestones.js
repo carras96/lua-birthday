@@ -7,6 +7,12 @@ import Scroll from './Scroll';
 const WrapperMilestones = styled.div`
     margin-top: 200px;
     position: relative;
+    // background-image: url('${process.env.PUBLIC_URL}/assets/images/bg-minestones.png');
+    // width: 100%;
+    // aspect-ratio: 1.6;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: center;
 `
 
 const LineImage = styled.img`
