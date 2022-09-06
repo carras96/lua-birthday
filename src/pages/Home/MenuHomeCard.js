@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from "react-router-dom";
 import HomeCard from '../../components/HomeCard';
 import { FadeInBottomDiv } from '../../styles';
+import { useApi } from '../../hooks/useApi';
 
 const WrapperMenuHomeCard = styled(FadeInBottomDiv)`
     background-image: url('${process.env.PUBLIC_URL}/assets/images/bg-line.png');
@@ -45,10 +46,10 @@ const LIST_CARD = [
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image24.png`,
         title: '$LUA social contest',
         desc: 'Join  mini game series and accept our challenges to win ',
-        link: '#',
+        link: 'https://twitter.com/LuaSwap/status/1566780595099025408',
         isOpenExtraLink: true,
         date: '',
-        isDisable: true
+        isDisable: false
     },
     {
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image23.png`,
@@ -79,6 +80,16 @@ const LIST_CARD = [
 ]
 
 const MenuHomeCard = () => {
+
+    const { getEventConfig } = useApi()
+
+    useEffect(() => {
+        const fetchEventConfig = async () => {
+            const data = await getEventConfig();
+            // console.log('data', data)
+        }
+        fetchEventConfig()
+    }, [])
     const navigate = useNavigate();
     const onNavigate = (link, isOpenExtraLink, isDisable) => {
         if (isDisable) {

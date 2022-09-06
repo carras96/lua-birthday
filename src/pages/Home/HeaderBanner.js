@@ -5,9 +5,9 @@ import Parallax from 'parallax-js';
 import { FadeInLeftDiv, FadeInRightDiv } from '../../styles';
 
 const WrapperBanner = styled.div`
-    background-image: url('${process.env.PUBLIC_URL}/assets/images/bg-header-home.png');
+    background-image: url('${process.env.PUBLIC_URL}/assets/images/bg-header-home.jpg');
     width: 100%;
-    aspect-ratio: 1.9;
+    aspect-ratio: 1.75;
     background-size: cover;
     background-repeat: no-repeat;
     display: grid;

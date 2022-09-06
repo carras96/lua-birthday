@@ -58,8 +58,6 @@ export function Card({
 
   const visible = visibility.isItemVisible(itemId);
 
-  console.log(selected, itemId)
-
   return (
       <BoxTimeNode onClick={() => onClick()} isActive={selected}>
           <NodeTime isActive={selected}>{node.time}</NodeTime>
