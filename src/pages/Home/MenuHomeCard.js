@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from "react-router-dom";
 import HomeCard from '../../components/HomeCard';
@@ -43,15 +43,17 @@ const Card = styled.div`
 
 const LIST_CARD = [
     {
+        id: 'socialContest',
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image24.png`,
         title: '$LUA social contest',
         desc: 'Join  mini game series and accept our challenges to win ',
         link: 'https://twitter.com/LuaSwap/status/1566780595099025408',
         isOpenExtraLink: true,
         date: '',
-        isDisable: false
+        isDisable: true
     },
     {
+        id: 'gleamMission',
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image23.png`,
         title: 'Gleam mission',
         desc: 'Complete the tasks to get decent rewards',
@@ -61,6 +63,7 @@ const LIST_CARD = [
         isDisable: true
     },
     {
+        id: 'tradingCompetition',
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image21.png`,
         title: 'Trading competition',
         desc: 'Trade to share a reward pool of 120,000 $LUA',
@@ -69,6 +72,7 @@ const LIST_CARD = [
         isDisable: true
     },
     {
+        id: 'dailyHunt',
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image22.png`,
         title: 'Daily hunt',
         desc: 'Conquer treasure city to earn a daily attractive bonus',
@@ -81,12 +85,21 @@ const LIST_CARD = [
 
 const MenuHomeCard = () => {
 
+    const [cardsData, setCardsData] = useState(LIST_CARD)
+
     const { getEventConfig } = useApi()
 
     useEffect(() => {
         const fetchEventConfig = async () => {
-            const data = await getEventConfig();
-            // console.log('data', data)
+            const {data = {}} = await getEventConfig();
+            let tempData = [...cardsData];
+            Object.keys(data).forEach(key => {
+                const card = tempData.find(item => item.id === key)
+                if (card) {
+                    card.isDisable = !data[key]
+                }
+            })
+            setCardsData(tempData)
         }
         fetchEventConfig()
     }, [])
