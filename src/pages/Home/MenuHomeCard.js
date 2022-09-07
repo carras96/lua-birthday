@@ -50,7 +50,7 @@ const LIST_CARD = [
         link: 'https://twitter.com/LuaSwap/status/1566780595099025408',
         isOpenExtraLink: true,
         date: '',
-        isDisable: true
+        isDisable: false
     },
     {
         id: 'gleamMission',
@@ -89,20 +89,20 @@ const MenuHomeCard = () => {
 
     const { getEventConfig } = useApi()
 
-    useEffect(() => {
-        const fetchEventConfig = async () => {
-            const {data = {}} = await getEventConfig();
-            let tempData = [...cardsData];
-            Object.keys(data).forEach(key => {
-                const card = tempData.find(item => item.id === key)
-                if (card) {
-                    card.isDisable = !data[key]
-                }
-            })
-            setCardsData(tempData)
-        }
-        fetchEventConfig()
-    }, [])
+    // useEffect(() => {
+    //     const fetchEventConfig = async () => {
+    //         const {data = {}} = await getEventConfig();
+    //         let tempData = [...cardsData];
+    //         Object.keys(data).forEach(key => {
+    //             const card = tempData.find(item => item.id === key)
+    //             if (card) {
+    //                 card.isDisable = !data[key]
+    //             }
+    //         })
+    //         setCardsData(tempData)
+    //     }
+    //     fetchEventConfig()
+    // }, [])
     const navigate = useNavigate();
     const onNavigate = (link, isOpenExtraLink, isDisable) => {
         if (isDisable) {
