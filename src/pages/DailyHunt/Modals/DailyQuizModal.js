@@ -2,22 +2,9 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { AnswerQuiz, ArrRight, ButtonModal, ModalTitle, QuestionQuiz, QuestionQuizBold, RadioButton, WrappAnswer, Wrapper } from './styles';
 
-const FAKE_ANSWER = [
-    {
-        option: 'A',
-        answer: 'Serum (SRM)'
-    },
-    {
-        option: 'B',
-        answer: 'FTX (FTT)'
-    },
-    {
-        option: 'C',
-        answer: 'Avalanche (Avax)'
-    }
-]
+const DailyQuizModal = ({ toggleModal, dailyQuestion }) => {
 
-const DailyQuizModal = ({ toggleModal }) => {
+    const {A, B, C, question, questionId} = dailyQuestion
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm({
         defaultValues: { quiz: sessionStorage.getItem('quiz') },
@@ -32,16 +19,26 @@ const DailyQuizModal = ({ toggleModal }) => {
         <ModalTitle>Daily quiz</ModalTitle>
         <br />
         <form onSubmit={handleSubmit(onSubmit)}>
-            <QuestionQuiz><QuestionQuizBold>Q1:</QuestionQuizBold> Which one is NOT a token listed on LuaSwap?</QuestionQuiz>
+            <QuestionQuiz><QuestionQuizBold>Q{questionId}:</QuestionQuizBold> {question}</QuestionQuiz>
             <br />
-            {
-                FAKE_ANSWER.map((answer, index) => <WrappAnswer key={index}>
-                    <RadioButton type="radio" id={index} {...register("quiz", { required: true })} value={answer.option} />
-                    <AnswerQuiz for={index}>
-                        <QuestionQuizBold>{answer.option}.</QuestionQuizBold> {answer.answer}
-                    </AnswerQuiz>
-                </WrappAnswer>)
-            }
+            <WrappAnswer>
+                <RadioButton type="radio" id={'A'} {...register("quiz", { required: true })} value={'A'} />
+                <AnswerQuiz for={'A'}>
+                    <QuestionQuizBold>A.</QuestionQuizBold> {A}
+                </AnswerQuiz>
+            </WrappAnswer>
+            <WrappAnswer>
+                <RadioButton type="radio" id={'B'} {...register("quiz", { required: true })} value={'B'} />
+                <AnswerQuiz for={'B'}>
+                    <QuestionQuizBold>B.</QuestionQuizBold> {B}
+                </AnswerQuiz>
+            </WrappAnswer>
+            <WrappAnswer>
+                <RadioButton type="radio" id={'C'} {...register("quiz", { required: true })} value={'C'} />
+                <AnswerQuiz for={'C'}>
+                    <QuestionQuizBold>C.</QuestionQuizBold> {C}
+                </AnswerQuiz>
+            </WrappAnswer>
             <ButtonModal type="submit" disabled={errors.quiz || !watch("quiz")}>Save <ArrRight src={`${process.env.PUBLIC_URL}/assets/images/arr-right.png`} /></ButtonModal>
         </form>
     </Wrapper>

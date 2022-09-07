@@ -1,7 +1,9 @@
 import React, { useMemo, useState } from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import BaseModal from '../../components/BaseModal';
 import CircleWave from '../../components/CircleWave';
+import { useApi } from '../../hooks/useApi';
 import { FadeInBottomDiv } from '../../styles';
 import DailyCheckInModal from './Modals/DailyCheckInModal';
 import DailyQuizModal from './Modals/DailyQuizModal';
@@ -156,6 +158,10 @@ const RoketImg = styled.img`
 
 const CitySection = () => {
 
+    const { getDailyHuntQuestion, getDailyHuntWinter } = useApi()
+    const [dailyQuestion, setDailyQuestion] = useState({})
+    const [dailyWinter, setDailyWinter] = useState({})
+
     const [isOpenSwap, setIsOpenSwap] = useState(false);
     const [isOpenStake, setIsOpenStake] = useState(false);
     const [isOpenDailyCheckIn, setIsOpenDailyCheckIn] = useState(false);
@@ -239,6 +245,20 @@ const CitySection = () => {
         toggleModalSuccess();
     }
 
+    useEffect(() => {
+        const fetchDailyQuestion = async () => {
+            const { data } = await getDailyHuntQuestion()
+            setDailyQuestion(data)
+        }
+
+        const fetchDailyWinter = async () => {
+            const { data } = await getDailyHuntWinter()
+            setDailyWinter(data)
+        }
+        fetchDailyQuestion()
+        fetchDailyWinter()
+    }, [])
+
 
     return <Wrapper>
         <WrapperCity>
@@ -255,21 +275,21 @@ const CitySection = () => {
                     <MessageTextBox onClick={toggleModalSwap} isDone={isDoneSwap}>
                         <Text isDone={isDoneSwap}>Swap</Text>
                     </MessageTextBox>
-                    <CircleWave/>
+                    <CircleWave />
                 </BoxMessage>
 
                 <BoxMessage top='19%' left='27%'>
                     <MessageTextBox onClick={toggleModalDailyCheckIn} isDone={isDoneCheckIn}>
                         <Text isDone={isDoneCheckIn}>Daily check in</Text>
                     </MessageTextBox>
-                    <CircleWave/>
+                    <CircleWave />
                 </BoxMessage>
 
                 <BoxMessage top='17%' right='33%'>
                     <MessageTextBox onClick={toggleModalDailyQuiz} isDone={isDoneQuiz}>
                         <Text isDone={isDoneQuiz}>Daily quiz</Text>
                     </MessageTextBox>
-                    <CircleWave/>
+                    <CircleWave />
                 </BoxMessage>
 
                 <BoxMessage top='45%' right='10%'>
@@ -277,14 +297,14 @@ const CitySection = () => {
                         <Text
                             isDone={isDoneTasks}>Social tasks</Text>
                     </MessageTextBox>
-                    <CircleWave/>
+                    <CircleWave />
                 </BoxMessage>
 
                 <BoxMessage bottom='13%' left='46%' >
                     <MessageTextBox onClick={toggleModalStake} isDone={isDoneStake}>
                         <Text isDone={isDoneStake}>Stake</Text>
                     </MessageTextBox>
-                    <CircleWave/>
+                    <CircleWave />
                 </BoxMessage>
             </WrapperImage>
 
@@ -346,7 +366,7 @@ const CitySection = () => {
                 toggleModal={toggleModalDailyQuiz}
                 width='380px'
                 height='310px'>
-                <DailyQuizModal toggleModal={toggleModalDailyQuiz} />
+                <DailyQuizModal toggleModal={toggleModalDailyQuiz} dailyQuestion={dailyQuestion}/>
             </BaseModal>
 
             <BaseModal
@@ -357,7 +377,7 @@ const CitySection = () => {
                 toggleModal={toggleModalResult}
                 width='700px'
                 height='435px'>
-                <ResultModal toggleModal={toggleModalResult} />
+                <ResultModal toggleModal={toggleModalResult} dailyWinter={dailyWinter} />
             </BaseModal>
 
             <BaseModal

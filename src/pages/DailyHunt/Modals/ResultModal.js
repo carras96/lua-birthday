@@ -190,7 +190,7 @@ const FAKE_DATA = [
 ]
 
 
-const ResultModal = ({ toggleModal }) => {
+const ResultModal = ({ toggleModal, dailyWinter }) => {
     return <Wrapper>
         <TitleModal>Winner list</TitleModal>
         <Header>

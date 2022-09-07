@@ -96,7 +96,8 @@ const MenuHomeCard = () => {
             Object.keys(data).forEach(key => {
                 const card = tempData.find(item => item.id === key)
                 if (card) {
-                    card.isDisable = !data[key]
+                    // card.isDisable = !data[key]
+                    card.isDisable = false
                 }
             })
             setCardsData(tempData)

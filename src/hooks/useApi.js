@@ -11,7 +11,29 @@ export const useApi = () => {
         }
     }
 
+    const getDailyHuntQuestion = async () => {
+        try {
+            const { data } = await API.get('luaturns2/dailyhunt/questions')
+            return data
+        } catch (error) {
+            console.log('error', error)
+            return null
+        }
+    }
+
+    const getDailyHuntWinter = async () => {
+        try {
+            const { data } = await API.get('luaturns2/dailyhunt/winners')
+            return data
+        } catch (error) {
+            console.log('error', error)
+            return null
+        }
+    }
+
     return {
-        getEventConfig
+        getEventConfig,
+        getDailyHuntQuestion,
+        getDailyHuntWinter
     }
 }
