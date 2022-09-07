@@ -1,6 +1,8 @@
+import BigNumber from 'bignumber.js';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { clickToCopy } from '../../utils/clickToCopy';
+import { reduceString } from '../../utils/reduceString';
 
 const WrapperPosCard = styled.div`
     width: 100%;
@@ -119,7 +121,7 @@ const PosImg = styled.img`
     }
 `
 
-const PosCard = ({pos}) => {
+const PosCard = ({pos, user}) => {
     const postText = useMemo(() => {
         if (pos === 1) return ['1', 'st']
         if (pos === 2) return ['2', 'nd']
@@ -141,10 +143,10 @@ const PosCard = ({pos}) => {
                     <PosText pos={pos}>{postText[0]}</PosText><SmallPostText pos={pos}>{postText[1]}</SmallPostText>
                 </WrappPostText>
                 <Text pos={pos}>Trading volume</Text>
-                <VolumeText pos={pos}>$15,000</VolumeText>
+                <VolumeText pos={pos}>${parseInt(new BigNumber(user?.volume).dividedBy(1000000).toFixed(0))}</VolumeText>
                 <WrappAddress>
-                    <AddressText pos={pos}>0xecg55EF0mog...963a</AddressText>
-                    <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy('0xecg55EF0mog...963a')}/>
+                    <AddressText pos={pos}>{reduceString(user?.userAddress)}</AddressText>
+                    <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy(user?.userAddress)}/>
                 </WrappAddress>
             </WrapperText>
         </MainCard>

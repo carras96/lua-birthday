@@ -1,6 +1,8 @@
+import BigNumber from 'bignumber.js';
 import React from 'react';
 import styled from 'styled-components';
 import { clickToCopy } from '../../../utils/clickToCopy';
+import { reduceString } from '../../../utils/reduceString';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -86,79 +88,8 @@ const CopyIcon = styled.img`
     }
 `
 
-const FAKE_DATA = [
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        tradingVol: '$15,000'
-    },
-]
 
-
-const LeaderBoardModal = () => {
+const LeaderBoardModal = ({listUsers}) => {
     return <Wrapper>
         <Header>
             <Col1><HeaderText>Rank</HeaderText></Col1>
@@ -167,10 +98,10 @@ const LeaderBoardModal = () => {
         </Header>
         <Main>
             {
-                FAKE_DATA.map((data, index) => <Row key={index}>
-                    <Col1><RowText>{index + 1}</RowText></Col1>
-                    <Col2><RowText>{data.address}</RowText> <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy(data.address)} /></Col2>
-                    <Col3><RowText>{data.tradingVol}</RowText></Col3>
+                listUsers.map((data, index) => <Row key={index}>
+                    <Col1><RowText>{data?.rank}</RowText></Col1>
+                    <Col2><RowText>{reduceString(data?.userAddress)}</RowText> <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy(data?.userAddress)} /></Col2>
+                    <Col3><RowText>{parseInt(new BigNumber(data.volume).dividedBy(1000000).toFixed(0))}</RowText></Col3>
                 </Row>)
             }
         </Main>

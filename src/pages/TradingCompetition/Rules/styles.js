@@ -22,6 +22,7 @@ export const BoxText = styled.div`
 
 export const TextNormal = styled(TextBold)`
     font-weight: 400;
+    color: rgba(255, 255, 255, 0.87);
 `
 export const Flex = styled.div`
     display: flex;

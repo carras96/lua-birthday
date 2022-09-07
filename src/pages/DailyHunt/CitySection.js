@@ -46,8 +46,6 @@ const WrapperImage = styled(FadeInBottomDiv)`
     align-items: center;
 `
 
-const CircleImg = styled.img``
-
 const BoxMessage = styled.div`
     display: flex;
     flex-direction: column;
@@ -158,7 +156,7 @@ const RoketImg = styled.img`
 
 const CitySection = () => {
 
-    const { getDailyHuntQuestion, getDailyHuntWinter } = useApi()
+    const { getDailyHuntQuestion, getDailyHuntWinter, postDailyHunt } = useApi()
     const [dailyQuestion, setDailyQuestion] = useState({})
     const [dailyWinter, setDailyWinter] = useState({})
 
@@ -205,6 +203,7 @@ const CitySection = () => {
     const toggleModalSuccess = (e) => {
         setOpacity(0);
         setIsOpenSuccess(!isOpenSuccess);
+        sessionStorage.clear();
     }
 
     const afterOpen = () => {
@@ -241,8 +240,22 @@ const CitySection = () => {
     }, [sessionStorage.getItem('stake')])
 
 
-    const onClickSubmitAnswer = () => {
-        toggleModalSuccess();
+    const onClickSubmitAnswer = async () => {
+        const result = await postDailyHunt(
+            {
+                userAddress: sessionStorage.getItem('checkIn'),
+                questionId: sessionStorage.getItem('questionId'),
+                answer: sessionStorage.getItem('quiz'),
+                accTwitter: sessionStorage.getItem('accTw'),
+                stakeTx: sessionStorage.getItem('stake'),
+                linkTweet: sessionStorage.getItem('linkTweet'),
+                swapTx: sessionStorage.getItem('swap'),
+                name: sessionStorage.getItem('name'),
+            }
+        )
+        if (result) {
+            toggleModalSuccess();
+        }
     }
 
     useEffect(() => {

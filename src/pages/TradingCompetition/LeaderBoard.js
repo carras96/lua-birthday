@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import BaseModal from '../../components/BaseModal';
 import Bubble from '../../components/Bubble';
 import PosCard from '../../components/PosCard';
+import { useApi } from '../../hooks/useApi';
 import { FadeInBottomDiv } from '../../styles';
 import LeaderBoardModal from './Modals/LeaderBoardModal';
 
@@ -128,8 +130,21 @@ const Button = styled.div`
 `
 
 const LeaderBoard = () => {
+    const { getCompetitionUsers } = useApi()
+
     const [isOpen, setIsOpen] = useState(false);
     const [opacity, setOpacity] = useState(0);
+
+    const [listUsers, setListUsers] = useState([])
+
+    useEffect(() => {
+        const fetchLeaderBoard = async () => {
+            const {data} = await getCompetitionUsers()
+            setListUsers(data)
+        }
+
+        fetchLeaderBoard()
+    }, [])
 
     const toggleModal = (e) => {
         setOpacity(0);
@@ -163,13 +178,13 @@ const LeaderBoard = () => {
         </FirstBubbleSection>
         <Main>
             <WrappPosCard width='100%' height='66.67%' alignSelf='end'>
-                <PosCard pos={2} />
+                <PosCard pos={2} user={listUsers[1]}/>
             </WrappPosCard>
             <WrappPosCard width='100%' height='100%' alignSelf='start'>
-                <PosCard pos={1} />
+                <PosCard pos={1} user={listUsers[0]}/>
             </WrappPosCard>
             <WrappPosCard width='100%' height='66.67%' alignSelf='end'>
-                <PosCard pos={3} />
+                <PosCard pos={3} user={listUsers[2]}/>
             </WrappPosCard>
         </Main>
         <FirstBubbleSection>
@@ -188,7 +203,7 @@ const LeaderBoard = () => {
             width='700px'
             height='435px'
         >
-            <LeaderBoardModal />
+            <LeaderBoardModal listUsers={listUsers}/>
         </BaseModal>
     </WrapperLeaderBoard>
 

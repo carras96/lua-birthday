@@ -31,9 +31,35 @@ export const useApi = () => {
         }
     }
 
+    const postDailyHunt = async (body) => {
+        try {
+            const { data } = await API.post('luaturns2/dailyhunt/answer', body)
+            return data
+        } catch (error) {
+            console.log('error', error)
+            return null
+        }
+    }
+
+    const getCompetitionUsers = async () => {
+        try {
+            const { data } = await API.get('competition/volume/users', {
+                params: {
+                    limit: 20
+                }
+            })
+            return data
+        } catch (error) {
+            console.log('error', error)
+            return null
+        }
+    }
+
     return {
         getEventConfig,
         getDailyHuntQuestion,
-        getDailyHuntWinter
+        getDailyHuntWinter,
+        postDailyHunt,
+        getCompetitionUsers
     }
 }

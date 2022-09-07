@@ -12,6 +12,7 @@ const DailyQuizModal = ({ toggleModal, dailyQuestion }) => {
 
     const onSubmit = data => {
         sessionStorage.setItem('quiz', data.quiz);
+        sessionStorage.setItem('questionId', questionId);
         toggleModal();
     };
 

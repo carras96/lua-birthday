@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { clickToCopy } from '../../../utils/clickToCopy';
+import { reduceString } from '../../../utils/reduceString';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -95,102 +96,12 @@ const TitleModal = styled.p`
     margin-bottom: 16px;
 `
 
-const FAKE_DATA = [
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-    {
-        address: '0xecg55EF0mog...963a',
-        date: '22 Aug, 2022',
-        reward: '5,546.32 LUA'
-    },
-
-]
-
 
 const ResultModal = ({ toggleModal, dailyWinter }) => {
+    let firstDay = 22
+
+    const { winners, boardId } = dailyWinter
+
     return <Wrapper>
         <TitleModal>Winner list</TitleModal>
         <Header>
@@ -200,10 +111,10 @@ const ResultModal = ({ toggleModal, dailyWinter }) => {
         </Header>
         <Main>
             {
-                FAKE_DATA.map((data, index) => <Row key={index}>
-                    <Col1><RowText>{data.date}</RowText></Col1>
-                    <Col2><RowText>{data.address}</RowText> <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy(data.address)} /></Col2>
-                    <Col3><RowText>{data.reward}</RowText></Col3>
+                winners.map((user, index) => <Row key={index}>
+                    <Col1><RowText>{`${firstDay + boardId - 1} Aug, 2022`}</RowText></Col1>
+                    <Col2><RowText>{reduceString(user)}</RowText> <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy(user)} /></Col2>
+                    <Col3><RowText>5,546.32 LUA</RowText></Col3>
                 </Row>)
             }
         </Main>
