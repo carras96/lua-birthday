@@ -45,7 +45,7 @@ const LIST_CARD = [
     {
         id: 'socialContest',
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image24.png`,
-        title: '$LUA social contest',
+        title: '$LUA Social Contest',
         desc: 'Join  mini game series and accept our challenges to win ',
         link: 'https://twitter.com/LuaSwap/status/1566780595099025408',
         isOpenExtraLink: true,
@@ -55,7 +55,7 @@ const LIST_CARD = [
     {
         id: 'gleamMission',
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image23.png`,
-        title: 'Gleam mission',
+        title: 'Gleam Mission',
         desc: 'Complete the tasks to get decent rewards',
         link: '#',
         isOpenExtraLink: true,
@@ -65,7 +65,7 @@ const LIST_CARD = [
     {
         id: 'tradingCompetition',
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image21.png`,
-        title: 'Trading competition',
+        title: 'Trading Competition',
         desc: 'Trade to share a reward pool of 120,000 $LUA',
         link: '/trading-competition',
         date: 'Start on 19 Sep, 2022',
@@ -74,7 +74,7 @@ const LIST_CARD = [
     {
         id: 'dailyHunt',
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image22.png`,
-        title: 'Daily hunt',
+        title: 'Daily Hunt',
         desc: 'Conquer treasure city to earn a daily attractive bonus',
         link: '/daily-hunt',
         date: 'Start on 22 Sep, 2022',
