@@ -135,6 +135,21 @@ const WrapperCake = styled.div`
      }
 `
 
+const SeeDetailBtn = styled.a`
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.87);
+    text-decoration: none;
+    margin-left: 45px;
+    &:hover {
+        text-decoration: underline;
+    }
+`
+
+const ArrImg = styled.img``
+
 const DAYS_EVENTS = [
     {
         day: 25,
@@ -327,7 +342,10 @@ const EventSchedule = () => {
     }, []);
 
     return <WrapperEventSchedule>
-        <Title><TitleYellow>Event</TitleYellow> <TitleGreen>Schedule</TitleGreen></Title>
+        <Title>
+            <TitleYellow>Event</TitleYellow> <TitleGreen>Schedule</TitleGreen>
+            <SeeDetailBtn target="_blank" href='https://medium.com/luaswap/celebrate-luaturns2-to-share-a-prize-pool-of-200-000-lua-9b216be942b2'>See Details <ArrImg src={`${process.env.PUBLIC_URL}/assets/images/arr-show-detail.png`} /></SeeDetailBtn>
+        </Title>
         <WrapperSchedule>
             <Schedule>
                 <ScheduleHeader>
