@@ -122,7 +122,7 @@ const MENU_ITEMS = [
     },
     {
         title: '$LUA Social Contest',
-        link: '#',
+        link: 'https://twitter.com/LuaSwap/status/1569323588028874752',
     },
 ];
 

@@ -47,7 +47,7 @@ const LIST_CARD = [
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image24.png`,
         title: '$LUA Social Contest',
         desc: 'Join  mini game series and accept our challenges to win ',
-        link: 'https://twitter.com/LuaSwap/status/1566780595099025408',
+        link: 'https://twitter.com/LuaSwap/status/1569323588028874752',
         isOpenExtraLink: true,
         date: '',
         isDisable: false
