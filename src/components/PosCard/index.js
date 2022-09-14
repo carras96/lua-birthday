@@ -121,7 +121,7 @@ const PosImg = styled.img`
     }
 `
 
-const PosCard = ({pos, user}) => {
+const PosCard = ({ pos, user }) => {
     const postText = useMemo(() => {
         if (pos === 1) return ['1', 'st']
         if (pos === 2) return ['2', 'nd']
@@ -136,18 +136,22 @@ const PosCard = ({pos, user}) => {
 
     return <WrapperPosCard>
         <LayerBack pos={pos} />
-        <PosImg src={srcPosCard}/>
+        <PosImg src={srcPosCard} />
         <MainCard pos={pos}>
             <WrapperText>
                 <WrappPostText>
                     <PosText pos={pos}>{postText[0]}</PosText><SmallPostText pos={pos}>{postText[1]}</SmallPostText>
                 </WrappPostText>
-                <Text pos={pos}>Trading volume</Text>
-                <VolumeText pos={pos}>${parseInt(new BigNumber(user?.volume).dividedBy(1000000).toFixed(0))}</VolumeText>
-                <WrappAddress>
-                    <AddressText pos={pos}>{reduceString(user?.userAddress)}</AddressText>
-                    <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy(user?.userAddress)}/>
-                </WrappAddress>
+                {
+                    user && <>
+                        <Text pos={pos}>Trading volume</Text>
+                        <VolumeText pos={pos}>${parseInt(new BigNumber(user?.volume).dividedBy(1000000).toFixed(0))}</VolumeText>
+                        <WrappAddress>
+                            <AddressText pos={pos}>{reduceString(user?.userAddress)}</AddressText>
+                            <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy(user?.userAddress)} />
+                        </WrappAddress>
+                    </>
+                }
             </WrapperText>
         </MainCard>
     </WrapperPosCard>

@@ -27,7 +27,12 @@ export const useApi = () => {
             return data
         } catch (error) {
             console.log('error', error)
-            return null
+            return {
+                data: {
+                    winners: [], 
+                    boardId: 0
+                }
+            }
         }
     }
 

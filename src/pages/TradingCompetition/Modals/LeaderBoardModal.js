@@ -88,8 +88,15 @@ const CopyIcon = styled.img`
     }
 `
 
+const WrappNodata = styled.div`
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
 
-const LeaderBoardModal = ({listUsers}) => {
+
+const LeaderBoardModal = ({ listUsers }) => {
     return <Wrapper>
         <Header>
             <Col1><HeaderText>Rank</HeaderText></Col1>
@@ -98,11 +105,15 @@ const LeaderBoardModal = ({listUsers}) => {
         </Header>
         <Main>
             {
-                listUsers.map((data, index) => <Row key={index}>
-                    <Col1><RowText>{data?.rank}</RowText></Col1>
-                    <Col2><RowText>{reduceString(data?.userAddress)}</RowText> <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy(data?.userAddress)} /></Col2>
-                    <Col3><RowText>{parseInt(new BigNumber(data.volume).dividedBy(1000000).toFixed(0))}</RowText></Col3>
-                </Row>)
+                listUsers.length === 0 ? <WrappNodata><HeaderText>No data.</HeaderText></WrappNodata> : <>
+                    {
+                        listUsers.map((data, index) => <Row key={index}>
+                            <Col1><RowText>{data?.rank}</RowText></Col1>
+                            <Col2><RowText>{reduceString(data?.userAddress)}</RowText> <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy(data?.userAddress)} /></Col2>
+                            <Col3><RowText>{parseInt(new BigNumber(data.volume).dividedBy(1000000).toFixed(0))}</RowText></Col3>
+                        </Row>)
+                    }
+                </>
             }
         </Main>
     </Wrapper>

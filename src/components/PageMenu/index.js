@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate, useLocation } from "react-router-dom";
+import { useApi } from '../../hooks/useApi';
 
 const WrapperPageMenu = styled.div`
     width: 100%;
@@ -66,82 +67,83 @@ const MenuItem = styled.span`
 
 `
 
-const MenuItemExtraLink = styled.a`
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 20px;
-    color: rgba(255, 255, 255, 0.6);
-    cursor: pointer;
-    text-decoration: none;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-        color: rgba(255, 255, 255, 0.87);
-        transition: all 0.3s ease-in-out;
-        &:after {
-            transition: all 0.3s ease-in-out;
-            opacity: 1;
-        }
-    }
-
-    &:after {
-        content: '';
-        position: absolute;
-        height: 3px;
-        width: 40px;
-        background: #FABC46;
-        border-radius: 10px;
-        bottom: -10px;
-        left: 0;
-        opacity: 0;
-    }
-
-    @media (max-width: 767px) {
-        margin-bottom: 20px;
-    }
-`
-
 const MENU_ITEMS = [
     {
+        id: 'home',
         title: 'Home',
         path: '/',
+        isDisable: false,
+        isOpenExtraLink: false
     },
     {
+        id: 'tradingCompetition',
         title: 'Trading Competition',
         path: '/trading-competition',
+        isDisable: true,
+        isOpenExtraLink: false
     },
     {
+        id: 'dailyHunt',
         title: 'Daily Hunt',
         path: '/daily-hunt',
+        isDisable: true,
+        isOpenExtraLink: false
     },
     {
+        id: 'gleamMission',
         title: 'Gleam Mission',
-        link: '#',
+        path: '#',
+        isDisable: true,
+        isOpenExtraLink: true
     },
     {
+        id: 'socialContest',
         title: '$LUA Social Contest',
-        link: '#',
+        path: 'https://twitter.com/LuaSwap/status/1569323588028874752',
+        isDisable: false,
+        isOpenExtraLink: true
     },
 ];
 
 const PageMenu = () => {
+    const [cardsData, setCardsData] = useState(MENU_ITEMS)
+
+    const { getEventConfig } = useApi()
+
+    useEffect(() => {
+        const fetchEventConfig = async () => {
+            const {data = {}} = await getEventConfig();
+            let tempData = [...cardsData];
+            Object.keys(data).forEach(key => {
+                const card = tempData.find(item => item.id === key)
+                if (card) {
+                    card.isDisable = !data[key]
+                    // card.isDisable = false
+                }
+            })
+            setCardsData(tempData)
+        }
+        fetchEventConfig()
+    }, [])
+
     const navigate = useNavigate();
     const location = useLocation();
-    const onNavigate = (path) => {
-        navigate(path);
+    const onNavigate = (path, isDisable, isOpenExtraLink) => {
+        if (isDisable) {
+            return;
+        }
+        if (isOpenExtraLink) {
+            window.open(path, '_blank', 'noopener,noreferrer');
+        } else {
+            navigate(path);
+        }
     }
 
     return <WrapperPageMenu>
         <Menu>
             {
                 MENU_ITEMS.map(item => {
-                    if (item.link) {
-                        return <MenuItemExtraLink href={item.link} target='blank' key={item.title}>{item.title}</MenuItemExtraLink>
-                    } else {
-                        return <MenuItem onClick={() => onNavigate(item.path)} isActive={item.path === location.pathname} key={item.title}>{item.title}</MenuItem>
-                    }
+                    return <MenuItem onClick={() => onNavigate(item.path, item.isDisable, item.isOpenExtraLink)} isActive={item.path === location.pathname} key={item.title}>{item.title}</MenuItem>
                 })
             }
         </Menu>

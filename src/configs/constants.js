@@ -1,1 +1,1 @@
-export const API_URL = 'http://localhost:8888/api-v2/'
+export const API_URL = 'https://api.luaswap.org/api-v2/'

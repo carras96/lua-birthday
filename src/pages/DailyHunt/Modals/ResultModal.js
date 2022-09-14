@@ -96,6 +96,13 @@ const TitleModal = styled.p`
     margin-bottom: 16px;
 `
 
+const WrappNodata = styled.div`
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
 
 const ResultModal = ({ toggleModal, dailyWinter }) => {
     let firstDay = 22
@@ -111,12 +118,17 @@ const ResultModal = ({ toggleModal, dailyWinter }) => {
         </Header>
         <Main>
             {
-                winners.map((user, index) => <Row key={index}>
-                    <Col1><RowText>{`${firstDay + boardId - 1} Aug, 2022`}</RowText></Col1>
-                    <Col2><RowText>{reduceString(user)}</RowText> <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy(user)} /></Col2>
-                    <Col3><RowText>5,546.32 LUA</RowText></Col3>
-                </Row>)
+                winners.length === 0 ? <WrappNodata>
+                    <HeaderText>No data.</HeaderText>
+                </WrappNodata> : <>{
+                    winners.map((user, index) => <Row key={index}>
+                        <Col1><RowText>{`${firstDay + boardId - 1} Aug, 2022`}</RowText></Col1>
+                        <Col2><RowText>{reduceString(user)}</RowText> <CopyIcon src={`${process.env.PUBLIC_URL}/assets/images/copy-icon.png`} onClick={() => clickToCopy(user)} /></Col2>
+                        <Col3><RowText>5,546.32 LUA</RowText></Col3>
+                    </Row>)
+                }</>
             }
+
         </Main>
     </Wrapper>
 }

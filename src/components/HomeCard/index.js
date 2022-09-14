@@ -91,15 +91,18 @@ const WrappCardDate = styled.div`
     height: 20px;
 `
 
-const HomeCard = ({ imgSrc, title, desc, onClickNavigate, date }) => {
+const HomeCard = ({ imgSrc, title, desc, onClickNavigate, date, isDisable }) => {
     return <WrapperCard onClick={onClickNavigate}>
         <WrappImg>
             <CardImg src={imgSrc} className='image' />
         </WrappImg>
         <CardTitle className='title'>{title}</CardTitle>
         <CardDesc>{desc}</CardDesc>
+
         <WrappCardDate>
-            <CardDate>{date}</CardDate>
+            {
+                isDisable && <CardDate>{date}</CardDate>
+            }
         </WrappCardDate>
     </WrapperCard>
 }
