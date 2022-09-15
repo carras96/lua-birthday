@@ -57,10 +57,10 @@ const LIST_CARD = [
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image23.png`,
         title: 'Gleam Mission',
         desc: 'Complete the tasks to get decent rewards',
-        link: '#',
+        link: 'https://gleam.io/Ltd56/luaturns2-birthday-airdrop',
         isOpenExtraLink: true,
         date: 'Start on 15 Sep, 2022',
-        isDisable: true
+        isDisable: false
     },
     {
         id: 'tradingCompetition',

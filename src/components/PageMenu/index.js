@@ -92,8 +92,8 @@ const MENU_ITEMS = [
     {
         id: 'gleamMission',
         title: 'Gleam Mission',
-        path: '#',
-        isDisable: true,
+        path: 'https://gleam.io/Ltd56/luaturns2-birthday-airdrop',
+        isDisable: false,
         isOpenExtraLink: true
     },
     {
