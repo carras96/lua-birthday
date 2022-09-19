@@ -72,6 +72,9 @@ const Button = styled.div`
 `
 
 const Rules = ({onClickGeneralBtn}) => {
+    const onSeeDetail = () => {
+        window.open('https://medium.com/luaswap/120-000-lua-trading-competition-to-celebrate-luaswap-season-2-anniversary-luaturns2-dc7ef135e108', '_blank', 'noopener,noreferrer');
+    }
     return <WrapperRules>
         <Header>
             <Title>
@@ -92,7 +95,7 @@ const Rules = ({onClickGeneralBtn}) => {
                 <GetRewardContent />
             </Accordion>
             <WrappButton>
-                <Button>See Details</Button>
+                <Button onClick={onSeeDetail}>See Details</Button>
             </WrappButton>
         </MainRules>
 
