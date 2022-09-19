@@ -35,7 +35,7 @@ const GeneralContent = ({ onClickLeaderBoard }) => {
             <TextNormal>LUA - ETH</TextNormal>
         </BoxText>
         <BoxText>
-            <InlineTextNormal><InlineTextBold>Competition period:</InlineTextBold> 9AM UTC 19, Sep - 9AM UTC 25 Sep, 2022</InlineTextNormal>
+            <InlineTextNormal><InlineTextBold>Competition period:</InlineTextBold> 9AM UTC 19, Sep - 9AM UTC 29 Sep, 2022</InlineTextNormal>
         </BoxText>
         <Button onClick={onClickLeaderBoard}>Leaderboard <ArrowImg src={`${process.env.PUBLIC_URL}/assets/images/arrow-up-green.png`} /></Button>
     </WrapperContent>

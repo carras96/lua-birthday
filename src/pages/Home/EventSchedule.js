@@ -284,7 +284,7 @@ const DAYS_EVENTS = [
                     title: '120,000 LUA Trading competition',
                     content: `It's competition time!`,
                     colStart: 6,
-                    colEnd: 8,
+                    colEnd: 9,
                     rowStart: 4,
                     rowEnd: 5,
                     isYellowEvent: true,
@@ -292,7 +292,7 @@ const DAYS_EVENTS = [
                     detail: {
                         title: `120,000 LUA Trading competition`,
                         content: `It's competition time! Are you In-it to Win-it?`,
-                        time: '19 - 25 Sep, 2022'
+                        time: '19 - 29 Sep, 2022'
                     },
                 }
             ],
