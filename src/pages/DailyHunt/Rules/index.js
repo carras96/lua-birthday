@@ -93,6 +93,9 @@ const GradiantText = styled.p`
 `
 
 const Rules = () => {
+    const onSeeDetail = () => {
+        window.open('https://medium.com/luaswap/join-treasure-hunt-to-celebrate-luaturns2-become-the-conqueror-to-achieve-decent-rewards-fa0720644f3a', '_blank', 'noopener,noreferrer');
+    }
     return <WrapperRules>
         <Header>
             <GradiantText>Rules</GradiantText>
@@ -114,7 +117,7 @@ const Rules = () => {
                 <GetRewardContent />
             </Accordion>
             <WrappButton>
-                <Button>See Details</Button>
+                <Button onClick={onSeeDetail}>See Details</Button>
             </WrappButton>
         </MainRules>
 
