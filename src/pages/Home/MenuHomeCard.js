@@ -74,9 +74,9 @@ const LIST_CARD = [
     {
         id: 'dailyHunt',
         imgSrc: `${process.env.PUBLIC_URL}/assets/images/image22.png`,
-        title: 'Daily Hunt',
+        title: 'Treasure Hunt',
         desc: 'Conquer treasure city to earn a daily attractive bonus',
-        link: '/daily-hunt',
+        link: '/treasure-hunt',
         date: 'Start on 22 Sep, 2022',
         isDisable: true
     },

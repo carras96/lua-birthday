@@ -84,8 +84,8 @@ const MENU_ITEMS = [
     },
     {
         id: 'dailyHunt',
-        title: 'Daily Hunt',
-        path: '/daily-hunt',
+        title: 'Treasure Hunt',
+        path: '/treasure-hunt',
         isDisable: true,
         isOpenExtraLink: false
     },

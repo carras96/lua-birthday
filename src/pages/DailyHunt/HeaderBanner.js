@@ -147,7 +147,7 @@ const HeaderBanner = ({onClickAction}) => {
         <WrapperBanner>
             <LeftBanner>
                 <Title>
-                    Daily Hunt
+                    Treasure Hunt
                 </Title>
                 <WrapperDesc>
                     <Desc>Complete daily tasks to win a part of</Desc>
