@@ -151,7 +151,7 @@ const HeaderBanner = ({onClickAction}) => {
                 </Title>
                 <WrapperDesc>
                     <Desc>Complete daily tasks to win a part of</Desc>
-                    <Desc><TextNumber>1,000</TextNumber> <TextLua>$LUA</TextLua></Desc></WrapperDesc>
+                    <Desc><TextNumber>15,000</TextNumber> <TextLua>$LUA</TextLua></Desc></WrapperDesc>
                 <WrapperBtn>
                     <Btn>
                         <ButtonLayer onPress={onClickAction}>

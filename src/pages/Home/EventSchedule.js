@@ -299,7 +299,7 @@ const DAYS_EVENTS = [
             [
                 {
                     title: 'Treasure Hunt',
-                    content: `1,000 LUA to reward players' commitment`,
+                    content: `15,000 LUA to reward players' commitment`,
                     colStart: 7,
                     colEnd: 9,
                     rowStart: 5,
@@ -307,7 +307,7 @@ const DAYS_EVENTS = [
                     isFullWidth: true,
                     detail: {
                         title: `Treasure Hunt`,
-                        content: `Complete daily series of missions to earn attractive bonuses! \n1,000 LUA to reward players' commitment`,
+                        content: `Complete daily series of missions to earn attractive bonuses! \n15,000 LUA to reward players' commitment`,
                         time: '22 - 29 Sep, 2022'
                     },
                 }
